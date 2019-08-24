@@ -1,0 +1,132 @@
+.mt-50 {
+    margin-top: 0px;
+}
+.credit-btn a {
+    color: brown;
+}
+
+.credit-btn:hover{
+    background: #FFBB38;
+}
+
+a.credit-btn{
+    color: white;
+}
+.header-area .credit-main-menu .classy-navbar .contact::before {
+    width: 155%;
+    height: 184%;
+}
+
+.jrk {
+    margin: 40px 0 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    font-family: "Montserrat";
+    text-transform: capitalize;
+    padding-bottom: 5%;
+}
+
+h3 {
+    padding-bottom: 5%;
+}
+
+.section-padding-100-0 {
+ padding-top: 0px;
+    }
+
+p{
+    color: #ffffff;
+}
+
+.section-padding-100-0{
+    background-color: #FFBB38;
+}
+
+.target-col-wrap p{
+    color: black;
+}
+
+
+section.target .target-col-wrap img {
+width: 40%;
+}
+
+img{
+    vertical-align: middle;
+    padding-bottom: 10%;
+}
+
+body{
+font-family: "Open Sans", sans-serif;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+.box-body {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    text-align: left;
+    padding: 10px;
+}
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 0px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.footer-area .copywrite-area {
+background-color: #003679;
+padding: 0px;
+}
+
+.footer-area .copywrite-area .copywrite-text a{
+    text-align: left;
+}
+
+.single-service-area .icon {
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 60px;
+    flex: 0 0 60px;
+    max-width: 60px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /* background-color: #003679; */
+    text-align: center;
+    margin-right: 20px;
+    line-height: 60px;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.content {
+    min-height: 250px;
+    padding: 51px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.col-md-6 {
+    width: 100%;
+    padding: 15;
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
