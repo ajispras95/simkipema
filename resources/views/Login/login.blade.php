@@ -35,24 +35,25 @@
 				<span class="login100-form-title p-b-41">
 					Account Login
 				</span>
-				<form class="login100-form validate-form p-b-33 p-t-5">
+				
+					@csrf
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="username" placeholder="User name">
+						<input class="input100" type="text" id="user" name="username" placeholder="User name">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" id="pw" type="password" name="pass" placeholder="Password">
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
 
 					<div class="container-login100-form-btn m-t-32">
-						<button class="login100-form-btn">
-							admin
+						<button id="login" class="login100-form-btn">
+							Login
 						</button>
 					</div>
-				</form>
+				
 			</div>
 		</div>
 	</div>
@@ -76,6 +77,61 @@
 	<script src="{{ ('vendor/countdowntime/countdowntime.js') }}"></script>
 <!--===============================================================================================-->
 	<script src="{{ ('js/main.js') }}"></script>
+	<script>
+		var request;
+		var form = new FormData();
+
+		$("#login").click(function(event){
+			var user = $('#user').val();
+			var password = $('#pw').val();
+			var token = $("input[name=_token]").val();
+
+			// Abort any pending request
+			if (request) {
+				request.abort();
+			}
+
+			form.append("nim", user);
+			form.append("password", password);
+			form.append("_token", token);
+
+			// Let's disable the inputs for the duration of the Ajax request.
+			// Note: we disable elements AFTER the form data has been serialized.
+			// Disabled form elements will not be serialized.
+
+			// Fire off the request to /form.php
+			request = $.ajax({
+				url: "{{ url('authenticate') }}",
+				type: "post",
+				data: form
+			});
+
+			// Callback handler that will be called on success
+			request.done(function (response, textStatus, jqXHR){
+				// Log a message to the console
+				// window.location = "http://www.yoururl.com";
+				console.log("Hooray, it worked!");
+			});
+
+			// Callback handler that will be called on failure
+			request.fail(function (jqXHR, textStatus, errorThrown){
+				// Log the error to the console
+				console.error(
+					"The following error occurred: "+
+					textStatus, errorThrown
+				);
+			});
+
+			// Callback handler that will be called regardless
+			// if the request failed or succeeded
+			request.always(function () {
+				// Reenable the inputs
+				$inputs.prop("disabled", false);
+			});
+
+			console.log("Hooray, it worked!"+user+" "+token+" "+password);
+		});
+	</script>
 
 </body>
 </html>

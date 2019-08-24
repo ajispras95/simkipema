@@ -13,6 +13,7 @@
 
 
 Route::get('/login',"Auth\LoginController@index");
+Route::post('/authenticate', 'Auth\LoginController@authenticate');
 
 Route::get('/', function () {
     return view('Admin/dashboardmin');
