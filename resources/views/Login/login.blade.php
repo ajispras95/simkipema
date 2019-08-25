@@ -109,6 +109,7 @@
 			// Callback handler that will be called on failure
 			request.fail(function (jqXHR, textStatus, errorThrown){
 				// Log the error to the console
+				alert("Wrong Login !!!");
 				console.error(
 					"The following error occurred: "+
 					textStatus, errorThrown

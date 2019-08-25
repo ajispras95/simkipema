@@ -25,7 +25,7 @@ Route::get('/', function () {
 
 Route::get('/Admin', function () {
     return view('Admin/Admin');
-});
+})->middleware('auth:user');
 
 Route::get('/mahasiswa', function () {
     return view('Admin/mahasiswa');
