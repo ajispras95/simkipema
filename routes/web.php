@@ -13,11 +13,15 @@
 
 
 Route::get('/login',"Auth\LoginController@index");
+Route::get('/register','Auth\RegisterController@create');
+Route::get('/logout', 'Auth\LogoutUser@logout');
 Route::post('/authenticate', 'Auth\LoginController@authenticate');
 
 Route::get('/', function () {
     return view('Admin/dashboardmin');
-});
+})->name('login')->middleware('auth:user');
+
+
 
 Route::get('/Admin', function () {
     return view('Admin/Admin');
@@ -86,9 +90,9 @@ Route::get('/formkeloladmin', function () {
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', function () {
-    return view('Mahasiswa/dashboard');
-});
+// Route::get('/', function () {
+//     return view('Mahasiswa/dashboard');
+// });
 
 Route::get('/Mahasiswa', function () {
     return view('Mahasiswa/mahasiswa');
