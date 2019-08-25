@@ -17,10 +17,13 @@ Route::get('/register','Auth\RegisterController@create');
 Route::get('/logout', 'Auth\LogoutUser@logout');
 Route::post('/authenticate', 'Auth\LoginController@authenticate');
 
-Route::get('/', function () {
+Route::get('/dashboardmin', function () {
     return view('Admin/dashboardmin');
-})->name('login')->middleware('auth:user');
+})->name('login')->middleware('auth:Admin');
 
+Route::get('/dashboard', function () {
+    return view('mahasiswa/dashboard');
+})->name('login')->middleware('auth:mahasiswa');
 
 
 Route::get('/Admin', function () {
@@ -51,9 +54,7 @@ Route::get('/laporandmin', function () {
     return view('Admin/laporandmin');
 });
 
-Route::get('/dashboardmin', function () {
-    return view('Admin/dashboardmin');
-});
+
 
 Route::get('/uploadproposal', function () {
     return view('Admin/uploadproposal');
@@ -122,9 +123,6 @@ Route::get('/laporan', function () {
     return view('Mahasiswa/laporan');
 });
 
-Route::get('/dashboard', function () {
-    return view('Mahasiswa/dashboard');
-});
 
 Route::get('/uploadproposal', function () {
     return view('Mahasiswa/uploadproposal');

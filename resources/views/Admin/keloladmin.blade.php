@@ -101,7 +101,7 @@
                                   <td> 2014</td>
                                   <td> viewed / Not Seen</td>
                                   <td>
-                                      <button href="{{ URL ('#') }}"> Detail </button>
+                                      <a href="{{ URL ('/dashboardmin') }}"><button> Detail </button></a>
                                       <button href="{{('')}}"> Edit</button>
                                       <button href="{{ URL ('#') }}"> Delete </button>
                                   </td>
