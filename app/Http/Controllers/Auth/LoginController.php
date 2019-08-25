@@ -19,6 +19,12 @@ class LoginController extends Controller
     |
     */
 
+    private $api = array();
+
+    public function __construct(){
+        $this->api['status'] = "unauthorized";
+    }
+
     //halaman login
     public function index()
     {
@@ -32,11 +38,12 @@ class LoginController extends Controller
 
         if (!Auth::attempt($credentials)) {
             // Authentication not passed...
-            // return redirect()->intended('dashboard');
-            return redirect('login');
+            return response($this->api, 401);
         }
 
-        // Authentication not passed...
+        // Authentication passed...
+        $this->api['status'] = "validated";
+        return $this->api;
 
     }
 }
