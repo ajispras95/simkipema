@@ -35,7 +35,7 @@
 				<span class="login100-form-title p-b-41">
 					Account Login
 				</span>
-				
+
 					@csrf
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
@@ -79,38 +79,31 @@
 	<script src="{{ ('js/main.js') }}"></script>
 	<script>
 		var request;
-		var form = new FormData();
 
 		$("#login").click(function(event){
 			var user = $('#user').val();
 			var password = $('#pw').val();
 			var token = $("input[name=_token]").val();
 
-			// Abort any pending request
 			if (request) {
 				request.abort();
 			}
 
-			form.append("nim", user);
-			form.append("password", password);
-			form.append("_token", token);
-
-			// Let's disable the inputs for the duration of the Ajax request.
-			// Note: we disable elements AFTER the form data has been serialized.
-			// Disabled form elements will not be serialized.
-
-			// Fire off the request to /form.php
 			request = $.ajax({
 				url: "{{ url('authenticate') }}",
 				type: "post",
-				data: form
+				data: 	{
+						"nim" : user,
+						"password" : password,
+						"_token" : token, 
+						}
 			});
 
 			// Callback handler that will be called on success
 			request.done(function (response, textStatus, jqXHR){
 				// Log a message to the console
-				// window.location = "http://www.yoururl.com";
-				console.log("Hooray, it worked!");
+				window.location = "{{ url('') }}";
+				console.log(response);
 			});
 
 			// Callback handler that will be called on failure
@@ -122,14 +115,7 @@
 				);
 			});
 
-			// Callback handler that will be called regardless
-			// if the request failed or succeeded
-			request.always(function () {
-				// Reenable the inputs
-				$inputs.prop("disabled", false);
-			});
-
-			console.log("Hooray, it worked!"+user+" "+token+" "+password);
+			// console.log("Hooray, it worked!"+user+" "+token+" "+password);
 		});
 	</script>
 
