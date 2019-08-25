@@ -23,6 +23,7 @@ class LoginController extends Controller
 
     public function __construct(){
         $this->api['status'] = "unauthorized";
+        $this->api['role'] = null;
     }
 
     //halaman login
@@ -34,7 +35,7 @@ class LoginController extends Controller
     //fungsi autentikasi login
     public function authenticate(Request $request)
     {
-        $credentials = $request->only('nim', 'password');
+        $credentials = $request->only('nimornip', 'password');
 
         if (!Auth::attempt($credentials)) {
             // Authentication not passed...
@@ -43,6 +44,7 @@ class LoginController extends Controller
 
         // Authentication passed...
         $this->api['status'] = "validated";
+        $this->api['role'] = Auth::user()->role;
         return $this->api;
 
     }

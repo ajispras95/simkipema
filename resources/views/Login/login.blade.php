@@ -93,7 +93,7 @@
 				url: "{{ url('authenticate') }}",
 				type: "post",
 				data: 	{
-						"nim" : user,
+						"nimornip" : user,
 						"password" : password,
 						"_token" : token, 
 						}
@@ -102,13 +102,20 @@
 			// Callback handler that will be called on success
 			request.done(function (response, textStatus, jqXHR){
 				// Log a message to the console
-				window.location = "{{ url('') }}";
-				console.log(response);
+				if (response.role == "Admin"){
+					window.location = "{{ url('dashboardmin') }}";
+				}else if(response.role == "mahasiswa"){
+					window.location = "{{ url('dashboard') }}";
+				}else if(response.role == "pengunjung"){
+
+				}
+				console.log(response.role);
 			});
 
 			// Callback handler that will be called on failure
 			request.fail(function (jqXHR, textStatus, errorThrown){
 				// Log the error to the console
+				alert("Wrong Login !!!");
 				console.error(
 					"The following error occurred: "+
 					textStatus, errorThrown
