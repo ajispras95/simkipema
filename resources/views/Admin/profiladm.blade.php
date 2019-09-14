@@ -1,7 +1,7 @@
-@extends('Mahasiswa.home')
+@extends('Admin.homeAdmin')
 
 @section('tab-title')
-<title>Halaman Profil | Mahasiswa</title>
+<title>Halaman Profil | Admin</title>
 @endsection
 
 @section('content')
@@ -44,7 +44,7 @@
                         <strong><i class="fa fa-book margin-r-5"></i> Deskripsi </strong>
             
                         <p class="text-muted">
-                            Himpunan Teknik Informatika adalah lembaga organisasi universitas islam indonesia yang melayani suara para mahasiswa teknik Informatika<bla class=""></bla>
+                            Himpunan Teknik Informatika adalah lembaga organisasi universitas islam indonesia yang bla bla bla bla bla <bla class=""></bla>
                         </p>
                         <hr>
                         <div class="box-footer">

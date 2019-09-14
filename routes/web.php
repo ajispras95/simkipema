@@ -81,7 +81,17 @@ Route::get('/formkeloladmin', function () {
     return view('Admin/formkeloladmin');
 });
 
+Route::get('/profiladm', function () {
+    return view('Admin/profiladm');
+});
 
+Route::get('/KegiatanAkademikdmin', function () { 
+    return view('Admin/KegiatanAkademikdmin');
+});
+
+Route::get('/KegiatanNonakademikdmin', function () {
+    return view('Admin/KegiatanNonakademikdmin');
+});
 /*
 |--------------------------------------------------------------------------
 | Mahasiswa
@@ -133,9 +143,7 @@ Route::get('/uploaddoknona', function () {
     return view('Mahasiswa/uploaddoknona');
 });
 
-Route::get('/KegiatanAkademik', function () {
-    return view('Mahasiswa/KegiatanAkademik');
-});
+Route::get('/KegiatanAkademik', "KegiatanAkademikController@show");
 
 Route::get('/KegiatanNonakademik', function () {
     return view('Mahasiswa/KegiatanNonakademik');

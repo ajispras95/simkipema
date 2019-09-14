@@ -20,9 +20,6 @@
                         <div class="box">
                           <!-- /.box-header -->
                           <div class="box-body"><div class="box-body">
-                              <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                  <i class="fa fa-plus-circle"></i> Tambah Dokumentasi
-                              </button>
                           </div>
                       
                           <div class="modal fade" id="tambahkegiatan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -43,12 +40,12 @@
                                               </div>
                                               <label>Nama Organisasi</label>
                                               <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                                  <option value="Informatika">Himpunan Teknik Informatika</option>
-                                                  <option value="Kimia">Himpunan Teknik Kimia</option>
-                                                  <option value="Elektro">Himpunan Teknik Elektro</option>
-                                                  <option value="Industri">Himpunan Teknik Industri</option>
-                                                  <option value="Mesin">Himpunan Teknik Mesin</option>
-                                              </select>
+                                                <option value="Informatika">Himpunan Teknik Informatika</option>
+                                                <option value="Mobil listrik">UASC UII</option>
+                                                <option value="Lem f">LEM F UII</option>
+                                                <option value="Industri">Himpunan Teknik Industri</option>
+                                                <option value="Mesin">Himpunan Teknik Mesin</option>
+                                            </select> 
                                               <div class="form-group">
                                                 <label for="recipient-name" class="col-form-label">Kejuaraan</label>
                                                 <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
@@ -99,9 +96,15 @@
                                 <td> 14-06-2014</td>
                                 <td> viewed / Not Seen</td>
                                 <td>
-                                    <button href="{{ URL ('#') }}"> Upload </button>
-                                    <button href="{{('')}}"> Edit</button>
-                                    <button href="{{ URL ('#') }}"> Delete </button>
+                                    <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
+                                      Download
+                                      </button>
+                                      <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
+                                          Edit 
+                                        </button>
+                                        <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
+                                            Hapus 
+                                          </button>
                                 </td>
                               </tr>
                               <tr>
@@ -111,9 +114,15 @@
                                     <td> 14-06-2014</td>
                                     <td> viewed / Not Seen</td>
                                     <td>
-                                        <button href="{{ URL ('#') }}"> Upload </button>
-                                        <button href="{{('')}}"> Edit</button>
-                                        <button href="{{ URL ('#') }}"> Delete </button>
+                                        <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
+                                            Download
+                                          </button>
+                                          <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
+                                              Edit 
+                                            </button>
+                                            <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
+                                                Hapus 
+                                              </button>
                                     </td>
                                   </tr>
                                   <tr>
@@ -123,9 +132,15 @@
                                         <td> 14-06-2014</td>
                                         <td> viewed / Not Seen</td>
                                         <td>
-                                            <button href="{{ URL ('#') }}"> Upload </button>
-                                            <button href="{{('')}}"> Edit</button>
-                                            <button href="{{ URL ('#') }}"> Delete </button>
+                                            <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
+                                                Download 
+                                              </button>
+                                              <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
+                                                  Edit 
+                                                </button>
+                                                <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
+                                                    Hapus 
+                                                  </button>
                                         </td>
                                       </tr>
                                

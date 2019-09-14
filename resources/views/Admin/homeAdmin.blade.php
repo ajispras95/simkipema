@@ -72,7 +72,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="{{ URL ('/profiladm')}}" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
                   <a href="{{ URL ('/logout')}}" class="btn btn-default btn-flat">Sign out</a>
@@ -116,11 +116,23 @@
           </a>
           <ul class="treeview-menu">
               <li><a href="{{ URL ('/keloladmin') }}"><i class="fa fa-circle-o"></i>Admin</a></li>
-            <li><a href="{{ URL ('/kelolamhs') }}"><i class="fa fa-circle-o"></i>Organisasi Mahasiswa</a></li>
+            <li><a href="{{ URL ('/kelolamhs') }}"><i class="fa fa-circle-o"></i>Mahasiswa</a></li>
             <li><a href="{{ URL ('/kelolapengunjung') }}"><i class="fa fa-circle-o"></i>Pengunjung</a></li>
           </ul>
         </li>
-
+        <li class="treeview">
+            <a href="#">
+              <i class="fa fa-pie-chart"></i>
+              <span>Kelola Kegiatan</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="{{ URL ('/KegiatanAkademikdmin') }}"><i class="fa fa-circle-o"></i>Kegiatan Akademik</a></li>
+              <li><a href="{{ URL ('/KegiatanNonakademikdmin') }}"><i class="fa fa-circle-o"></i>Kegiatan Non Akademik</a></li>
+            </ul>
+          </li>
         <li><a href="{{ URL ('/prestasidmin') }}"><i class="fa fa-book"></i> <span>Rekap prestasi</span></a></li>
 
         <li class="treeview">
