@@ -26,6 +26,9 @@ Route::get('/dashboard', function () {
 })->name('login')->middleware('auth:mahasiswa');
 
 
+Route::get('/Admin', function () {
+    return view('Admin/Admin');
+})->middleware('auth:user');
 
 Route::get('/mahasiswa', function () {
     return view('Admin/mahasiswa');
