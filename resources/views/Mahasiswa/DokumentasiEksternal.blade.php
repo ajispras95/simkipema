@@ -1,13 +1,13 @@
 @extends('Mahasiswa.home')
 
 @section('tab-title')
-<title>Dokumentasi | Non Akademis</title>
+<title>Dokumentasi | Eksternal</title>
 @endsection
 
 @section('content')
     <section class="content-header">
         <h1>Halaman
-        <small>Dokumentasi Akademis</small>
+        <small>Dokumentasi Eksternal</small>
         </h1>
     </section>
 
@@ -19,7 +19,7 @@
                   <div class="box">
                     <div class="box-body">
                       <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                          <i class="fa fa-plus-circle"></i> Upload dokumentasi
+                          <i class="fa fa-plus-circle"></i> Upload Dokumentasi
                       </button>
                   </div>
               
@@ -27,7 +27,7 @@
                       <div class="modal-dialog" role="document">
                           <div class="modal-content">
                               <div class="modal-header">
-                                  <h3 class="modal-title" id="exampleModalLabel">Upload Dokumentasi</h3>
+                                  <h3 class="modal-title" id="exampleModalLabel">Upload dokumentasi</h3>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                   </button>
@@ -94,34 +94,15 @@
                           </tr>
                           </thead>
                           <tbody>
-                          <tr>
-                            <td> 1</td>
-                            <td> Porsematif 2014</td>
-                            <td> Himpunan Informatika</td>
-                            <td> Harapan 1</td>
-                            <td> 14-06-2014</td>                                
-                            <td> 2014</td>
-                            <td> viewed / Not Seen</td>
-                            <td>
-                              <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                Detail 
-                              </button>
-                              <button type="button" class="" data-toggle="modal" data-target="#editkegiatan" data-whatever="@mdo">
-                                  Edit 
-                                </button>
-                                <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                    Hapus 
-                                  </button>
-                            </td>
-                          </tr>
+                            @foreach ($data as $d)
                         <tr>
-                          <td> 1</td>
-                          <td> Porsematif 2014</td>
-                          <td> Himpunan Informatika</td>
-                          <td> Harapan 1</td>
-                          <td> 14-06-2014</td>                                
-                          <td> 2014</td>
-                          <td> viewed / Not Seen</td>
+                          <td> {{ $d->id }}</td>
+                          <td> {{ $d->nama_organisasi }}</td>
+                          <td> {{ $d->nama_kegiatan }}</td>
+                          <td> {{ $d->Juara }}</td>
+                          <td> {{ $d->Tanggal_Kegiatan }}</td>                                
+                          <td> {{ $d->Angkatan }}</td>
+                          <td> {{ $d->Status }}</td>
                           <td>
                               <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
                                   Detail 
@@ -133,29 +114,8 @@
                                       Hapus 
                                     </button>
                           </td>
-                            </tr>
-                            <tr>
-                              <td> 1</td>
-                              <td> Porsematif 2014</td>
-                              <td> Himpunan Informatika</td>
-                              <td> Harapan 1</td>
-                              <td> 14-06-2014</td>                                
-                              <td> 2014</td>
-                              <td> viewed / Not Seen</td>
-                              <td>
-                                  <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                      Detail 
-                                    </button>
-                                    <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                        Edit 
-                                      </button>
-                                      <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                          Hapus 
-                                        </button>
-                              </td>
-                                </tr>
-                         
-                        </tbody>
+                            @endforeach
+                      </tbody>
                       </table>
                     </div>
                     <!-- /.box-body -->

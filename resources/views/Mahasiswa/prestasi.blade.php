@@ -93,7 +93,30 @@
                             <th>Angkatan</th>
                             <th>Action</th>
                           </tr>
-                          </thead>
+                        </thead>
+                        <tbody>
+                            @foreach ($data as $d)
+                        <tr>
+                          <td> {{ $d->id }}</td>
+                          <td> {{ $d->nama_peserta }}</td>
+                          <td> {{ $d->nama_organisasi }}</td>
+                          <td> {{ $d->nama_kegiatan }}</td>
+                          <td> {{ $d->Juara }}</td>
+                          <td> {{ $d->nama_lomba }}</td>                                
+                          <td> {{ $d->tanggal_kegiatan }}</td>
+                          <td> {{ $d->Angkatan }}</td>
+                          <td>
+                              <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
+                                  Detail 
+                                </button>
+                                <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
+                                    Edit 
+                                  </button>
+                                  <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
+                                      Hapus 
+                                    </button>
+                          </td>
+                      {{-- </tbody>
                           <tbody>
                           <tr>
                             <td> 1</td>
@@ -104,8 +127,8 @@
                             <td> engklek</td>
                             <td> 14-06-2014</td>                                
                             <td> 2014</td>
-                            <td>
-                                <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
+                            <td> --}}
+                                {{-- <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
                                     Detail 
                                   </button>
                                   <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
@@ -113,8 +136,8 @@
                                     </button>
                                     <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
                                         Hapus 
-                                      </button>
-                            </td>
+                                      </button> --}}
+                            {{-- </td>
                           </tr>
                           <tr>
                             <td> 2</td>
@@ -156,9 +179,9 @@
                                     <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
                                         Hapus 
                                       </button>
-                            </td>
+                            </td> --}}
                           </tr>
-                         
+                          @endforeach
                         </tbody>
                       </table>
                     </div>

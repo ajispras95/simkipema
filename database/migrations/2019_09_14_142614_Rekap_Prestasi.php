@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class KegiatanAkademik extends Migration
+class RekapPrestasi extends Migration
 {
     /**
      * Run the migrations.
@@ -14,14 +14,15 @@ class KegiatanAkademik extends Migration
     public function up()
     {
         //
-        Schema::create('kegiatan_akademik', function (Blueprint $table) {
+        Schema::create('Rekap_Prestasi', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nama_peserta');
             $table->string('nama_organisasi');
             $table->string('nama_kegiatan');
-            $table->string('kategori');
-            $table->timestamp('tanggal');
-            $table->string('tempat');
-            $table->boolean('status');
+            $table->string('Juara');
+            $table->string('nama_lomba')
+            $table->timestamp('tanggal_kegiatan');
+            $table->string('angkatan');
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ class KegiatanAkademik extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kegiatan_akademik');
+        Schema::dropIfExists('Rekap_Prestasi');
     }
 }

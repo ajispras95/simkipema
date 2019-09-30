@@ -129,8 +129,8 @@
               </span>
             </a>
             <ul class="treeview-menu">
-                <li><a href="{{ URL ('/KegiatanAkademikdmin') }}"><i class="fa fa-circle-o"></i>Kegiatan Akademik</a></li>
-              <li><a href="{{ URL ('/KegiatanNonakademikdmin') }}"><i class="fa fa-circle-o"></i>Kegiatan Non Akademik</a></li>
+                <li><a href="{{ URL ('/KegiatanInternaldmin') }}"><i class="fa fa-circle-o"></i>Kegiatan Internal</a></li>
+              <li><a href="{{ URL ('/KegiatanEksternaldmin') }}"><i class="fa fa-circle-o"></i>Kegiatan Eksternal</a></li>
             </ul>
           </li>
         <li><a href="{{ URL ('/prestasidmin') }}"><i class="fa fa-book"></i> <span>Rekap prestasi</span></a></li>
@@ -143,8 +143,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ URL ('/DokumentasiAkademikmin' ) }}"><i class="fa fa-circle-o"></i>DokumentasiAkademis</a></li>
-            <li><a href="{{ URL ('/DokumentasiNonAkademikmin') }}"><i class="fa fa-circle-o"></i>DokumentasiNonAkademis</a></li>
+            <li><a href="{{ URL ('/DokumentasiInternalmin' ) }}"><i class="fa fa-circle-o"></i>Dokumentasi Internal</a></li>
+            <li><a href="{{ URL ('/DokumentasiEksternalmin') }}"><i class="fa fa-circle-o"></i>Dokumentasi Eksternal</a></li>
           </ul>
         </li>
         <li><a href="{{ URL ('/laporandmin') }}"><i class="fa fa-book"></i> <span>Laporan</span></a></li>

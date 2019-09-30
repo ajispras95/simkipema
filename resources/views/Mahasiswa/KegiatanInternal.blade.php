@@ -1,13 +1,13 @@
   @extends('Mahasiswa.home')
 
   @section('tab-title')
-  <title>Kegiatan | Akademik</title>
+  <title>Kegiatan | Internal</title>
   @endsection
 
   @section('content')
       <section class="content-header">
           <h1>Halaman
-          <small>Kegiatan Akademis</small>
+          <small>Kegiatan Internal</small>
           </h1>
       </section>
 
@@ -37,7 +37,7 @@
                                           </button>
                                       </div>
                                       <div class="modal-body">
-                                          <form action="/eo/create" method="post">
+                                          <form action="/controller/auth" method="post">
                                               {{csrf_field()}}
                                               <div class="form-group">
                                                   <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>
@@ -88,7 +88,7 @@
                               <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                   <tr>
-                                    <th>ID</th>
+                                    <th>No</th>
                                     <th>Nama Organisasi</th>
                                     <th>Nama Kegiatan</th>
                                     <th>Kategori kegiatan</th>
@@ -103,8 +103,8 @@
                                   <tr>
                                     <td> {{ $d->id }}</td>
                                     <td> {{ $d->nama_organisasi }}</td>
-                                    <td>{{ $d->nama_kegiatan }}</td>
-                                    <td>{{ $d->kategori }}</td>
+                                    <td> {{ $d->nama_kegiatan }}</td>
+                                    <td> {{ $d->kategori }}</td>
                                     <td> {{ $d->tanggal }}</td>                                
                                     <td> {{ $d->tempat }}</td>
                                     <td> {{ $d->status }}</td>

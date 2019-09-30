@@ -93,65 +93,27 @@
                           </tr>
                           </thead>
                           <tbody>
-                          <tr>
-                            <td> 1</td>
-                            <td> Porsematif 2014</td>
-                            <td> Himpunan Informatika</td>
-                            <td> 14-05-2015</td>                                
-                            <td> 2014-2015</td>
-                            <td> viewed / Not Seen</td>
-                            <td>
+                            @foreach ($data as $d)
+                        <tr>
+                          <td> {{ $d->id }}</td>
+                          <td> {{ $d->nama_kegiatan }}</td>
+                          <td> {{ $d->nama_organisasi }}</td>
+                          <td> {{ $d->tanggal_kegiatan }}</td>                                
+                          <td> {{ $d->periode }}</td>
+                          <td> {{ $d->status }}</td>
+                          <td>
+                              <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
+                                  Detail 
+                                </button>
                                 <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                    Detail 
+                                    Edit 
                                   </button>
                                   <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                      Edit 
+                                      Hapus  
                                     </button>
-                                    <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                        Hapus 
-                                      </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td> 2</td>
-                            <td> FSAE japan</td>
-                            <td> UASC UII</td>
-                            <td> 14-06-2018</td>                                
-                            <td> 2017-2018</td>
-                            <td> viewed / Not Seen</td>
-                            <td>
-                                <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                    Detail 
-                                  </button>
-                                  <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                      Edit 
-                                    </button>
-                                    <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                        Hapus 
-                                      </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td> 3</td>
-                            <td> Fornetif UII</td>
-                            <td> LEM F UII</td>
-                            <td> 14-06-2016</td>                                
-                            <td> 2015-2016</td>
-                            <td> viewed / Not Seen</td>
-                            <td>
-                                <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                    Detail 
-                                  </button>
-                                  <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                      Edit 
-                                    </button>
-                                    <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                        Hapus 
-                                      </button>
-                            </td>
-                          </tr>
-                         
-                        </tbody>
+                          </td>
+                            @endforeach
+                      </tbody>
                       </table>
                     </div>
                     <!-- /.box-body -->

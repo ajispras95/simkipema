@@ -1,13 +1,13 @@
 @extends('Admin.homeAdmin')
 
 @section('tab-title')
-<title>Dokumentasi | Akademis</title>
+<title>Dokumentasi | Internal</title>
 @endsection
 
 @section('content')
     <section class="content-header">
         <h1>Halaman
-        <small>Kegiatan Akademis</small>
+        <small>Kegiatan Internal</small>
         </h1>
     </section>
 

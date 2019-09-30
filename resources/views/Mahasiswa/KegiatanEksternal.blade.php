@@ -1,13 +1,13 @@
-@extends('Admin.homeAdmin')
+@extends('Mahasiswa.home')
 
 @section('tab-title')
-<title>Kegiatan | Non akademik</title>
+<title>Kegiatan | Eksternal</title>
 @endsection
 
 @section('content')
     <section class="content-header">
         <h1>Halaman
-        <small>Kegiatan Non Akademis</small>
+        <small>Kegiatan Eksternal</small>
         </h1>
     </section>
 
@@ -18,13 +18,16 @@
                       <div class="col-xs-12">
                         <div class="box">
                           <div class="box-body">
+                            <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
+                                <i class="fa fa-plus-circle"></i> Tambah Kegiatan
+                            </button>
                         </div>
                     
                         <div class="modal fade" id="tambahkegiatan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h3 class="modal-title" id="exampleModalLabel">Form Tambah Data</h3>
+                                        <h3 class="modal-title" id="exampleModalLabel">Form Tambah Kegiatan</h3>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -32,10 +35,6 @@
                                     <div class="modal-body">
                                         <form action="/eo/create" method="post">
                                             {{csrf_field()}}
-                                            <div class="form-group">
-                                                <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>
-                                                <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
-                                            </div>
                                             <label>Nama Organisasi</label>
                                             <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                               <option value="Informatika">Himpunan Teknik Informatika</option>
@@ -44,6 +43,10 @@
                                               <option value="Industri">Himpunan Teknik Industri</option>
                                               <option value="Mesin">Himpunan Teknik Mesin</option>
                                           </select> 
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>
+                                                <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
+                                            </div>
                                             <div class="form-group">
                                               <label for="recipient-name" class="col-form-label">Kejuaraan</label>
                                               <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
@@ -91,7 +94,17 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
+                                        @foreach ($data as $d)
+                                    <tr>
+                                      <td> {{ $d->id }}</td>
+                                      <td> {{ $d->nama_organisasi }}</td>
+                                      <td> {{ $d->nama_kegiatan }}</td>
+                                      <td> {{ $d->kategori }}</td>
+                                      <td> {{ $d->tanggal }}</td>                                
+                                      <td> {{ $d->tempat }}</td>
+                                      <td> {{ $d->status }}</td>
+                                      <td>
+                                {{-- <tr>
                                   <td> 1</td>
                                   <td> UASC</td>
                                   <td> FSAE Student 2019</td>
@@ -99,9 +112,9 @@
                                   <td> 14-06-2018</td>                                
                                   <td> Jepang</td>
                                   <td> viewed / Not Seen</td>
-                                  <td>
+                                  <td> --}}
                                       <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                          Download 
+                                          Detail 
                                         </button>
                                         <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
                                             Edit 
@@ -109,7 +122,7 @@
                                           <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
                                               Hapus 
                                             </button>
-                                  </td>
+                                  {{-- </td>
                                 </tr>
                                 <td> 2</td>
                                 <td> Kosmik UII</td>
@@ -120,7 +133,7 @@
                                 <td> viewed / Not Seen</td>
                                 <td>
                                     <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                        Download 
+                                        Detail 
                                       </button>
                                       <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
                                           Edit 
@@ -140,7 +153,7 @@
                                     <td> viewed / Not Seen</td>
                                     <td>
                                         <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                          Download
+                                            Detail 
                                           </button>
                                           <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
                                               Edit 
@@ -148,9 +161,9 @@
                                             <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
                                                 Hapus 
                                               </button>
-                                    </td>
-                                      </tr>
-                                      
+                                    </td> --}}
+                                  </tr>
+                                  @endforeach
                               </tbody>
                             </table>
                           </div>

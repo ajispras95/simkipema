@@ -115,8 +115,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-              <li><a href="{{ URL ('/KegiatanAkademik') }}"><i class="fa fa-circle-o"></i>Kegiatan Akademik</a></li>
-            <li><a href="{{ URL ('/KegiatanNonakademik') }}"><i class="fa fa-circle-o"></i>Kegiatan Non Akademik</a></li>
+              <li><a href="{{ URL ('/KegiatanInternal') }}"><i class="fa fa-circle-o"></i>Kegiatan Internal</a></li>
+            <li><a href="{{ URL ('/KegiatanEksternal') }}"><i class="fa fa-circle-o"></i>Kegiatan Eksternal</a></li>
           </ul>
         </li>
 
@@ -130,8 +130,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ URL ('/DokumentasiAkademik' ) }}"><i class="fa fa-circle-o"></i>DokumentasiAkademis</a></li>
-            <li><a href="{{ URL ('/DokumentasiNonAkademik') }}"><i class="fa fa-circle-o"></i>DokumentasiNonAkademis</a></li>
+            <li><a href="{{ URL ('/DokumentasiInternal' ) }}"><i class="fa fa-circle-o"></i>Dokumentasi Internal</a></li>
+            <li><a href="{{ URL ('/DokumentasiEksternal') }}"><i class="fa fa-circle-o"></i>Dokumentasi Eksternal</a></li>
           </ul>
         </li>
         <li><a href="{{ URL ('/laporan') }}"><i class="fa fa-book"></i> <span>Laporan</span></a></li>

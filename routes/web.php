@@ -42,18 +42,17 @@ Route::get('/prestasidmin', function () {
     return view('Admin/prestasidmin');
 });
 
-Route::get('/DokumentasiAkademikmin', function () {
-    return view('Admin/DokumentasiAkademikmin');
+Route::get('/DokumentasiInternalmin', function () {
+    return view('Admin/DokumentasiInternalmin');
 });
 
-Route::get('/DokumentasiNonAkademikmin', function () {
-    return view('Admin/DokumentasiNonAkademikmin');
+Route::get('/DokumentasiEksternalmin', function () {
+    return view('Admin/DokumentasiEksternalmin');
 });
 
 Route::get('/laporandmin', function () {
     return view('Admin/laporandmin');
 });
-
 
 
 Route::get('/uploadproposal', function () {
@@ -88,12 +87,12 @@ Route::get('/profiladm', function () {
     return view('Admin/profiladm');
 });
 
-Route::get('/KegiatanAkademikdmin', function () { 
-    return view('Admin/KegiatanAkademikdmin');
+Route::get('/KegiatanInternaldmin', function () { 
+    return view('Admin/KegiatanInternaldmin');
 });
 
-Route::get('/KegiatanNonakademikdmin', function () {
-    return view('Admin/KegiatanNonakademikdmin');
+Route::get('/KegiatanEksternaldmin', function () {
+    return view('Admin/KegiatanEksternaldmin');
 });
 /*
 |--------------------------------------------------------------------------
@@ -117,21 +116,21 @@ Route::get('/Pengguna', function () {
     return view('Mahasiswa/Pengguna');
 });
 
-Route::get('/prestasi', function () {
-    return view('Mahasiswa/prestasi');
-});
+// Route::get('/prestasi', function () {
+//     return view('Mahasiswa/prestasi');
+// });
 
-Route::get('/DokumentasiAkademik', function () {
-    return view('Mahasiswa/DokumentasiAkademik');
-});
+// Route::get('/DokumentasiInternal', function () {
+//     return view('Mahasiswa/DokumentasiInternal');
+// });
 
-Route::get('/DokumentasiNonAkademik', function () {
-    return view('Mahasiswa/DokumentasiNonAkademik');
-});
+// Route::get('/DokumentasiEksternal', function () {
+//     return view('Mahasiswa/DokumentasiEksternal');
+// });
 
-Route::get('/laporan', function () {
-    return view('Mahasiswa/laporan');
-});
+// Route::get('/laporan', function () {
+//     return view('Mahasiswa/laporan');
+// });
 
 
 Route::get('/uploadproposal', function () {
@@ -146,11 +145,21 @@ Route::get('/uploaddoknona', function () {
     return view('Mahasiswa/uploaddoknona');
 });
 
-Route::get('/KegiatanAkademik', "KegiatanAkademikController@show");
+Route::get('/KegiatanInternal', "KegiatanInternalController@show");
 
-Route::get('/KegiatanNonakademik', function () {
-    return view('Mahasiswa/KegiatanNonakademik');
-});
+Route::get('/KegiatanEksternal', "KegiatanEksternalController@show");
+
+Route::get('/prestasi', "RekapPrestasiController@show");
+
+Route::get('/DokumentasiInternal', "DokumentasiInternalController@show");
+
+Route::get('/DokumentasiEksternal', "DokumentasiEksternalController@show");
+
+Route::get('/laporan', "laporanController@show");
+
+// Route::get('/KegiatanEksternal', function () {
+//     return view('Mahasiswa/KegiatanEksternal');
+// });
 
 Route::get('/formtambahkegiatan', function () {
     return view('Mahasiswa/formtambahkegiatan');
@@ -179,3 +188,7 @@ Route::get('/profilmahasiswa', function () {
 Route::get('/input', 'Simkipema@input');
  
 Route::post('/proses', 'Simkipema@proses');
+
+Route::get('/hapus', 'Simkipema@hapus');
+
+Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
