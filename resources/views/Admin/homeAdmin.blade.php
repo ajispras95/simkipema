@@ -120,6 +120,7 @@
             <li><a href="{{ URL ('/kelolapengunjung') }}"><i class="fa fa-circle-o"></i>Pengunjung</a></li>
           </ul>
         </li>
+
         <li class="treeview">
             <a href="#">
               <i class="fa fa-pie-chart"></i>
@@ -129,24 +130,71 @@
               </span>
             </a>
             <ul class="treeview-menu">
-                <li><a href="{{ URL ('/KegiatanInternaldmin') }}"><i class="fa fa-circle-o"></i>Kegiatan Internal</a></li>
-              <li><a href="{{ URL ('/KegiatanEksternaldmin') }}"><i class="fa fa-circle-o"></i>Kegiatan Eksternal</a></li>
+              <li class="treeview menu-open" style="display: block;">
+                  <a href="#"><i class="fa fa-circle-o"></i>Kegiatan Internal
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+              <ul class="treeview-menu" style="display: block;">
+                  <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> LEM</a></li>
+                  <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> DPM</a></li>
+                  <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> HIMMAH</a></li>
+              </ul>
+              <li class="treeview menu-open" style="display: block;">
+                  <a href="#"><i class="fa fa-circle-o"></i> Kegiatan Eksternal
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                  <ul class="treeview-menu" style="display: block;">
+                    <li><a href="{{ URL ('/Centris') }}"><i class="fa fa-circle-o"></i> Centris</a></li>
+                    <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> KOSMIK</a></li>
+                    <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> UASC</a></li>
+                  </ul>
+              </li>
             </ul>
-          </li>
+        </li>
+        
+
         <li><a href="{{ URL ('/prestasidmin') }}"><i class="fa fa-book"></i> <span>Rekap prestasi</span></a></li>
 
         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-edit"></i> <span>Rekap dokumentasi</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{ URL ('/DokumentasiInternalmin' ) }}"><i class="fa fa-circle-o"></i>Dokumentasi Internal</a></li>
-            <li><a href="{{ URL ('/DokumentasiEksternalmin') }}"><i class="fa fa-circle-o"></i>Dokumentasi Eksternal</a></li>
-          </ul>
+            <a href="#">
+              <i class="fa fa-pie-chart"></i>
+              <span>Kelola Dokumentasi</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li class="treeview menu-open" style="display: block;">
+                  <a href="#"><i class="fa fa-circle-o"></i> Dokumentasi Internal
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+              <ul class="treeview-menu" style="display: block;">
+                  <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> LEM</a></li>
+                  <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> DPM</a></li>
+                  <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> HIMMAH</a></li>
+              </ul>
+              <li class="treeview menu-open" style="display: block;">
+                  <a href="#"><i class="fa fa-circle-o"></i> Dokumentasi Eksternal
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                  <ul class="treeview-menu" style="display: block;">
+                    <li><a href="{{ URL ('/Centris') }}"><i class="fa fa-circle-o"></i> Centris</a></li>
+                    <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> KOSMIK</a></li>
+                    <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> UASC</a></li>
+                  </ul>
+              </li>
+            </ul>
         </li>
+        
+        
         <li><a href="{{ URL ('/laporandmin') }}"><i class="fa fa-book"></i> <span>Laporan</span></a></li>
       </ul>
     </section>

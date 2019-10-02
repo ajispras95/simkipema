@@ -93,7 +93,7 @@
                                           <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
                                               Edit 
                                             </button>
-                                            <button href="/Mahasiswa/hapus/{{ $p->mahasiswa_id }}">Hapus</button>
+                                            
                                       </div>
                                   
                                       <div class="modal fade" id="tambahkegiatan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

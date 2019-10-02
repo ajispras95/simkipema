@@ -41,6 +41,9 @@ Route::get('/Pengguna', function () {
 Route::get('/prestasidmin', function () {
     return view('Admin/prestasidmin');
 });
+Route::get('/Centris', function () {
+    return view('Admin/Centris');
+});
 
 Route::get('/DokumentasiInternalmin', function () {
     return view('Admin/DokumentasiInternalmin');
@@ -191,4 +194,6 @@ Route::post('/proses', 'Simkipema@proses');
 
 Route::get('/hapus', 'Simkipema@hapus');
 
-Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
+Route::get('/mahasiswa/hapus/{id}','mahasiswaController@hapus');
+// alihkan halaman ke halaman 
+// pegawai return redirect('/kelolamhs');

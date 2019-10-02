@@ -9,7 +9,7 @@ use App\Hapus_Akun;
 public function hapus($id)
 {
 	// menghapus data pegawai berdasarkan id yang dipilih
-	DB::table('mahasiswa')->where('mahasiswa_id',$id)->delete();
+	DB::table('users')->where('users_id',$id)->delete();
 		
 	// alihkan halaman ke halaman pegawai
 	return redirect('/mahasiswa');
