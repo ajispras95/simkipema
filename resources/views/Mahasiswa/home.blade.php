@@ -115,25 +115,82 @@
             </span>
           </a>
           <ul class="treeview-menu">
-              <li><a href="{{ URL ('/KegiatanInternal') }}"><i class="fa fa-circle-o"></i>Kegiatan Internal</a></li>
-            <li><a href="{{ URL ('/KegiatanEksternal') }}"><i class="fa fa-circle-o"></i>Kegiatan Eksternal</a></li>
+            <li class="treeview menu-open" style="display: block;">
+                <a href="#"><i class="fa fa-circle-o"></i>Kegiatan Internal
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+            <ul class="treeview-menu" style="display: block;">
+                <li><a href="{{ URL ('/LEMmhs') }}"><i class="fa fa-circle-o"></i> LEM</a></li>
+                <li><a href="{{ URL ('/DPMmhs') }}"><i class="fa fa-circle-o"></i> DPM</a></li>
+                <li><a href="{{ URL ('/HIMMAHmhs') }}"><i class="fa fa-circle-o"></i> HIMMAH</a></li>
+            </ul>
+            <li class="treeview menu-open" style="display: block;">
+                <a href="#"><i class="fa fa-circle-o"></i> Kegiatan Eksternal
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu" style="display: block;">
+                  <li><a href="{{ URL ('/CENTRISmhs') }}"><i class="fa fa-circle-o"></i> CENTRIS</a></li>
+                  <li><a href="{{ URL ('/KOSMIKmhs') }}"><i class="fa fa-circle-o"></i> KOSMIK</a></li>
+                  <li><a href="{{ URL ('/UASCmhs') }}"><i class="fa fa-circle-o"></i> UASC</a></li>
+                </ul>
+            </li>
           </ul>
-        </li>
-
-        <li><a href="{{ URL ('/prestasi') }}"><i class="fa fa-book"></i> <span>Rekap prestasi</span></a></li>
-
-        <li class="treeview">
+      </li>
+        {{-- <li class="treeview">
           <a href="#">
-            <i class="fa fa-edit"></i> <span>Rekap dokumentasi</span>
+            <i class="fa fa-pie-chart"></i>
+            <span>Kegiatan mahasiswa</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ URL ('/DokumentasiInternal' ) }}"><i class="fa fa-circle-o"></i>Dokumentasi Internal</a></li>
-            <li><a href="{{ URL ('/DokumentasiEksternal') }}"><i class="fa fa-circle-o"></i>Dokumentasi Eksternal</a></li>
+              <li><a href="{{ URL ('/KegiatanInternal') }}"><i class="fa fa-circle-o"></i>Kegiatan Internal</a></li>
+            <li><a href="{{ URL ('/KegiatanEksternal') }}"><i class="fa fa-circle-o"></i>Kegiatan Eksternal</a></li>
           </ul>
-        </li>
+        </li> --}}
+
+        <li><a href="{{ URL ('/prestasi') }}"><i class="fa fa-book"></i> <span>Rekap prestasi</span></a></li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-edit"></i> 
+            <span>Rekap dokumentasi</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="treeview menu-open" style="display: block;">
+                <a href="#"><i class="fa fa-circle-o"></i>dokumentasi Internal
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+            <ul class="treeview-menu" style="display: block;">
+                <li><a href="{{ URL ('/LEMmhs') }}"><i class="fa fa-circle-o"></i> LEM</a></li>
+                <li><a href="{{ URL ('/DPMmhs') }}"><i class="fa fa-circle-o"></i> DPM</a></li>
+                <li><a href="{{ URL ('/HIMMAHmhs') }}"><i class="fa fa-circle-o"></i> HIMMAH</a></li>
+            </ul>
+            <li class="treeview menu-open" style="display: block;">
+                <a href="#"><i class="fa fa-circle-o"></i> dokumentasi Eksternal
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu" style="display: block;">
+                  <li><a href="{{ URL ('/CENTRISmhs') }}"><i class="fa fa-circle-o"></i> CENTRIS</a></li>
+                  <li><a href="{{ URL ('/KOSMIKmhs') }}"><i class="fa fa-circle-o"></i> KOSMIK</a></li>
+                  <li><a href="{{ URL ('/UASCmhs') }}"><i class="fa fa-circle-o"></i> UASC</a></li>
+                </ul>
+            </li>
+          </ul>
+      </li>
+        
         <li><a href="{{ URL ('/laporan') }}"><i class="fa fa-book"></i> <span>Laporan</span></a></li>
       </ul>
     </section>

@@ -137,9 +137,9 @@
                     </span>
                   </a>
               <ul class="treeview-menu" style="display: block;">
-                  <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> LEM</a></li>
-                  <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> DPM</a></li>
-                  <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> HIMMAH</a></li>
+                  <li><a href="{{ URL ('/LEM') }}"><i class="fa fa-circle-o"></i> LEM</a></li>
+                  <li><a href="{{ URL ('/DPM') }}"><i class="fa fa-circle-o"></i> DPM</a></li>
+                  <li><a href="{{ URL ('/HIMMAH') }}"><i class="fa fa-circle-o"></i> HIMMAH</a></li>
               </ul>
               <li class="treeview menu-open" style="display: block;">
                   <a href="#"><i class="fa fa-circle-o"></i> Kegiatan Eksternal
@@ -148,9 +148,9 @@
                     </span>
                   </a>
                   <ul class="treeview-menu" style="display: block;">
-                    <li><a href="{{ URL ('/Centris') }}"><i class="fa fa-circle-o"></i> Centris</a></li>
-                    <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> KOSMIK</a></li>
-                    <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> UASC</a></li>
+                    <li><a href="{{ URL ('/CENTRIS') }}"><i class="fa fa-circle-o"></i> CENTRIS</a></li>
+                    <li><a href="{{ URL ('/KOSMIK') }}"><i class="fa fa-circle-o"></i> KOSMIK</a></li>
+                    <li><a href="{{ URL ('/UASC') }}"><i class="fa fa-circle-o"></i> UASC</a></li>
                   </ul>
               </li>
             </ul>
@@ -175,9 +175,9 @@
                     </span>
                   </a>
               <ul class="treeview-menu" style="display: block;">
-                  <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> LEM</a></li>
-                  <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> DPM</a></li>
-                  <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> HIMMAH</a></li>
+                  <li><a href="{{ URL ('/LEM') }}"><i class="fa fa-circle-o"></i> LEM</a></li>
+                  <li><a href="{{ URL ('/DPM') }}"><i class="fa fa-circle-o"></i> DPM</a></li>
+                  <li><a href="{{ URL ('/HIMMAH') }}"><i class="fa fa-circle-o"></i> HIMMAH</a></li>
               </ul>
               <li class="treeview menu-open" style="display: block;">
                   <a href="#"><i class="fa fa-circle-o"></i> Dokumentasi Eksternal
@@ -186,9 +186,9 @@
                     </span>
                   </a>
                   <ul class="treeview-menu" style="display: block;">
-                    <li><a href="{{ URL ('/Centris') }}"><i class="fa fa-circle-o"></i> Centris</a></li>
-                    <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> KOSMIK</a></li>
-                    <li><a href="{{ URL ('/') }}"><i class="fa fa-circle-o"></i> UASC</a></li>
+                    <li><a href="{{ URL ('/CENTRIS') }}"><i class="fa fa-circle-o"></i> CENTRIS</a></li>
+                    <li><a href="{{ URL ('/KOSMIK') }}"><i class="fa fa-circle-o"></i> KOSMIK</a></li>
+                    <li><a href="{{ URL ('/UASC') }}"><i class="fa fa-circle-o"></i> UASC</a></li>
                   </ul>
               </li>
             </ul>

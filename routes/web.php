@@ -41,8 +41,28 @@ Route::get('/Pengguna', function () {
 Route::get('/prestasidmin', function () {
     return view('Admin/prestasidmin');
 });
-Route::get('/Centris', function () {
-    return view('Admin/Centris');
+
+Route::get('/CENTRIS', function () {
+    return view('Admin/CENTRIS');
+});
+
+Route::get('/DPM', function () {
+    return view('Admin/DPM');
+});
+Route::get('/KOSMIK', function () {
+    return view('Admin/KOSMIK');
+});
+
+Route::get('/LEM', function () {
+    return view('Admin/LEM');
+});
+
+Route::get('/HIMMAH', function () {
+    return view('Admin/HIMMAH');
+});
+
+Route::get('/UASC', function () {
+    return view('Admin/UASC');
 });
 
 Route::get('/DokumentasiInternalmin', function () {
@@ -152,6 +172,18 @@ Route::get('/KegiatanInternal', "KegiatanInternalController@show");
 
 Route::get('/KegiatanEksternal', "KegiatanEksternalController@show");
 
+Route::get('/LEMmhs', "LEMmhsController@show");
+
+Route::get('/DPMmhs', "DPMmhsController@show");
+
+Route::get('/UASCmhs', "UASCmhsController@show");
+
+Route::get('/KOSMIKmhs', "KOSMIKmhsController@show");
+
+Route::get('/HIMMAHmhs', "HIMMAHmhsController@show");
+
+Route::get('/CENTRISmhs', "CENTRISmhsController@show");
+
 Route::get('/prestasi', "RekapPrestasiController@show");
 
 Route::get('/DokumentasiInternal', "DokumentasiInternalController@show");
@@ -197,3 +229,13 @@ Route::get('/hapus', 'Simkipema@hapus');
 Route::get('/mahasiswa/hapus/{id}','mahasiswaController@hapus');
 // alihkan halaman ke halaman 
 // pegawai return redirect('/kelolamhs');
+
+
+/*
+|--------------------------------------------------------------------------
+| form tambah data
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/inputform/add', 'inputformController@add')->name('inputform.add');
+Route::post('/inputform/add', 'inputformController@save')->name('inputform.save');
