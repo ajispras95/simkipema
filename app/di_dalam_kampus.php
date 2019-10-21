@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class dokumentasi_internal extends Model
+class di_dalam_kampus extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'dokumentasi_internal';
+    protected $table = 'di_dalam_kampus';
 
     /**
      * The attributes that are mass assignable.
@@ -19,6 +19,6 @@ class dokumentasi_internal extends Model
      * @var array
      */
     protected $fillable = [
-        'nama_organisasi', 'nama_kegiatan', 'Juara', 'tanggal_kegiatan', 'Angkatan','Status', 
+        'nama_kegiatan', 'program_kerja_divisi', 'predikat', 'waktu_pelaksanaan', 'tempat','tingkat', 'scan_bukti',
     ];
 }

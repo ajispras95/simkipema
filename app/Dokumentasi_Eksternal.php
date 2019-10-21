@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Dokumentasi_Eksternal extends Model
+class dokumentasi_eksternal extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'Dokumentasi_Eksternal';
+    protected $table = 'dokumentasi_eksternal';
 
     /**
      * The attributes that are mass assignable.

@@ -14,7 +14,7 @@ class DokumentasiEksternal extends Migration
     public function up()
     {
         //
-        Schema::create('Dokumentasi_Eksternal', function (Blueprint $table) {
+        Schema::create('dokumentasi_eksternal', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_organisasi');
             $table->string('nama_kegiatan');
@@ -32,6 +32,6 @@ class DokumentasiEksternal extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Dokumentasi_Eksternal');
+        Schema::dropIfExists('dokumentasi_eksternal');
     }
 }

@@ -35,18 +35,6 @@
                                     <div class="modal-body">
                                         <form action="/eo/create" method="post">
                                             {{csrf_field()}}
-                                            <div class="form-group">
-                                              <label for="recipient-name" class="col-form-label">NIM</label>
-                                              <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
-                                          </div>
-                                          <div class="form-group">
-                                            <label for="recipient-name" class="col-form-label">Nama</label>
-                                            <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
-                                        </div>
-                                        <div class="form-group">
-                                          <label for="recipient-name" class="col-form-label">Angkatan</label>
-                                          <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
-                                      </div>
                                             <label>Nama Organisasi</label>
                                             <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                               <option value="Informatika">Himpunan Teknik Informatika</option>
@@ -59,6 +47,14 @@
                                                 <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>
                                                 <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
                                             </div>
+                                            <div class="form-group">
+                                              <label>Diselenggarakan</label>
+                                              <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                                <option value="Didalam kampus">Didalam kampus</option>
+                                                <option value="Diluar kampus">Diluar kampus</option>
+                                              </select>              
+                                            </label>
+                                          </div>
                                             <div class="form-group">
                                               <label for="recipient-name" class="col-form-label">Kejuaraan</label>
                                               <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
@@ -95,9 +91,10 @@
                             <table id="example2" class="table table-bordered table-hover">
                               <thead>
                                 <tr>
-                                  <th>No</th>
+                                  <th>No</th>                              
                                   <th>Nama Organisasi</th>
                                   <th>Nama Kegiatan</th>
+                                  <th>angkatan</th>
                                   <th>Kategori kegiatan</th>
                                   <th>Tanggal Kegiatan</th>
                                   <th>Tempat kegiatan</th>
@@ -108,9 +105,10 @@
                                 <tbody>
                                         @foreach ($data as $d)
                                     <tr>
-                                      <td> {{ $d->id }}</td>
+                                      <td> {{ $d->id }}</td>                                   
                                       <td> {{ $d->nama_organisasi }}</td>
                                       <td> {{ $d->nama_kegiatan }}</td>
+                                      <td> {{ $d->Angkatan }}</td>
                                       <td> {{ $d->kategori }}</td>
                                       <td> {{ $d->tanggal }}</td>                                
                                       <td> {{ $d->tempat }}</td>

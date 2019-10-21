@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CENTRISmhs extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CENTRISmhs extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('CENTRIS_mhs', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            
-            $table->string('kategori');
-            $table->timestamp('tanggal');
-            $table->string('tempat');
-            $table->boolean('status');
+            $table->string('name');
+            $table->string('nimornip',50)->unique();
+            $table->string('email',100)->unique();
+            $table->string('role');
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CENTRISmhs extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('CENTRIS_mhs');
+        Schema::dropIfExists('users');
     }
 }

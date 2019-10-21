@@ -174,6 +174,10 @@ Route::get('/KegiatanEksternal', "KegiatanEksternalController@show");
 
 Route::get('/LEMmhs', "LEMmhsController@show");
 
+Route::get('/didalamkampus', "didalamkampusController@show");
+
+Route::get('/diluarkampus', "diluarkampusController@show");
+
 Route::get('/DPMmhs', "DPMmhsController@show");
 
 Route::get('/UASCmhs', "UASCmhsController@show");
@@ -226,11 +230,21 @@ Route::post('/proses', 'Simkipema@proses');
 
 Route::get('/hapus', 'Simkipema@hapus');
 
+/*
+|--------------------------------------------------------------------------
+| kelola data tabel
+|--------------------------------------------------------------------------
+*/
+
 Route::get('/mahasiswa/hapus/{id}','mahasiswaController@hapus');
 // alihkan halaman ke halaman 
 // pegawai return redirect('/kelolamhs');
 
-
+Route::get('/upload', 'UploadController@upload');
+Route::post('/upload/proses', 'UploadController@proses_upload');
+ 
+// hapus file
+Route::get('/didalamkampus/hapus/{id}', 'didalamkampusController@hapus');
 /*
 |--------------------------------------------------------------------------
 | form tambah data

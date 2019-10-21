@@ -33,49 +33,61 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="/eo/create" method="post">
+                                        <form action="/diluarkampus" method="post">
                                             {{csrf_field()}}
-                                            <label>Nama Organisasi</label>
-                                            <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                              <option value="Informatika">Himpunan Teknik Informatika</option>
-                                              <option value="Mobil listrik">UASC UII</option>
-                                              <option value="Lem f">LEM F UII</option>
-                                              <option value="Industri">Himpunan Teknik Industri</option>
-                                              <option value="Mesin">Himpunan Teknik Mesin</option>
-                                          </select> 
                                             <div class="form-group">
-                                                <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>
-                                                <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
-                                            </div>
-                                            <div class="form-group">
-                                              <label>Diselenggarakan</label>
-                                              <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                                <option value="Didalam kampus">Didalam kampus</option>
-                                                <option value="Diluar kampus">Diluar kampus</option>
-                                              </select>              
-                                            </label>
+                                              <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>
+                                              <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
                                           </div>
-                                            <div class="form-group">
-                                              <label for="recipient-name" class="col-form-label">Kejuaraan</label>
+                                          <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Dosen Pembimbing</label>
+                                            <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
+                                        </div>
+                                          <div class="form-group">
+                                            <label>Program kerja divisi</label>
+                                            <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                              <option value="Didalam kampus">Didalam kampus</option>
+                                              <option value="Diluar kampus">Diluar kampus</option>
+                                            </select>              
+                                          </label>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="recipient-name" class="col-form-label">predikat</label>
+                                          <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
+                                        </div>
+                                          <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Waktu Pelaksanaan</label>
+                                            <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="recipient-name" class="col-form-label">tempat</label>
+                                          <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="recipient-name" class="col-form-label">tingkat</label>
                                               <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
                                           </div>
                                           <div class="form-group">
-                                            <label for="recipient-name" class="col-form-label">Tanggal Kegiatan</label>
-                                            <input type="text" name="tanggal kejuaraan" class="form-control" id="recipient-name" placeholder="26 Maret 2018">
-                                        </div>
-                                        <label>Angkatan</label>
-                                            <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                                <option value="2010">2010</option>
-                                                <option value="2011">2011</option>
-                                                <option value="2012">2012</option>
-                                                <option value="2013">2013</option>
-                                                <option value="2014">2014</option>
-                                            </select>
-                                            <div class="form-group">
-                                              <label for="exampleInputFile">File input</label>
-                                              <input type="file" id="exampleInputFile">
-                                              <p class="help-block"></p>
-                                            </div>
+                                              <label for="recipient-name" class="col-form-label">Scan_bukti</label>
+                                              <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
+                                          </div>
+                                          {{-- <div class="form-group">
+                                              <label for="recipient-name" class="col-form-label">Tanggal Kegiatan</label>
+                                              <input type="text" name="tanggal kejuaraan" class="form-control" id="recipient-name" placeholder="26 Maret 2018">
+                                          </div>
+                                      <label>Angkatan</label>
+                                          <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                              <option value="2010">2010</option>
+                                              <option value="2011">2011</option>
+                                              <option value="2012">2012</option>
+                                              <option value="2013">2013</option>
+                                              <option value="2014">2014</option>
+                                          </select> --}}
+                                          <div class="form-group">
+                                            <label for="exampleInputFile">File input</label>
+                                            <input type="file" id="exampleInputFile">
+                                            <p class="help-block"></p>
+                                          </div>
                                        
                                     </div>
                                     <div class="modal-footer">
@@ -91,14 +103,15 @@
                             <table id="example2" class="table table-bordered table-hover">
                               <thead>
                                 <tr>
-                                  <th>No</th>                              
-                                  <th>Nama Organisasi</th>
+                                  <th>No</th>
                                   <th>Nama Kegiatan</th>
-                                  <th>angkatan</th>
-                                  <th>Kategori kegiatan</th>
-                                  <th>Tanggal Kegiatan</th>
-                                  <th>Tempat kegiatan</th>
-                                  <th>Status</th>
+                                  <th>dosen pembimbing</th>
+                                  <th>program kerja divisi</th>
+                                  <th>predikat</th>
+                                  <th>waktu pelaksanaan</th>
+                                  <th>tempat</th>
+                                  <th>tingkat</th>
+                                  <th>scan bukti</th>
                                   <th>Action</th>
                                 </tr>
                                 </thead>
@@ -106,13 +119,14 @@
                                         @foreach ($data as $d)
                                     <tr>
                                       <td> {{ $d->id }}</td>                                   
-                                      <td> {{ $d->nama_organisasi }}</td>
                                       <td> {{ $d->nama_kegiatan }}</td>
-                                      <td> {{ $d->Angkatan }}</td>
-                                      <td> {{ $d->kategori }}</td>
-                                      <td> {{ $d->tanggal }}</td>                                
-                                      <td> {{ $d->tempat }}</td>
-                                      <td> {{ $d->status }}</td>
+                                      <td> {{ $d->dosen_pembimbing }}</td>
+                                      <td> {{ $d->program_kerja_divisi }}</td>
+                                      <td> {{ $d->predikat }}</td>
+                                      <td> {{ $d->waktu_pelaksanaan }}</td>
+                                      <td> {{ $d->tempat }}</td>                                
+                                      <td> {{ $d->tingkat }}</td>
+                                      <td> {{ $d->scan_bukti }}</td>
                                       <td>
                                 {{-- <tr>
                                   <td> 1</td>

@@ -3,26 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Dokumentasi_Eksternal;
+use App\dokumentasi_eksternal;
 
 class DokumentasiEksternalController extends Controller
 {
 
     public function show()
     {
-        $data =  Dokumentasi_Eksternal::all();
+        $data =  dokumentasi_eksternal::all();
         return view('Mahasiswa/DokumentasiEksternal', ['data' => $data]);
     }
 
     public function insert(Request $request)
     {
-        $Dokumentasi_Eksternal = new Dokumentasi_Eksternal();
-        $Dokumentasi_Eksternal->nama_organisasi = $request->nama_organisasi;
-        $Dokumentasi_Eksternal->nama_kegiatan = $request->nama_kegiatan;
-        $Dokumentasi_Eksternal->kategori = $request->kategori;
-        $Dokumentasi_Eksternal->tempat = $request->tempat;
-        $Dokumentasi_Eksternal->status = $request->status;
-        $Dokumentasi_Eksternal->save();
+        $dokumentasi_eksternal = new dokumentasi_eksternal();
+        $dokumentasi_eksternal->nama_organisasi = $request->nama_organisasi;
+        $dokumentasi_eksternal->nama_kegiatan = $request->nama_kegiatan;
+        $dokumentasi_eksternal->kategori = $request->kategori;
+        $dokumentasi_eksternal->tempat = $request->tempat;
+        $dokumentasi_eksternal->status = $request->status;
+        $dokumentasi_eksternal->save();
     }
     // public function __construct()
     // {

@@ -35,92 +35,66 @@
                             <div class="modal-body">
                                 <form action="/controller/inputformController" method="post">
                                     {{csrf_field()}}
-                                    <div class="form-group">
-                                      <label for="recipient-name" class="col-form-label">NIM</label>
-                                      <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Nama</label>
-                                    <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
-                                </div>
-                                <div class="form-group">
-                                  <label for="recipient-name" class="col-form-label">Pembimbing</label>
-                                  <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
-                              </div>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>
-                                        <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
-                                    </div>
-                                    <div class="form-group">
-                                      <label for="recipient-name" class="col-form-label">Predikat</label>
-                                      <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
-                                  </div>
-                                  <label>Tingkat</label>
-                                    <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                        <option value="Kampus">Kampus</option>
-                                        <option value="Kecamatan">Kecamatan</option>
-                                        <option value="Kabupaten/kota">Kabupaten/kota</option>
-                                        <option value="Daerah/Provinsi">Daerah/Provinsi</option>
-                                        <option value="Nasional">Nasional</option>
-                                        <option value="Internasional">Internasional</option>
-                                    </select>
-                                  <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Penyelenggara</label>
-                                    <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
-                                </div>
-                                <div class="form-group">
-                                  <label for="recipient-name" class="col-form-label">Tempat Acara</label>
-                                  <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
-                                  </div>
-                                  <label>Diselenggarakan</label>
-                                    <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                        <option value="Juara I">Didalam Kampus</option>
-                                        <option value="Juara II">Diluar Kampus</option>
-                                    </select>
                                     <label>Nama Organisasi</label>
-                                    <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                      <option value="Informatika">Himpunan Teknik Informatika</option>
-                                      <option value="Mobil listrik">UASC UII</option>
-                                      <option value="Lem f">LEM F UII</option>
-                                      <option value="Industri">Himpunan Teknik Industri</option>
-                                      <option value="Mesin">Himpunan Teknik Mesin</option>
-                                  </select> 
-                                  <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Tanggal Kegiatan</label>
-                                    <input type="text" name="tanggal kejuaraan" class="form-control" id="recipient-name" placeholder="26 Maret 2018">
-                                </div>
-                                <label>Bidang</label>
-                                    <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                        <option value="Penalaran dan Riset">Penalaran dan Riset</option>
-                                        <option value="Unit Unggulan Universitas">Unit Unggulan Universitas</option>
-                                        <option value="Lembaga dakwah">Lembaga dakwah</option>
-                                        <option value="Unit Kegiatan Mahasiswa">Unit Kegiatan Mahasiswa</option>
-                                        <option value="Pers Mahasiswa">Pers Mahasiswa</option>
-                                        <option value="Unit Kegiatan Mahasiswa">Unit Kegiatan Mahasiswa</option>
-                                    </select>
-                                    <div class="form-group">
-                                      <label for="exampleInputFile">File input</label>
-                                      <input type="file" id="exampleInputFile">
-                                      <p class="help-block"></p>
+                                            <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                              <option value="Informatika">Himpunan Teknik Informatika</option>
+                                              <option value="Mobil listrik">UASC UII</option>
+                                              <option value="Lem f">LEM F UII</option>
+                                              <option value="Industri">Himpunan Teknik Industri</option>
+                                              <option value="Mesin">Himpunan Teknik Mesin</option>
+                                          </select> 
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>
+                                                <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
+                                            </div>
+                                            <div class="form-group">
+                                              <label>Diselenggarakan</label>
+                                              <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                                <option value="Didalam kampus">Didalam kampus</option>
+                                                <option value="Diluar kampus">Diluar kampus</option>
+                                              </select>              
+                                            </label>
+                                          </div>
+                                            <div class="form-group">
+                                              <label for="recipient-name" class="col-form-label">Kejuaraan</label>
+                                              <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Tanggal Kegiatan</label>
+                                            <input type="text" name="tanggal kejuaraan" class="form-control" id="recipient-name" placeholder="26 Maret 2018">
+                                        </div>
+                                        <label>Angkatan</label>
+                                            <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                                <option value="2010">2010</option>
+                                                <option value="2011">2011</option>
+                                                <option value="2012">2012</option>
+                                                <option value="2013">2013</option>
+                                                <option value="2014">2014</option>
+                                            </select>
+                                            <div class="form-group">
+                                              <label for="exampleInputFile">File input</label>
+                                              <input type="file" id="exampleInputFile">
+                                              <p class="help-block"></p>
+                                            </div>
+                                       
                                     </div>
-                              
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                        <button type="submit" class="btn btn-primary">Buat Kegiatan</button>
+                                    </div>
+                                </form>
+                                </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                <button type="submit" class="btn btn-primary">Buat Kegiatan</button>
-                            </div>
-                        </form>
                         </div>
-                    </div>
-                </div>
                           <!-- /.box-header -->
                           <div class="box-body">
                             <table id="example2" class="table table-bordered table-hover">
                               <thead>
                                 <tr>
-                                  <th>No</th>
+                                  <th>No</th>                              
                                   <th>Nama Organisasi</th>
                                   <th>Nama Kegiatan</th>
+                                  <th>angkatan</th>
                                   <th>Kategori kegiatan</th>
                                   <th>Tanggal Kegiatan</th>
                                   <th>Tempat kegiatan</th>
@@ -131,9 +105,10 @@
                                 <tbody>
                                         @foreach ($data as $d)
                                     <tr>
-                                      <td> {{ $d->id }}</td>
+                                      <td> {{ $d->id }}</td>                                   
                                       <td> {{ $d->nama_organisasi }}</td>
                                       <td> {{ $d->nama_kegiatan }}</td>
+                                      <td> {{ $d->Angkatan }}</td>
                                       <td> {{ $d->kategori }}</td>
                                       <td> {{ $d->tanggal }}</td>                                
                                       <td> {{ $d->tempat }}</td>

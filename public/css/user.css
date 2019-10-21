@@ -135,4 +135,11 @@ padding: 0px;
     text-decoration: none;
     cursor: pointer;
   }
-    
+ /*tabel dashboard*/
+ .content-header {
+    position: relative;
+    padding: 0px 0px 0 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;   

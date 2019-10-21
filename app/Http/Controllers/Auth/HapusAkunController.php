@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Hapus_Akun;
 
+class inputformController extends Controller
+{
 // method untuk hapus data pegawai
 public function hapus($id)
 {
@@ -14,3 +16,4 @@ public function hapus($id)
 	// alihkan halaman ke halaman pegawai
 	return redirect('/mahasiswa');
 }
+

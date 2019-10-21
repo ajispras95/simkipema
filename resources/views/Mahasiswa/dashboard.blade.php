@@ -128,97 +128,47 @@
               <button type="button" class="btn btn-default btn-block btn-flat">Create</button>
             </div>
           </div> --}}
-                 <section> 
+              <section>
                   <div class="content-header">
-                    <h2>
-                        Organisasi Mahasiswa
-                    </h2>
+                      <div class="box">
+              <div id="kegiatan-grid" class="grid-view">
+                <table class="items table table-bordered">
+                <thead>
+                <tr>
+                <th id="kegiatan-grid_c0">No</th>
+                <th id="kegiatan-grid_c1"><a class="sort-link" href="/kegiatan-index.html?status=t&amp;uny=f&amp;Kegiatan_sort=nim">Nama Kegiatan
+                  <span class="caret"></span></a></th>
+                  <th id="kegiatan-grid_c3">Nama Lembaga</th>
+                  <th id="kegiatan-grid_c5"><a class="sort-link" href="/kegiatan-index.html?status=t&amp;uny=f&amp;Kegiatan_sort=tempat">Tempat
+                      <span class="caret"></span></a></th>
+                      <th id="kegiatan-grid_c6"><a class="sort-link" href="/kegiatan-index.html?status=t&amp;uny=f&amp;Kegiatan_sort=tanggal_awal">Tahun
+                        <span class="caret"></span></a></th>
+                        <th id="kegiatan-grid_c7"><a class="sort-link" href="/kegiatan-index.html?status=t&amp;uny=f&amp;Kegiatan_sort=status">STATUS
+                          <span class="caret"></span></a></th>
+                          <th id="kegiatan-grid_c9">Perbaikan</th>
+                <tr class="filters">
+                <td><div class="filter-container">&nbsp;</div></td>
+                <td><div class="filter-container">
+                  <input placeholder="Pencarian kegiatan (enter)" name="Kegiatan[nim]" id="Kegiatan_nim" type="text" maxlength="15"></div></td>
+                  <td><div class="filter-container">&nbsp;</div></td>
+                  <td><div class="filter-container">&nbsp;</div></td>
+                  <td><div class="filter-container">&nbsp;</div></td>
+                  <td><div class="filter-container">&nbsp;</div></td>
+                  <td><div class="filter-container">&nbsp;</div></td>
+                  <td><div class="filter-container">&nbsp;</div></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr><td colspan="10" class="empty"><span class="empty">Belum ada prestasi. Klik tombol berikut 
+                  <a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">Tambah Data Baru</a></span></td></tr>
+                  
+                </tbody>
+                </table><div class="keys" style="display:none" title="/kegiatan-index.html?status=t&amp;uny=f"></div>
+                </div>
+                      </div>
                   </div>
-
-                  <section>
-                  <div class="content-header">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <div class="box">
-                                <div class="icon">
-                                    <i  class="fa fa-glass" aria-hidden="true"></i>
-                                </div>
-                                <h3>LEM FTI</h3>
-                                <div class="text">
-                                <a href="{{ URL('https://lem.uii.ac.id/') }}">
-                                    <div class="btn-join">See All</div>
-                                </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                          <div class="box">
-                              <div class="icon">
-                                  <i class="fa fa-cutlery"></i>
-                              </div>
-                              <h3>DPM FTI</h3>
-                              <div class="text">                     
-                                  <a href="{{ URL('https://dpm.uii.ac.id/') }}">
-                                      <div class="btn-join">See All</div>
-                                  </a>
-                              </div>
-                          </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="box">
-                                <div class="icon">
-                                    <i class="fa fa-wifi" aria-hidden="true"></i>
-                                </div>
-                                <h3>UASC</h3>
-                                <div class="text">                     
-                                    <a href="{{ URL('https://www.electricvehicle-indonesia.com/') }}">
-                                        <div class="btn-join">See All</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>  
-                        <div class="col-md-2">
-                            <div class="box">
-                                <div class="icon">
-                                    <i  class="fa fa-diamond" aria-hidden="true"></i>
-                                </div>
-                                <h3>HIMMAH</h3>
-                                <div class="text">                     
-                                    <a href="{{ URL('https://himmahonline.id/') }}">
-                                        <div class="btn-join">See All</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div> 
-                        <div class="col-md-2">
-                            <div class="box">
-                                <div class="icon">
-                                    <i class="fa fa-envira" aria-hidden="true"></i>
-                                </div>
-                                <h3>MENWA UII</h3>
-                                <div class="text">                     
-                                    <a href="{{ URL('https://menwa.uii.ac.id/') }}">
-                                        <div class="btn-join">See All</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="box">
-                                <div class="icon">
-                                    <i class="fa fa-external-link-square" aria-hidden="true"></i>
-                                </div>
-                                <h3>Lain-Lain</h3>
-                                <div class="text">                     
-                                    <a href="{{ URL('https://kemahasiswaan.uii.ac.id/informasi/organisasi-kemahasiswaan/') }}">
-                                        <div class="btn-join">See All</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>                     
-                    </div>
-                  </div>
-                  </section>
+          </section>
+                
                  </section>    
                 </section>
                   <!-- /.content -->

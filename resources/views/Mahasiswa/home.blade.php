@@ -121,25 +121,87 @@
                     <i class="fa fa-angle-left pull-right"></i>
                   </span>
                 </a>
-            <ul class="treeview-menu" style="display: block;">
-                <li><a href="{{ URL ('/LEMmhs') }}"><i class="fa fa-circle-o"></i> LEM</a></li>
-                <li><a href="{{ URL ('/DPMmhs') }}"><i class="fa fa-circle-o"></i> DPM</a></li>
-                <li><a href="{{ URL ('/HIMMAHmhs') }}"><i class="fa fa-circle-o"></i> HIMMAH</a></li>
-            </ul>
-            <li class="treeview menu-open" style="display: block;">
-                <a href="#"><i class="fa fa-circle-o"></i> Kegiatan Eksternal
-                  <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-                </a>
-                <ul class="treeview-menu" style="display: block;">
-                  <li><a href="{{ URL ('/CENTRISmhs') }}"><i class="fa fa-circle-o"></i> CENTRIS</a></li>
-                  <li><a href="{{ URL ('/KOSMIKmhs') }}"><i class="fa fa-circle-o"></i> KOSMIK</a></li>
-                  <li><a href="{{ URL ('/UASCmhs') }}"><i class="fa fa-circle-o"></i> UASC</a></li>
+                <ul class="treeview-menu">
+                    <li class="treeview menu-open" style="display: block;">
+                        <a href="#">LEM
+                          <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </span>
+                        </a>
+                        <ul class="treeview-menu" style="display: block;">
+                            <li><a href="{{ URL ('/didalamkampus') }}"> Di dalam kampus</a></li>
+                            <li><a href="{{ URL ('/diluarkampus') }}"> Di luar kampus</a></li>
+                          </ul>
+                      </li>
+                      <li class="treeview menu-open" style="display: block;">
+                        <a href="#">DPM
+                          <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </span>
+                        </a>
+                        <ul class="treeview-menu" style="display: block;">
+                            <li><a href="{{ URL ('/didalamkampus') }}"> Di dalam kampus</a></li>
+                            <li><a href="{{ URL ('/diluarkampus') }}"> Di luar kampus</a></li>
+                          </ul>
+                      </li>
+                      <li class="treeview menu-open" style="display: block;">
+                        <a href="#">HIMMAH
+                          <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </span>
+                        </a>
+                        <ul class="treeview-menu" style="display: block;">
+                            <li><a href="{{ URL ('/didalamkampus') }}"> Di dalam kampus</a></li>
+                            <li><a href="{{ URL ('/diluarkampus') }}"> Di luar kampus</a></li>
+                          </ul>
+                      </li>
+                  </ul>
+                  
+                  <li class="treeview menu-open" style="display: block;">
+                      <a href="#"><i class="fa fa-circle-o"></i> Kegiatan Eksternal
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                    <ul class="treeview-menu">
+                    <li class="treeview menu-open" style="display: block;">
+                      <a href="#">KOSMIK
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu" style="display: block;">
+                          <li><a href="{{ URL ('/didalamkampus') }}"> Di dalam kampus</a></li>
+                          <li><a href="{{ URL ('/diluarkampus') }}"> Di luar kampus</a></li>
+                        </ul>
+                      </li>
+                    <li class="treeview menu-open" style="display: block;">
+                        <a href="#">UASC
+                          <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </span>
+                        </a>
+                        <ul class="treeview-menu" style="display: block;">
+                            <li><a href="{{ URL ('/didalamkampus') }}"> Di dalam kampus</a></li>
+                            <li><a href="{{ URL ('/diluarkampus') }}"> Di luar kampus</a></li>
+                        </ul>
+                    </li>
+                        <li class="treeview menu-open" style="display: block;">
+                          <a href="#">CENTRIS
+                            <span class="pull-right-container">
+                              <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                          </a>
+                        <ul class="treeview-menu" style="display: block;">
+                            <li><a href="{{ URL ('/didalamkampus') }}"> Di dalam kampus</a></li>
+                            <li><a href="{{ URL ('/diluarkampus') }}"> Di luar kampus</a></li>
+                          </ul>
+                        </li>
+                    </ul>
+                  </li>
                 </ul>
-            </li>
-          </ul>
-      </li>
+                
+
         {{-- <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
@@ -154,7 +216,50 @@
           </ul>
         </li> --}}
 
-        <li><a href="{{ URL ('/prestasi') }}"><i class="fa fa-book"></i> <span>Rekap prestasi</span></a></li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Rekap Prestasi</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+              <ul class="treeview-menu">
+                    <li class="treeview menu-open" style="display: block;">
+                        <a href="#">Prestasi
+                          <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </span>
+                        </a>
+                        <ul class="treeview-menu" style="display: block;">
+                            <li><a href="{{ URL ('/didalamkampus') }}"> Di dalam kampus</a></li>
+                            <li><a href="{{ URL ('/diluarkampus') }}"> Di luar kampus</a></li>
+                          </ul>
+                      </li>
+                      <li class="treeview menu-open" style="display: block;">
+                        <a href="#">Produk
+                          <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </span>
+                        </a>
+                        <ul class="treeview-menu" style="display: block;">
+                            <li><a href="{{ URL ('/didalamkampus') }}"> Di dalam kampus</a></li>
+                            <li><a href="{{ URL ('/diluarkampus') }}"> Di luar kampus</a></li>
+                          </ul>
+                      </li>
+                      <li class="treeview menu-open" style="display: block;">
+                        <a href="#">Konten
+                          <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </span>
+                        </a>
+                        <ul class="treeview-menu" style="display: block;">
+                            <li><a href="{{ URL ('/didalamkampus') }}"> Di dalam kampus</a></li>
+                            <li><a href="{{ URL ('/diluarkampus') }}"> Di luar kampus</a></li>
+                          </ul>
+                      </li>
+                  </ul>
+                 </li>
 
         <li class="treeview">
           <a href="#">
@@ -172,9 +277,9 @@
                   </span>
                 </a>
             <ul class="treeview-menu" style="display: block;">
-                <li><a href="{{ URL ('/LEMmhs') }}"><i class="fa fa-circle-o"></i> LEM</a></li>
-                <li><a href="{{ URL ('/DPMmhs') }}"><i class="fa fa-circle-o"></i> DPM</a></li>
-                <li><a href="{{ URL ('/HIMMAHmhs') }}"><i class="fa fa-circle-o"></i> HIMMAH</a></li>
+                <li><a href="{{ URL ('/DokumentasiInternal') }}"><i class="fa fa-circle-o"></i> LEM</a></li>
+                <li><a href="{{ URL ('/DokumentasiInternal') }}"><i class="fa fa-circle-o"></i> DPM</a></li>
+                <li><a href="{{ URL ('/DokumentasiInternal') }}"><i class="fa fa-circle-o"></i> HIMMAH</a></li>
             </ul>
             <li class="treeview menu-open" style="display: block;">
                 <a href="#"><i class="fa fa-circle-o"></i> dokumentasi Eksternal
@@ -183,9 +288,9 @@
                   </span>
                 </a>
                 <ul class="treeview-menu" style="display: block;">
-                  <li><a href="{{ URL ('/CENTRISmhs') }}"><i class="fa fa-circle-o"></i> CENTRIS</a></li>
-                  <li><a href="{{ URL ('/KOSMIKmhs') }}"><i class="fa fa-circle-o"></i> KOSMIK</a></li>
-                  <li><a href="{{ URL ('/UASCmhs') }}"><i class="fa fa-circle-o"></i> UASC</a></li>
+                  <li><a href="{{ URL ('/DokumentasiEksternal') }}"><i class="fa fa-circle-o"></i> CENTRIS</a></li>
+                  <li><a href="{{ URL ('/DokumentasiEksternal') }}"><i class="fa fa-circle-o"></i> KOSMIK</a></li>
+                  <li><a href="{{ URL ('/DokumentasiEksternal') }}"><i class="fa fa-circle-o"></i> UASC</a></li>
                 </ul>
             </li>
           </ul>
