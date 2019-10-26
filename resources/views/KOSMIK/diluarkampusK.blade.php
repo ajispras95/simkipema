@@ -1,4 +1,4 @@
-@extends('Mahasiswa.home')
+@extends('KOSMIK.home')
 
 @section('tab-title')
 <title>Kegiatan | Eksternal</title>
@@ -33,65 +33,61 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="/didalamkampus" method="post">
+                                        <form action="/diluarkampus" method="post">
                                             {{csrf_field()}}
-                                            {{-- <label>Nama Organisasi</label>
-                                            <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                              <option value="Informatika">Himpunan Teknik Informatika</option>
-                                              <option value="Mobil listrik">UASC UII</option>
-                                              <option value="Lem f">LEM F UII</option>
-                                              <option value="Industri">Himpunan Teknik Industri</option>
-                                              <option value="Mesin">Himpunan Teknik Mesin</option>
-                                          </select>  --}}
                                             <div class="form-group">
-                                                <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>
-                                                <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
-                                            </div>
-                                            <div class="form-group">
-                                              <label>Program kerja divisi</label>
-                                              <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                                <option value="Didalam kampus">Didalam kampus</option>
-                                                <option value="Diluar kampus">Diluar kampus</option>
-                                              </select>              
-                                            </label>
+                                              <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>
+                                              <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
                                           </div>
                                           <div class="form-group">
-                                                <label for="recipient-name" class="col-form-label">Predikat</label>
-                                                <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
-                                            </div>
-                                            <div class="form-group">
-                                              <label for="recipient-name" class="col-form-label">Waktu Pelaksanaan</label>
+                                            <label for="recipient-name" class="col-form-label">Dosen Pembimbing</label>
+                                            <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
+                                        </div>
+                                          <div class="form-group">
+                                            <label>Program kerja divisi</label>
+                                            <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                              <option value="Didalam kampus">Didalam kampus</option>
+                                              <option value="Diluar kampus">Diluar kampus</option>
+                                            </select>              
+                                          </label>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="recipient-name" class="col-form-label">predikat</label>
+                                          <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
+                                        </div>
+                                          <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Waktu Pelaksanaan</label>
+                                            <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="recipient-name" class="col-form-label">tempat</label>
+                                          <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="recipient-name" class="col-form-label">tingkat</label>
                                               <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
                                           </div>
                                           <div class="form-group">
-                                            <label for="recipient-name" class="col-form-label">tempat</label>
-                                            <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="recipient-name" class="col-form-label">tingkat</label>
-                                                <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="recipient-name" class="col-form-label">Scan_bukti</label>
-                                                <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
-                                            </div>
-                                            {{-- <div class="form-group">
-                                                <label for="recipient-name" class="col-form-label">Tanggal Kegiatan</label>
-                                                <input type="text" name="tanggal kejuaraan" class="form-control" id="recipient-name" placeholder="26 Maret 2018">
-                                            </div>
-                                        <label>Angkatan</label>
-                                            <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                                <option value="2010">2010</option>
-                                                <option value="2011">2011</option>
-                                                <option value="2012">2012</option>
-                                                <option value="2013">2013</option>
-                                                <option value="2014">2014</option>
-                                            </select> --}}
-                                            <div class="form-group">
-                                              <label for="exampleInputFile">File input</label>
-                                              <input type="file" id="exampleInputFile">
-                                              <p class="help-block"></p>
-                                            </div>
+                                              <label for="recipient-name" class="col-form-label">Scan_bukti</label>
+                                              <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
+                                          </div>
+                                          {{-- <div class="form-group">
+                                              <label for="recipient-name" class="col-form-label">Tanggal Kegiatan</label>
+                                              <input type="text" name="tanggal kejuaraan" class="form-control" id="recipient-name" placeholder="26 Maret 2018">
+                                          </div>
+                                      <label>Angkatan</label>
+                                          <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                              <option value="2010">2010</option>
+                                              <option value="2011">2011</option>
+                                              <option value="2012">2012</option>
+                                              <option value="2013">2013</option>
+                                              <option value="2014">2014</option>
+                                          </select> --}}
+                                          <div class="form-group">
+                                            <label for="exampleInputFile">File input</label>
+                                            <input type="file" id="exampleInputFile">
+                                            <p class="help-block"></p>
+                                          </div>
                                        
                                     </div>
                                     <div class="modal-footer">
@@ -109,6 +105,7 @@
                                 <tr>
                                   <th>No</th>
                                   <th>Nama Kegiatan</th>
+                                  <th>dosen pembimbing</th>
                                   <th>program kerja divisi</th>
                                   <th>predikat</th>
                                   <th>waktu pelaksanaan</th>
@@ -123,6 +120,7 @@
                                     <tr>
                                       <td> {{ $d->id }}</td>                                   
                                       <td> {{ $d->nama_kegiatan }}</td>
+                                      <td> {{ $d->dosen_pembimbing }}</td>
                                       <td> {{ $d->program_kerja_divisi }}</td>
                                       <td> {{ $d->predikat }}</td>
                                       <td> {{ $d->waktu_pelaksanaan }}</td>
@@ -139,14 +137,14 @@
                                   <td> Jepang</td>
                                   <td> viewed / Not Seen</td>
                                   <td> --}}
-                                      <button type="button" class="" data-toggle="modal" data-target="#Detail" data-whatever="@mdo">
+                                      <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
                                           Detail 
                                         </button>
-                                        <button type="button" class="" data-toggle="modal" data-target="#Edit" data-whatever="@mdo">
+                                        <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
                                             Edit 
                                           </button>
-                                          <button type="button" class="" data-toggle="modal" data-target="#hapus" data-whatever="@mdo">
-                                            Hapus
+                                          <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
+                                              Hapus 
                                             </button>
                                   {{-- </td>
                                 </tr>
@@ -200,55 +198,7 @@
                       </div>
                       <!-- /.col -->
                     </div>
-                    <script>
-                    var request;
-
-                      $("#tambahkegiatan").click(function(event){
-                        var user = $('#user').val();
-                        var password = $('#pw').val();
-                        var token = $("input[name=_token]").val();
-
-                        if (request) {
-                          request.abort();
-                        }
-
-                        request = $.ajax({
-                          url: "{{ url('authenticate') }}",
-                          type: "post",
-                          data: 	{
-                              "nimornip" : user,
-                              "password" : password,
-                              "_token" : token, 
-                              }
-                        });
-
-                        // Callback handler that will be called on success
-                        request.done(function (response, textStatus, jqXHR){
-                          // Log a message to the console
-                          if (response.role == "Admin"){
-                            window.location = "{{ url('dashboardmin') }}";
-                          }else if(response.role == "mahasiswa"){
-                            window.location = "{{ url('dashboard') }}";
-                          }else if(response.role == "pengunjung"){
-
-                          }
-                          console.log(response.role);
-                        });
-
-                        // Callback handler that will be called on failure
-                        request.fail(function (jqXHR, textStatus, errorThrown){
-                          // Log the error to the console
-                          alert("Wrong Login !!!");
-                          console.error(
-                            "The following error occurred: "+
-                            textStatus, errorThrown
-                          );
-                        });
-
-                        // console.log("Hooray, it worked!"+user+" "+token+" "+password);
-                      });
                     <!-- /.row -->
-                    </script>
                   </section>
 
     </section>

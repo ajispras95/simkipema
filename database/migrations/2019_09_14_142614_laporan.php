@@ -23,6 +23,46 @@ class laporan extends Migration
             $table->boolean('status');
             $table->timestamps();
         });
+
+        Schema::create('laporanK', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nama_kegiatan');
+            $table->string('nama_organisasi');
+            $table->timestamp('tanggal_kegiatan');
+            $table->string('periode');
+            $table->boolean('status');
+            $table->timestamps();
+        });
+
+        Schema::create('laporanD', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nama_kegiatan');
+            $table->string('nama_organisasi');
+            $table->timestamp('tanggal_kegiatan');
+            $table->string('periode');
+            $table->boolean('status');
+            $table->timestamps();
+        });
+
+        Schema::create('laporanU', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nama_kegiatan');
+            $table->string('nama_organisasi');
+            $table->timestamp('tanggal_kegiatan');
+            $table->string('periode');
+            $table->boolean('status');
+            $table->timestamps();
+        });
+
+        Schema::create('laporanH', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nama_kegiatan');
+            $table->string('nama_organisasi');
+            $table->timestamp('tanggal_kegiatan');
+            $table->string('periode');
+            $table->boolean('status');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -33,5 +73,10 @@ class laporan extends Migration
     public function down()
     {
         Schema::dropIfExists('laporan');
+        Schema::dropIfExists('laporanK');
+        Schema::dropIfExists('laporanU');
+        Schema::dropIfExists('laporanD');
+        Schema::dropIfExists('laporanC');
+        Schema::dropIfExists('laporanH');
     }
 }

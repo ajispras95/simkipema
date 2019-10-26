@@ -14,6 +14,7 @@ class didalamkampus extends Migration
     public function up()
     {
         //
+        Schema::disableForeignKeyConstraints();
         Schema::create('di_dalam_kampus', function (Blueprint $table) {
             $table->increments('id');
             
@@ -25,6 +26,13 @@ class didalamkampus extends Migration
             $table->string('tingkat');
             $table->string('scan_bukti');
             $table->timestamps();
+        });
+
+        Schema::table('di_dalam_kampus', function (Blueprint $table){
+            $table->unsignedInteger('nama_kegiatan');
+            $table->foreign('nama_kegiatan')->references('id')->on('confirms');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

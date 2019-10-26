@@ -1,5 +1,4 @@
-@extends('Mahasiswa.home')
-
+@extends('home')
 @section('tab-title')
 <title>prestasi</title>
 @endsection
@@ -19,7 +18,7 @@
             <div class="box">  
             <div class="box-body">
               <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                  <i class="fa fa-plus-circle"></i> Tambah Kegiatan
+                  <i class="fa fa-plus-circle"></i> Tambah Prestasi
               </button>
           </div>
       
@@ -35,19 +34,11 @@
                       <div class="modal-body">
                           <form action="/controller/inputformController" method="post">
                               {{csrf_field()}}
-                              <div class="form-group">
+                              {{-- <div class="form-group">
                                   <label for="recipient-name" class="col-form-label">NIM</label>
                                   <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
-                              </div>
-                              <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Nama</label>
-                                <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
-                            </div>
+                              </div> --}}
                             <div class="form-group">
-                              <label for="recipient-name" class="col-form-label">Angkatan</label>
-                              <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
-                          </div>
-                          <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Dosen Pembimbing</label>
                             <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
                             </div>
@@ -83,6 +74,14 @@
                                   <option value="Unit Kegiatan Mahasiswa">Unit Kegiatan Mahasiswa</option>
                               </select>
                               <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Penyelenggara</label>
+                                <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
+                            </div>
+                            <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Tingkat</label>
+                              <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
+                          </div>
+                              <div class="form-group">
                                 <label for="exampleInputFile">File input</label>
                                 <input type="file" id="exampleInputFile">
                                 <p class="help-block"></p>
@@ -103,13 +102,12 @@
                         <thead>
                           <tr>
                             <th>No</th>
-                            <th>Nama Peserta</th>
+                            <th>Dosen Pembimbing</th>
                             <th>Nama Organisasi</th>
                             <th>Nama Kegiatan</th>
                             <th>Juara</th>
-                            <th>Nama Lomba</th>
                             <th>Tanggal Kegiatan</th>
-                            <th>Angkatan</th>
+                            <th>Bidang</th>
                             <th>Action</th>
                           </tr>
                         </thead>
@@ -117,13 +115,12 @@
                             @foreach ($data as $d)
                         <tr>
                           <td> {{ $d->id }}</td>
-                          <td> {{ $d->nama_peserta }}</td>
+                          <td> {{ $d->dosen_pembimbing }}</td>
                           <td> {{ $d->nama_organisasi }}</td>
                           <td> {{ $d->nama_kegiatan }}</td>
-                          <td> {{ $d->Juara }}</td>
-                          <td> {{ $d->nama_lomba }}</td>                                
+                          <td> {{ $d->Juara }}</td>                                
                           <td> {{ $d->tanggal_kegiatan }}</td>
-                          <td> {{ $d->Angkatan }}</td>
+                          <td> {{ $d->Bidang }}</td>
                           <td>
                               <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
                                   Detail 

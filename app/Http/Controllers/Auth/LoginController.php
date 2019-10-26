@@ -35,7 +35,7 @@ class LoginController extends Controller
     //fungsi autentikasi login
     public function authenticate(Request $request)
     {
-        $credentials = $request->only('nimornip', 'password');
+        $credentials = $request->only('email', 'password');
 
         if (!Auth::attempt($credentials)) {
             // Authentication not passed...
@@ -45,6 +45,7 @@ class LoginController extends Controller
         // Authentication passed...
         $this->api['status'] = "validated";
         $this->api['role'] = Auth::user()->role;
+        $this->api['name'] = Auth::user()->name;
         return $this->api;
 
     }

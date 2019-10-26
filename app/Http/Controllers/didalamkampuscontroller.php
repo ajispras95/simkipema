@@ -11,7 +11,7 @@ class didalamkampusController extends Controller
     public function show()
     {
         $data =  di_dalam_kampus::all();
-        return view('Mahasiswa/didalamkampus', ['data' => $data]);
+        return view('/didalamkampus', ['data' => $data]);
     }
 
     public function insert(Request $request)
@@ -25,6 +25,8 @@ class didalamkampusController extends Controller
         $di_dalam_kampus->tingkat = $request->tingkat;
         $di_dalam_kampus->scan_bukti = $request->scan_bukti;
         $di_dalam_kampus->save();
+
+        return redirect('/didalamkampus')  ;
     }
     
     public function hapus($id)
@@ -35,8 +37,5 @@ class didalamkampusController extends Controller
         // alihkan halaman ke halaman pegawai
         return redirect('/didalamkampus');
     }
-    // public function __construct()
-    // {
-    //     $this->middleware('guest');
-    // }
+   
 }

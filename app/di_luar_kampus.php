@@ -12,6 +12,7 @@ class di_luar_kampus extends Model
      * @var string
      */
     protected $table = 'di_luar_kampus';
+    public $incrementing = false;
 
     /**
      * The attributes that are mass assignable.

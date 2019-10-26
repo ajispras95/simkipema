@@ -23,6 +23,9 @@ class Authenticate extends Middleware
         if (Auth::check() && Auth::user()->role == $guards[0]) {
             return $next($request);
         }
+        if (Auth::check() && Auth::user()->name == $guards[0]) {
+            return $next($request);
+        }
         else {
             return redirect('/login');
         }

@@ -1,13 +1,12 @@
-@extends('Mahasiswa.home')
-
+@extends('KOSMIK.home')
 @section('tab-title')
-<title>laporan</title>
+<title>Dokumentasi | Eksternal</title>
 @endsection
 
 @section('content')
     <section class="content-header">
         <h1>Halaman
-        <small>laporan</small>
+        <small>Dokumentasi Eksternal</small>
         </h1>
     </section>
 
@@ -19,7 +18,7 @@
                   <div class="box">
                     <div class="box-body">
                       <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                          <i class="fa fa-plus-circle"></i> Tambah laporan
+                          <i class="fa fa-plus-circle"></i> Upload Dokumentasi
                       </button>
                   </div>
               
@@ -27,7 +26,7 @@
                       <div class="modal-dialog" role="document">
                           <div class="modal-content">
                               <div class="modal-header">
-                                  <h3 class="modal-title" id="exampleModalLabel">Upload laporan</h3>
+                                  <h3 class="modal-title" id="exampleModalLabel">Upload dokumentasi</h3>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                   </button>
@@ -84,10 +83,11 @@
                         <thead>
                           <tr>
                             <th>No</th>
-                            <th>Nama Kegiatan</th>
                             <th>Nama Organisasi</th>
+                            <th>Nama Kegiatan</th>
+                            <th>Juara</th>
                             <th>Tanggal Kegiatan</th>
-                            <th>Periode</th>
+                            <th>Angkatan</th>
                             <th>Status</th>
                             <th>Action</th>
                           </tr>
@@ -96,11 +96,12 @@
                             @foreach ($data as $d)
                         <tr>
                           <td> {{ $d->id }}</td>
-                          <td> {{ $d->nama_kegiatan }}</td>
                           <td> {{ $d->nama_organisasi }}</td>
-                          <td> {{ $d->tanggal_kegiatan }}</td>                                
-                          <td> {{ $d->periode }}</td>
-                          <td> {{ $d->status }}</td>
+                          <td> {{ $d->nama_kegiatan }}</td>
+                          <td> {{ $d->Juara }}</td>
+                          <td> {{ $d->Tanggal_Kegiatan }}</td>                                
+                          <td> {{ $d->Angkatan }}</td>
+                          <td> {{ $d->Status }}</td>
                           <td>
                               <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
                                   Detail 
@@ -109,7 +110,7 @@
                                     Edit 
                                   </button>
                                   <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                      Hapus  
+                                      Hapus 
                                     </button>
                           </td>
                             @endforeach

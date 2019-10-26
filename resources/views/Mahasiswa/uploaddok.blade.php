@@ -1,4 +1,4 @@
-@extends('Mahasiswa.home')
+@extends('home')
 
 @section('tab-title')
 <title>Dokumentasi | Akademis</title>

@@ -11,7 +11,7 @@ class diluarkampusController extends Controller
     public function show()
     {
         $data = di_luar_kampus::all();
-        return view('Mahasiswa/diluarkampus', ['data' => $data]);
+        return view('/diluarkampus', ['data' => $data]);
     }
 
     public function insert(Request $request)
@@ -26,9 +26,21 @@ class diluarkampusController extends Controller
         $di_luar_kampus->tingkat = $request->tingkat;
         $di_luar_kampus->scan_bukti = $request->scan_bukti;
         $di_luar_kampus->save();
+
+        return redirect('/diluarkampus')  ;
     }
-    // public function __construct()
-    // {
-    //     $this->middleware('guest');
+
+    public function hapus($id)
+    {
+        // menghapus data pegawai berdasarkan id yang dipilih
+        DB::table('di_dalam_kampus')->where('didalamkampus_id',$id)->delete();
+            
+        // alihkan halaman ke halaman pegawai
+        return redirect('/didalamkampus');
+    }
+    // public function deleteEvent(Request $request){
+
+    //     $delete = Event::where('id',$request->id)->delete();
+    //     return back();
     // }
 }

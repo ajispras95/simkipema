@@ -11,7 +11,7 @@ class DokumentasiInternalController extends Controller
     public function show()
     {
         $data =  dokumentasi_internal::all();
-        return view('Mahasiswa/DokumentasiInternal', ['data' => $data]);
+        return view('/DokumentasiInternal', ['data' => $data]);
     }
 
     public function insert(Request $request)
@@ -23,6 +23,8 @@ class DokumentasiInternalController extends Controller
         $dokumentasi_internal->tempat = $request->tempat;
         $dokumentasi_internal->status = $request->status;
         $dokumentasi_internal->save();
+
+        return redirect('/DokumentasiInternal')  ;
     }
     // public function __construct()
     // {

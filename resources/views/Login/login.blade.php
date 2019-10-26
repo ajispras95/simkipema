@@ -93,7 +93,7 @@
 				url: "{{ url('authenticate') }}",
 				type: "post",
 				data: 	{
-						"nimornip" : user,
+						"email" : user,
 						"password" : password,
 						"_token" : token, 
 						}
@@ -106,10 +106,21 @@
 					window.location = "{{ url('dashboardmin') }}";
 				}else if(response.role == "mahasiswa"){
 					window.location = "{{ url('dashboard') }}";
-				}else if(response.role == "pengunjung"){
+				}else if(response.name == "HIMMAH"){
+					window.location = "{{ url('dashboardH') }}";
+				}else if(response.name == "KOSMIK"){
+					window.location = "{{ url('dashboardK') }}";
+				}else if(response.name == "UASC"){
+					window.location = "{{ url('dashboardU') }}";
+				}else if(response.name == "CENTRIS"){
+					window.location = "{{ url('dashboardC') }}";
+				}else if(response.name == "DPM"){
+					window.location = "{{ url('dashboardD') }}";
+				}else if(response.name == "pengunjung"){
 
 				}
 				console.log(response.role);
+				console.log(response.name);
 			});
 
 			// Callback handler that will be called on failure

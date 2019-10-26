@@ -12,6 +12,7 @@ class di_dalam_kampus extends Model
      * @var string
      */
     protected $table = 'di_dalam_kampus';
+    public $incrementing = false;
 
     /**
      * The attributes that are mass assignable.
@@ -22,3 +23,4 @@ class di_dalam_kampus extends Model
         'nama_kegiatan', 'program_kerja_divisi', 'predikat', 'waktu_pelaksanaan', 'tempat','tingkat', 'scan_bukti',
     ];
 }
+

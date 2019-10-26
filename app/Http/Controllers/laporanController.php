@@ -11,7 +11,8 @@ class laporanController extends Controller
     public function show()
     {
         $data =  laporan::all();
-        return view('Mahasiswa/laporan', ['data' => $data]);
+        return view('/laporan',['data' => $data]);
+        return view('/laporanK',['data' => $data]);
     }
 
     public function insert(Request $request)
@@ -23,9 +24,24 @@ class laporanController extends Controller
         $laporan->periode = $request->periode;
         $laporan->status = $request->status;
         $laporan->save();
+
+        return redirect('/laporan');
+        return redirect('/laporanK');
+        
     }
-    // public function __construct()
+    
+
+    // public function insert(Request $request)
     // {
-    //     $this->middleware('guest');
+    //     $laporan = new laporanK();
+    //     $laporan->nama_kegiatan = $request->nama_kegiatan;
+    //     $laporan->nama_organisasi = $request->nama_organisasi;
+    //     $laporan->tanggal_kegiatan = $request->tanggal_kegiatan;
+    //     $laporan->periode = $request->periode;
+    //     $laporan->status = $request->status;
+    //     $laporan->save();
+
+    //     return redirect('/laporanK');
+        
     // }
 }

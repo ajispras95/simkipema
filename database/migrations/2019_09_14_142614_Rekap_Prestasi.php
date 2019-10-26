@@ -22,7 +22,7 @@ class RekapPrestasi extends Migration
             $table->string('Juara');
             $table->string('nama_lomba')
             $table->timestamp('tanggal_kegiatan');
-            $table->string('angkatan');
+            $table->string('Bidang');
             $table->timestamps();
         });
     }
