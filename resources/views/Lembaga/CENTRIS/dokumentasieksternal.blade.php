@@ -1,12 +1,13 @@
-@extends('Mahasiswa.home')
+@extends('lembaga.centris.home')
+
 @section('tab-title')
-<title>Dokumentasi | Internal</title>
+<title>Dokumentasi | Eksternal</title>
 @endsection
 
 @section('content')
     <section class="content-header">
         <h1>Halaman
-        <small>Dokumentasi Internal</small>
+        <small>Dokumentasi Eksternal</small>
         </h1>
     </section>
 
@@ -18,7 +19,7 @@
                   <div class="box">
                     <div class="box-body">
                       <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                          <i class="fa fa-plus-circle"></i> Upload dokumentasi
+                          <i class="fa fa-plus-circle"></i> Upload Dokumentasi
                       </button>
                   </div>
               
@@ -26,13 +27,13 @@
                       <div class="modal-dialog" role="document">
                           <div class="modal-content">
                               <div class="modal-header">
-                                  <h3 class="modal-title" id="exampleModalLabel">Upload Dokumentasi</h3>
+                                  <h3 class="modal-title" id="exampleModalLabel">Upload dokumentasi</h3>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                   </button>
                               </div>
                               <div class="modal-body">
-                                <form action={{ url('/DokumentasiInternal')}} method="post">
+                                  <form action="/eo/create" method="post">
                                       {{csrf_field()}}
                                       <div class="form-group">
                                           <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>

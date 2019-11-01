@@ -19,35 +19,31 @@ Route::post('/authenticate', 'Auth\LoginController@authenticate');
 
 Route::get('/dashboardmin', function () {
     return view('Admin/dashboardmin');
-})->name('login')->middleware('auth:role');
+})->name('login')->middleware('auth:Admin');
 
-Route::get('/dashboard', function () {
-    return view('mahasiswa/dashboard');
+Route::get('/Mahasiswa/dashboard', function () {
+    return view('Mahasiswa/dashboard');
 })->name('login')->middleware('auth:mahasiswa');
 
-Route::get('/dashboardC/', function () {
-    return view('/CENTRIS/dashboardU');
-})->name('login')->middleware('auth:CENTRIS');
+Route::get('/centris/dashboard', function () {
+    return view('/lembaga/centris/dashboard');
+})->name('login')->middleware('auth:centris');
 
-Route::get('/dashboardU', function () {
-    return view('UASC/dashboardU');
-})->name('login')->middleware('auth:UASC');
+Route::get('/uasc/dashboard', function () {
+    return view('/lembaga/uasc/dashboard');
+})->name('login')->middleware('auth:uasc');
 
-Route::get('/dashboardK', function () {
-    return view('Lembaga/KOSMIK/dashboardK');
-})->name('login')->middleware('auth:KOSMIK');
+Route::get('/kosmik/dashboard', function () {
+    return view('/lembaga/kosmik/dashboard');
+})->name('login')->middleware('auth:kosmik');
 
-Route::get('/dashboardH', function () {
-    return view('HIMMAH/dashboardH');
-})->name('login')->middleware('auth:HIMMAH');
+Route::get('/himmah/dashboard', function () {
+    return view('/lembaga/himmah/dashboard');
+})->name('login')->middleware('auth:himmah');
 
-Route::get('/dashboardD', function () {
-    return view('DPM/dashboardD');
-})->name('login')->middleware('auth:DPM');
-
-Route::get('/Admin', function () {
-    return view('Admin/Admin');
-})->middleware('auth:user');
+Route::get('/dpm/dashboard', function () {
+    return view('/lembaga/dpm/dashboard');
+})->name('login')->middleware('auth:dpm');
 
 Route::get('/mahasiswa', function () {
     return view('Admin/mahasiswa');
@@ -206,56 +202,55 @@ Route::get('/uploaddoknona', function () {
 
 // Route::get('/LEMmhs', "LEMmhsController@show");
 
-Route::get('/didalamkampus', "didalamkampusController@show");
-Route::get('/didalamkampusK', "didalamkampusController@show");
-Route::get('/didalamkampusU', "didalamkampusController@show");
-Route::get('/didalamkampusD', "didalamkampusController@show");
-Route::get('/didalamkampusC', "didalamkampusController@show");
-Route::get('/didalamkampusH', "didalamkampusController@show");
+Route::get('/Mahasiswa/didalamkampus', "didalamkampusController@show");
+Route::get('/lembaga/kosmik/didalamkampus', "didalamkampusController@show");
+Route::get('/lembaga/centris/didalamkampus', "didalamkampusController@show");
+Route::get('/lembaga/uasc/didalamkampus', "didalamkampusController@show");
+Route::get('/lembaga/dpm/didalamkampus', "didalamkampusController@show");
+Route::get('/lembaga/himmah/didalamkampus', "didalamkampusController@show");
 Route::post('/didalamkampus/{route->get}','didalamkampusController@show');
-Route::get('/didalamkampus', "didalamkampusController@index");
-Route::post('/didalamkampus','didalamkampusController@store');
-Route::post('/KOSMIK/didalamkampusK','didalamkampusController@store');
+Route::get('/lembaga/didalamkampus', "didalamkampusController@index");
+Route::post('/lembaga/didalamkampus','didalamkampusController@store');
+Route::post('/kosmik/didalamkampusK','didalamkampusController@store');
 
-Route::get('/diluarkampus', "diluarkampusController@show");
-Route::get('/diluarkampusK', "diluarkampusController@show");
-Route::get('/diluarkampusU', "diluarkampusController@show");
-Route::get('/diluarkampusD', "diluarkampusController@show");
-Route::get('/diluarkampusC', "diluarkampusController@show");
-Route::get('/diluarkampusH', "diluarkampusController@show");
-Route::post('/diluarkampus/{route->get}', 'diluarkampuscontroller@show');
+Route::get('/Mahasiswa/diluarkampus', "diluarkampusController@show");
+Route::get('/lembaga/kosmik/diluarkampus', "diluarkampusController@show");
+Route::get('/lembaga/centris/diluarkampus', "diluarkampusController@show");
+Route::get('/lembaga/uasc/diluarkampus', "diluarkampusController@show");
+Route::get('/lembaga/dpm/diluarkampus', "diluarkampusController@show");
+Route::get('/lembaga/himmah/diluarkampus', "diluarkampusController@show");
+Route::post('/diluarkampus/{route->get}','diluarkampusController@show');
 
-Route::get('/prestasi', "RekapPrestasiController@show");
-Route::get('/prestasiK', "RekapPrestasiController@show");
-Route::get('/prestasiU', "RekapPrestasiController@show");
-Route::get('/prestasiD', "RekapPrestasiController@show");
-Route::get('/prestasiH', "RekapPrestasiController@show");
-Route::get('/prestasiC', "RekapPrestasiController@show");
+Route::get('/Mahasiswa/prestasi', "RekapPrestasiController@show");
+Route::get('/lembaga/kosmik/prestasi', "RekapPrestasiController@show");
+Route::get('/lembaga/centris/prestasi', "RekapPrestasiController@show");
+Route::get('/lembaga/uasc/prestasi', "RekapPrestasiController@show");
+Route::get('/lembaga/dpm/prestasi', "RekapPrestasiController@show");
+Route::get('/lembaga/himmah/prestasi', "RekapPrestasiController@show");
 Route::post('/prestasi/{route->get}', 'RekapPrestasiController@show');
 
-Route::get('/DokumentasiInternal', "DokumentasiInternalController@show");
-Route::get('/DokumentasiInternalK', "DokumentasiInternalController@show");
-Route::get('/DokumentasiInternalU', "DokumentasiInternalController@show");
-Route::get('/DokumentasiInternalD', "DokumentasiInternalController@show");
-Route::get('/DokumentasiInternalH', "DokumentasiInternalController@show");
-Route::get('/DokumentasiInternalC', "DokumentasiInternalController@show");
-Route::post('/DokumentasiInternal/{route->get}', "DokumentasiInternalController@show");
+Route::get('/Mahasiswa/dokumentasiinternal', "dokumentasiinternalController@show");
+Route::get('/lembaga/kosmik/dokumentasiinternal', "dokumentasiinternalController@show");
+Route::get('/lembaga/centris/dokumentasiinternal', "dokumentasiinternalController@show");
+Route::get('/lembaga/uasc/dokumentasiinternal', "dokumentasiinternalController@show");
+Route::get('/lembaga/dpm/dokumentasiinternal', "dokumentasiinternalController@show");
+Route::get('/lembaga/himmah/dokumentasiinternal', "dokumentasiinternalController@show");
+Route::post('/dokumentasiinternal/{route->get}', "dokumentasiinternalController@show");
 
+Route::get('/Mahasiswa/dokumentasieksternal', "dokumentasieksternalController@show");
+Route::get('/lembaga/kosmik/dokumentasieksternal', "dokumentasieksternalController@show");
+Route::get('/lembaga/centris/dokumentasieksternal', "dokumentasieksternalController@show");
+Route::get('/lembaga/uasc/dokumentasieksternal', "dokumentasieksternalController@show");
+Route::get('/lembaga/dpm/dokumentasieksternal', "dokumentasieksternalController@show");
+Route::get('/lembaga/himmah/dokumentasieksternal', "dokumentasieksternalController@show");
+Route::post('/dokumentasieksternal/{route->get}', "dokumentasieksternalController@show");
 
-Route::get('/DokumentasiEksternal', "DokumentasiEksternalController@show");
-Route::get('/DokumentasiEksternalK', "DokumentasiEksternalController@show");
-Route::get('/DokumentasiEksternalU', "DokumentasiEksternalController@show");
-Route::get('/DokumentasiEksternalD', "DokumentasiEksternalController@show");
-Route::get('/DokumentasiEksternalH', "DokumentasiEksternalController@show");
-Route::get('/DokumentasiEksternalC', "DokumentasiEksternalController@show");
-Route::post('/DokumentasiEksternal/{route->get}', "DokumentasiEksternalController@show");
-
-Route::get('/laporan', "laporanController@show");
-Route::get('/laporanK', "laporanController@show");
-Route::get('/laporanU', "laporanController@show");
-Route::get('/laporanD', "laporanController@show");
-Route::get('/laporanH', "laporanController@show");
-Route::get('/laporanC', "laporanController@show");
+Route::get('/Mahasiswa/laporan', "laporanController@show");
+Route::get('/lembaga/kosmiklaporan', "laporanController@show");
+Route::get('/lembaga/centris/laporan', "laporanController@show");
+Route::get('/lembaga/uasc/laporan', "laporanController@show");
+Route::get('/lembaga/dpm/laporan', "laporanController@show");
+Route::get('/lembaga/himmah/laporan', "laporanController@show");
 Route::post('/laporan/{route->get}', "laporanController@show");
 
 // // Route::get('/DPMmhs', "DPMmhsController@show");

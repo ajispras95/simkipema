@@ -103,19 +103,19 @@
 			request.done(function (response, textStatus, jqXHR){
 				// Log a message to the console
 				if (response.role == "Admin"){
-					window.location = "{{ url('/Admin/dashboardmin') }}";
+					window.location = "{{ url('/dashboardmin') }}";
 				}else if(response.role == "mahasiswa"){
 					window.location = "{{ url('/dashboard') }}";
 				}else if(response.name == "HIMMAH"){
-					window.location = "{{ url('dashboardH') }}";
+					window.location = "{{ url('/lembaga/himmah/dashboard') }}";
 				}else if(response.name == "KOSMIK"){
-					window.location = "{{ url('dashboardK') }}";
+					window.location = "{{ url('/lembaga/kosmik/dashboard') }}";
 				}else if(response.name == "UASC"){
-					window.location = "{{ url('dashboardU') }}";
+					window.location = "{{ url('/lembaga/uasc/dashboard') }}";
 				}else if(response.name == "CENTRIS"){
-					window.location = "{{ url('dashboardC') }}";
+					window.location = "{{ url('/lembaga/centris/dashboard') }}";
 				}else if(response.name == "DPM"){
-					window.location = "{{ url('dashboardD') }}";
+					window.location = "{{ url('/lembaga/dpm/dashboard') }}";
 				}else if(response.name == "pengunjung"){
 
 				}

@@ -1,4 +1,4 @@
-@extends('Mahasiswa.kegiatanakademis')
+@extends('lembaga.centris.kegiatanakademis')
 
 @section('tab-title')
 <title>upload proposal</title>

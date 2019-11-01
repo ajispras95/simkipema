@@ -1,4 +1,5 @@
-@extends('Mahasiswa.home')
+@extends('lembaga.uasc.home')
+
 @section('tab-title')
 <title>Dokumentasi | Internal</title>
 @endsection
@@ -32,7 +33,7 @@
                                   </button>
                               </div>
                               <div class="modal-body">
-                                <form action={{ url('/DokumentasiInternal')}} method="post">
+                                  <form action="/eo/create" method="post">
                                       {{csrf_field()}}
                                       <div class="form-group">
                                           <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>

@@ -1,4 +1,4 @@
-@extends('Mahasiswa.home')
+@extends('lembaga.dpm.home')
 
 @section('tab-title')
 <title>Kegiatan | Eksternal</title>
@@ -33,7 +33,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                      <form action={{ url('/diluarkampus')}} method="post">
+                                        <form action="/diluarkampus" method="post">
                                             {{csrf_field()}}
                                             <div class="form-group">
                                               <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>

@@ -1,4 +1,4 @@
-@extends('Mahasiswa.home')
+@extends('lembaga.dpm.home')
 
 @section('tab-title')
 <title>Halaman | Mahasiswa</title>
@@ -30,7 +30,7 @@
                 <div class="icon">
                   <i class="ion ion-bag"></i>
                 </div>
-                <a href="{{ URL ('/Mahasiswa/laporan') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ URL ('/laporan') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -45,7 +45,7 @@
                 <div class="icon">
                   <i class="ion ion-stats-bars"></i>
                 </div>
-                <a href="{{ URL ('/Mahasiswa/KegiatanInternal') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ URL ('/KegiatanInternal') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -60,7 +60,7 @@
                 <div class="icon">
                   <i class="ion ion-person-add"></i>
                 </div>
-                <a href="{{ URL ('/Mahasiswa/prestasi') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ URL ('/prestasi') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -75,7 +75,7 @@
                 <div class="icon">
                   <i class="ion ion-pie-graph"></i>
                 </div>
-                <a href="{{ URL ('/Mahasiswa/DokumentasiAkademik') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ URL ('/DokumentasiAkademik') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->

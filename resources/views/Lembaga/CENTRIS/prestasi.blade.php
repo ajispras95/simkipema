@@ -1,4 +1,5 @@
-@extends('Mahasiswa.home')
+@extends('lembaga.centris.home')
+
 @section('tab-title')
 <title>prestasi</title>
 @endsection
@@ -32,7 +33,7 @@
                           </button>
                       </div>
                       <div class="modal-body">
-                        <form action={{ url('/prestasi')}} method="post">
+                          <form action="/controller/inputformController" method="post">
                               {{csrf_field()}}
                               {{-- <div class="form-group">
                                   <label for="recipient-name" class="col-form-label">NIM</label>

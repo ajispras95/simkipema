@@ -33,8 +33,15 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="/mahasiswa/didalamkampus" method="POST">
+                                        <form action={{ url('/didalamkampus')}} method="post">
                                             {{csrf_field()}}
+                                            @if(count($errors) > 0)
+                                            <div class="alert alert-danger">
+                                                @foreach ($errors->all() as $error)
+                                                {{ $error }} <br/>
+                                                @endforeach
+                                            </div>
+                                            @endif
                                             {{-- <label>Nama Organisasi</label>
                                             <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                               <option value="Informatika">Himpunan Teknik Informatika</option>
@@ -43,56 +50,42 @@
                                               <option value="Industri">Himpunan Teknik Industri</option>
                                               <option value="Mesin">Himpunan Teknik Mesin</option>
                                           </select>  --}}
-                                            <div class="form-group">
-                                                <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>
-                                                <input type="text" name="" class="form-control" id="recipient-name" placeholder="Event Name">
-                                            </div>
-                                            <div class="form-group">
-                                              <label>Program kerja divisi</label>
-                                              <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                                <option value="Didalam kampus">Didalam kampus</option>
-                                                <option value="Diluar kampus">Diluar kampus</option>
-                                              </select>              
-                                            </label>
-                                          </div>
-                                          <div class="form-group">
-                                                <label for="recipient-name" class="col-form-label">Predikat</label>
-                                                <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
-                                            </div>
-                                            <div class="form-group">
-                                              <label for="recipient-name" class="col-form-label">Waktu Pelaksanaan</label>
-                                              <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
-                                          </div>
-                                          <div class="form-group">
-                                            <label for="recipient-name" class="col-form-label">tempat</label>
-                                            <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="recipient-name" class="col-form-label">tingkat</label>
-                                                <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="recipient-name" class="col-form-label">Scan_bukti</label>
-                                                <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
-                                            </div>
-                                            {{-- <div class="form-group">
-                                                <label for="recipient-name" class="col-form-label">Tanggal Kegiatan</label>
-                                                <input type="text" name="tanggal kejuaraan" class="form-control" id="recipient-name" placeholder="26 Maret 2018">
-                                            </div>
-                                        <label>Angkatan</label>
-                                            <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                                <option value="2010">2010</option>
-                                                <option value="2011">2011</option>
-                                                <option value="2012">2012</option>
-                                                <option value="2013">2013</option>
-                                                <option value="2014">2014</option>
-                                            </select> --}}
-                                            <div class="form-group">
-                                              <label for="exampleInputFile">File input</label>
-                                              <input type="file" id="exampleInputFile">
-                                              <p class="help-block"></p>
-                                            </div>
-                                       
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>
+                                        <input type="text" name="nama_kegiatan" class="form-control" id="recipient-name" placeholder="Event Name">
+                                    </div>
+                                    <div class="form-group">
+                                      <label>Program kerja divisi</label>
+                                      <select class="form-control select2 select2-hidden-accessible" name="program_kerja_divisi" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                        <option value="Didalam kampus">Didalam kampus</option>
+                                        <option value="Diluar kampus">Diluar kampus</option>
+                                      </select>              
+                                    </label>
+                                  </div>
+                                  <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Predikat</label>
+                                        <input type="text" name="predikat" class="form-control" id="recipient-name" placeholder="Juara satu">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="recipient-name" class="col-form-label">Waktu Pelaksanaan</label>
+                                      <input type="text" name="waktu_pelaksanaan" class="form-control" id="recipient-name" placeholder="Juara satu">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">tempat</label>
+                                    <input type="text" name="tempat" class="form-control" id="recipient-name" placeholder="Juara satu">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">skala_kegiatan</label>
+                                        <input type="text" name="skala_kegiatan" class="form-control" id="recipient-name" placeholder="Juara satu">
+                                        </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">tingkat</label>
+                                        <input type="text" name="tingkat" class="form-control" id="recipient-name" placeholder="Juara satu">
+                                    </div>
+                                    <div class="form-group">
+                                        <b>Scan bukti</b><br/>
+                                        <input type="file" name="scan_bukti">
+                                    </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
@@ -119,6 +112,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                    @php $no = 1; @endphp
                                         @foreach ($data as $d)
                                     <tr>
                                       <td> {{ $d->id }}</td>                                   
@@ -130,64 +124,15 @@
                                       <td> {{ $d->tingkat }}</td>
                                       <td> {{ $d->scan_bukti }}</td>
                                       <td>
-                                {{-- <tr>
-                                  <td> 1</td>
-                                  <td> UASC</td>
-                                  <td> FSAE Student 2019</td>
-                                  <td> Best technology</td>
-                                  <td> 14-06-2018</td>                                
-                                  <td> Jepang</td>
-                                  <td> viewed / Not Seen</td>
-                                  <td> --}}
-                                      <button type="button" class="" data-toggle="modal" data-target="#Detail" data-whatever="@mdo">
-                                          Detail 
-                                        </button>
-                                        <button type="button" class="" data-toggle="modal" data-target="#Edit" data-whatever="@mdo">
-                                            Edit 
-                                          </button>
-                                          <button type="button" class="" data-toggle="modal" data-target="#hapus" data-whatever="@mdo">
-                                            Hapus
+                                          <button type="button" class="" data-toggle="modal" data-target="#Detail" data-whatever="@mdo">
+                                              Detail 
                                             </button>
-                                  {{-- </td>
-                                </tr>
-                                <td> 2</td>
-                                <td> Kosmik UII</td>
-                                <td> Soundrenaline 2018</td>
-                                <td> best indie band</td>
-                                <td> 12-08-2018</td>                                
-                                <td> Jogjakarta</td>
-                                <td> viewed / Not Seen</td>
-                                <td>
-                                    <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                        Detail 
-                                      </button>
-                                      <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                          Edit 
-                                        </button>
-                                        <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                            Hapus 
-                                          </button>
-                                </td>
-                                  </tr>
-                                  <tr>
-                                    <td> 3</td>
-                                    <td> Centris UII</td>
-                                    <td> Seminar digital dakwah</td>
-                                    <td> Pengisi acara </td>
-                                    <td> 19-02-2015</td>
-                                    <td> Jakarta</td>
-                                    <td> viewed / Not Seen</td>
-                                    <td>
-                                        <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                            Detail 
-                                          </button>
-                                          <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                              Edit 
-                                            </button>
-                                            <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                                Hapus 
+                                            <button type="button" class="" data-toggle="modal" data-target="#Edit" data-whatever="@mdo">
+                                                Edit 
                                               </button>
-                                    </td> --}}
+                                              <button type="button" class="" data-toggle="modal" data-target="#hapus" data-whatever="@mdo">
+                                                Hapus
+                                                </button>
                                   </tr>
                                   @endforeach
                               </tbody>
@@ -203,7 +148,10 @@
                     <script>
                     var request;
 
-                      $("#tambahkegiatan").click(function(event){
+                      $("#tambahkegiatan").click(function(event)
+                      $("#Hapus").click(function(event)
+                      $("#Edit").click(function(event)
+                      $("#Detail").click(function(event){
                         var user = $('#user').val();
                         var password = $('#pw').val();
                         var token = $("input[name=_token]").val();

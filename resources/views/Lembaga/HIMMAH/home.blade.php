@@ -1,3 +1,4 @@
+@extends('layout.home')
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +41,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="{{ URL ('/dashboard')}}" class="logo">
+    <a href="{{ URL ('/dashboardH')}}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>UII</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -49,14 +50,14 @@
     
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
-        <!-- Sidebar toggle button-->
-        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-          <span class="sr-only">Toggle navigation</span>
-        </a>
-        <div class="navbar-custom-menu">
-          <ul class="nav navbar-nav">
-            <li class="dropdown user user-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{{ URL ('template1/dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
               <span class="hidden-xs">Zain Aziz P</span>
             </a>
@@ -104,8 +105,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
 
-        <li><a href="{{ URL ('/dashboard')}}"><i class="fa fa-book"></i> <span>Dashboard</span></a></li>
-        
+        <li><a href="{{ URL ('/dashboardH')}}"><i class="fa fa-book"></i> <span>Dashboard</span></a></li>
 
         <li class="treeview">
           <a href="#">

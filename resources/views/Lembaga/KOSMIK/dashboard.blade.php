@@ -1,4 +1,4 @@
-@extends('Mahasiswa.home')
+@extends('lembaga.kosmik.home')
 
 @section('tab-title')
 <title>Halaman | Mahasiswa</title>
@@ -15,7 +15,9 @@
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">Dashboard</li>
           </ol>
-        </section>
+        </section>    
+
+
         <section class="content">
           <!-- Small boxes (Stat box) -->
           <div class="row">
@@ -30,7 +32,7 @@
                 <div class="icon">
                   <i class="ion ion-bag"></i>
                 </div>
-                <a href="{{ URL ('/Mahasiswa/laporan') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ URL ('/laporanK') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -45,7 +47,7 @@
                 <div class="icon">
                   <i class="ion ion-stats-bars"></i>
                 </div>
-                <a href="{{ URL ('/Mahasiswa/KegiatanInternal') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ URL ('/KOSMIK/KegiatanInternal') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -60,7 +62,7 @@
                 <div class="icon">
                   <i class="ion ion-person-add"></i>
                 </div>
-                <a href="{{ URL ('/Mahasiswa/prestasi') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ URL ('/KOSMIK/prestasiK') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -75,7 +77,7 @@
                 <div class="icon">
                   <i class="ion ion-pie-graph"></i>
                 </div>
-                <a href="{{ URL ('/Mahasiswa/DokumentasiAkademik') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ URL ('/KOSMIK/dokumentasiInternalK') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
