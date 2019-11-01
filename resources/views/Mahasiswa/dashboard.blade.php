@@ -1,4 +1,4 @@
-@extends('Mahasiswa.home')
+@extends('Mahasiswa/home')
 
 @section('tab-title')
 <title>Halaman | Mahasiswa</title>
@@ -75,7 +75,7 @@
                 <div class="icon">
                   <i class="ion ion-pie-graph"></i>
                 </div>
-                <a href="{{ URL ('/Mahasiswa/DokumentasiAkademik') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ URL ('/Mahasiswa/dokumentasiakademik') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->

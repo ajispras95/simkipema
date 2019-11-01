@@ -33,7 +33,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action={{ url('/didalamkampus')}} method="post">
+                                        <form action={{ url('/Mahasiswa/didalamkampus')}} method="post">
                                             {{csrf_field()}}
                                             @if(count($errors) > 0)
                                             <div class="alert alert-danger">

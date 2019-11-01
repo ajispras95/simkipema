@@ -21,8 +21,8 @@ Route::get('/dashboardmin', function () {
     return view('Admin/dashboardmin');
 })->name('login')->middleware('auth:Admin');
 
-Route::get('/Mahasiswa/dashboard', function () {
-    return view('Mahasiswa/dashboard');
+Route::get('/dashboard', function () {
+    return view('/Mahasiswa/dashboard');
 })->name('login')->middleware('auth:mahasiswa');
 
 Route::get('/centris/dashboard', function () {
@@ -44,6 +44,10 @@ Route::get('/himmah/dashboard', function () {
 Route::get('/dpm/dashboard', function () {
     return view('/lembaga/dpm/dashboard');
 })->name('login')->middleware('auth:dpm');
+
+Route::get('/didalamkampus', function () {
+    return view('/Mahasiswa/didalamkampus');
+})->name('login')->middleware('auth:mahasiswa');
 
 Route::get('/mahasiswa', function () {
     return view('Admin/mahasiswa');
@@ -202,7 +206,7 @@ Route::get('/uploaddoknona', function () {
 
 // Route::get('/LEMmhs', "LEMmhsController@show");
 
-Route::get('/Mahasiswa/didalamkampus', "didalamkampusController@show");
+Route::get('Mahasiswa/didalamkampus', "didalamkampusController@show");
 Route::get('/lembaga/kosmik/didalamkampus', "didalamkampusController@show");
 Route::get('/lembaga/centris/didalamkampus', "didalamkampusController@show");
 Route::get('/lembaga/uasc/didalamkampus', "didalamkampusController@show");

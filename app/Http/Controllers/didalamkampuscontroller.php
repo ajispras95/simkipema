@@ -12,7 +12,7 @@ class didalamkampusController extends Controller
     public function show()
     {
         $data =  di_dalam_kampus::all();
-        return view('/didalamkampus', ['data' => $data]);
+        return view('/Mahasiswa/didalamkampus', ['data' => $data]);
     
         $data =  di_dalam_kampusK::all();
         return view('/didalamkampusK', ['data' => $data]);
@@ -31,7 +31,7 @@ class didalamkampusController extends Controller
         $di_dalam_kampus->scan_bukti = $request->scan_bukti;
         $di_dalam_kampus->save();
 
-        return redirect('/didalamkampus')  ;
+        return redirect('/Mahasiswa/didalamkampus')  ;
         return redirect('/didalamkampusK')  ;
     }
 
