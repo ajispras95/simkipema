@@ -23,7 +23,7 @@ Route::get('/dashboardmin', function () {
 
 Route::get('/dashboard', function () {
     return view('mahasiswa/dashboard');
-})->name('login')->middleware('auth:role');
+})->name('login')->middleware('auth:mahasiswa');
 
 Route::get('/dashboardC/', function () {
     return view('/CENTRIS/dashboardU');
@@ -34,11 +34,7 @@ Route::get('/dashboardU', function () {
 })->name('login')->middleware('auth:UASC');
 
 Route::get('/dashboardK', function () {
-    return view('KOSMIK/dashboardK');
-    return view('KOSMIK/didalamkampusK');
-    return view('KOSMIK/diluarkampusK');
-    return view('KOSMIK/prestasikK');
-    return view('KOSMIK/laporanK');
+    return view('Lembaga/KOSMIK/dashboardK');
 })->name('login')->middleware('auth:KOSMIK');
 
 Route::get('/dashboardH', function () {
@@ -150,7 +146,7 @@ Route::get('/profiladm', function () {
     return view('Admin/profiladm');
 });
 
-Route::get('/KegiatanInternaldmin', function () { 
+Route::get('/KegiatanInternaldmin', function () {
     return view('Admin/KegiatanInternaldmin');
 });
 
@@ -302,7 +298,7 @@ Route::get('/profilmahasiswa', function () {
 
 
 Route::get('/input', 'Simkipema@input');
- 
+
 Route::post('/proses', 'Simkipema@proses');
 
 Route::get('/hapus', 'Simkipema@hapus');
@@ -313,11 +309,11 @@ Route::get('/hapus', 'Simkipema@hapus');
 |--------------------------------------------------------------------------
 */
 
-// alihkan halaman ke halaman 
+// alihkan halaman ke halaman
 // pegawai return redirect('/kelolamhs');
 
 
- 
+
 // hapus file
 Route::put('/didalamkampus/Hapus/{id}', 'didalamkampusController@hapus');
 /*
