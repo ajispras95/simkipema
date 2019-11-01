@@ -1,4 +1,4 @@
-@extends('Mahasiswa.kegiatanakademis')
+@extends('didalamkampus')
 
 @section('tab-title')
 <title>upload proposal</title>
@@ -14,7 +14,7 @@
     <section class="content">
         <section>
     <!-- form validasi -->
-        <form action="/proses" method="post">
+        <form action="/didalamkampus" method="post">
          {{ csrf_field() }}
          <body>
              <div class="row">
@@ -28,11 +28,11 @@
                          </div>
                          @endif
          
-                         <form action="/upload/proses" method="POST" enctype="multipart/form-data">
+                         <form action="/upload/didalamkampus" method="POST" enctype="multipart/form-data">
                              {{ csrf_field() }}
          
                              <div class="form-group">
-                                 <b>File Gambar</b><br/>
+                                 <b>Scan bukti</b><br/>
                                  <input type="file" name="file">
                              </div>
          

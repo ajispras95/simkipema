@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use App\User;
 use App\Event;
 use Alert;
+use App\di_dalam_kampus;
 
 class FormController extends Controller
 {
@@ -19,7 +20,7 @@ class FormController extends Controller
     public function index(){
         $userLogin = Auth::user();
 
-        if($userLogin->role != 'EO'){
+        if($userLogin->role != 'lembaga'){
             ALert::error('Anda bukan Event Organizer. Silahkan masuk sebagai Event Organizer untuk melihat halaman ini','Ditolak');
             return back();
         }
@@ -28,6 +29,8 @@ class FormController extends Controller
             'userLogin' => $userLogin
         ]);
     }
+
+    
     
     public function profil(){
         $userLogin = Auth::user();
@@ -46,17 +49,17 @@ class FormController extends Controller
 
         $user_id = Auth::user()->id;
 
-        $proposal = $request->file('proposal');
+        $scan_bukti = $request->file('bukti');
         $time = Carbon::now()->format('dmyHis-');
-        $nama_proposal = $time.$proposal->getClientOriginalName();
-        $proposal->move('document/proposal',$nama_proposal);
+        $scan_bukti = $time.$scan_bukti->getClientOriginalName();
+        $scan_bukti->move('document/bukti',$scan_bukti);
         
         $poster = $request->file('poster');
         $time = Carbon::now()->format('dmyHis-');
         $nama_poster = $time.$poster->getClientOriginalName();
         $poster->move('document/proposal',$nama_poster);
 
-        $di_dalam_kampus = new kegiatan;
+        $di_dalam_kampus = new di_dalam_kampus();
         $di_dalam_kampus->name = $request->name;
         $di_dalam_kampus->email = $request->email;
         $di_dalam_kampus->category = $request->category;
@@ -68,12 +71,12 @@ class FormController extends Controller
         $di_dalam_kampus->date_end = $request->end;
         $di_dalam_kampus->budget = $request->budget;
         $di_dalam_kampus->detail_kegiatan = $request->note;
-        $di_dalam_kampus->file_proposal = $nama_proposal;
-        $di_dalam_kampus->file_poto = $nama_poster;
+        $di_dalam_kampus->file_proposal =  $scan_bukti;
+        $di_dalam_kampus->file_poto =  $scan_bukti;
         $di_dalam_kampus->user_id = $user_id;
         $di_dalam_kampus->save();
         
-        return redirect('/mahasiswa/didalamkampus')  ;
+        return redirect('/didalamkampus')  ;
         
     }
 

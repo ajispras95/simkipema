@@ -14,6 +14,10 @@ class di_dalam_kampus extends Model
     protected $table = 'di_dalam_kampus';
     public $incrementing = false;
 
+    public function user(){
+        return $this->hasOne(User::class, 'di_dalam_kampus');
+    }
+
     /**
      * The attributes that are mass assignable.
      *
@@ -22,5 +26,6 @@ class di_dalam_kampus extends Model
     protected $fillable = [
         'nama_kegiatan', 'program_kerja_divisi', 'predikat', 'waktu_pelaksanaan', 'tempat','tingkat', 'scan_bukti',
     ];
+
 }
 

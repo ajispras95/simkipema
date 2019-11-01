@@ -15,7 +15,7 @@ class didalamkampus extends Migration
     {
         //
         Schema::disableForeignKeyConstraints();
-        Schema::create('di_dalam_kampus', function (Blueprint $table) {
+        Schema::create('di_dalam_kampus','di_dalam_kampusK', function (Blueprint $table) {
             $table->increments('id');
             
             $table->string('nama_kegiatan');
@@ -44,5 +44,6 @@ class didalamkampus extends Migration
     public function down()
     {
         Schema::dropIfExists('di_dalam_kampus');
+        Schema::dropIfExists('di_dalam_kampusK');
     }
 }

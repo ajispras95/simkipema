@@ -1,4 +1,4 @@
-@extends('home')
+@extends('layout.home')
 @section('tab-title')
 <title>prestasi</title>
 @endsection

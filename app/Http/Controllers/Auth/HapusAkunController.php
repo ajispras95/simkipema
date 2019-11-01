@@ -14,6 +14,9 @@ public function hapus($id)
 	DB::table('users')->where('users_id',$id)->delete();
 		
 	// alihkan halaman ke halaman pegawai
+	return redirect('/admin');
 	return redirect('/mahasiswa');
+	return redirect('/lembaga');
+}
 }
 

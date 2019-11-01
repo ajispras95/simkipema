@@ -4,17 +4,22 @@ namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\User;
+use App\Event;
+use App\Category;
+use App\SponsorInterest;
+use App\SponsoredEvent;
  
  
-class didakamkampusController extends Controller
+class didalamkampusController extends Controller
 {
-    public function index()
+    public function form()
     {
     	// mengambil data dari table pegawai
-    	$di_dalam_kampus = DB::table('didalamkampus')->get();
+    	$di_dalam_kampus = DB::table('di_dalam_kampus')->get();
  
     	// mengirim data pegawai ke view index
-    	return view('didalamlampus',['didalamkampus' => $di_dalam_kampus]);
+    	return view('didalamkampus',['didalamkampus' => $di_dalam_kampus]);
  
-    }
+	}
 }

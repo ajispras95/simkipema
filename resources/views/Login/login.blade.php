@@ -103,13 +103,14 @@
 			request.done(function (response, textStatus, jqXHR){
 				// Log a message to the console
 				if (response.role == "Admin"){
-					window.location = "{{ url('dashboardmin') }}";
+					window.location = "{{ url('/Admin/dashboardmin') }}";
 				}else if(response.role == "mahasiswa"){
-					window.location = "{{ url('dashboard') }}";
+					window.location = "{{ url('/Mahasiswa/dashboard') }}";
 				}else if(response.name == "HIMMAH"){
 					window.location = "{{ url('dashboardH') }}";
 				}else if(response.name == "KOSMIK"){
 					window.location = "{{ url('dashboardK') }}";
+					window.location = "{{ url('didalamkampusK') }}"
 				}else if(response.name == "UASC"){
 					window.location = "{{ url('dashboardU') }}";
 				}else if(response.name == "CENTRIS"){

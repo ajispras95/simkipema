@@ -1,5 +1,4 @@
-@extends('Mahasiswa.home')
-
+@extends('layout.home')
 @section('tab-title')
 <title>Halaman | Mahasiswa</title>
 @endsection

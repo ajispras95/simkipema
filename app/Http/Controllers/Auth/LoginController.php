@@ -24,6 +24,7 @@ class LoginController extends Controller
     public function __construct(){
         $this->api['status'] = "unauthorized";
         $this->api['role'] = null;
+        $this->api['name'] = null;
     }
 
     //halaman login
@@ -48,5 +49,18 @@ class LoginController extends Controller
         $this->api['name'] = Auth::user()->name;
         return $this->api;
 
+    }
+
+    protected function redirectTo()
+    {
+        $user = Auth::user();
+
+        if($user->role=='Admin'){
+            return '/admin';
+        }else if($user->role=='EO'){
+            return '/eo';
+        }else if($user->role=='Sponsor'){
+            return '/partner';
+        }
     }
 }
