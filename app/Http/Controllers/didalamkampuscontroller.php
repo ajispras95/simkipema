@@ -13,10 +13,6 @@ class didalamkampusController extends Controller
     {
         $data =  di_dalam_kampus::all();
         return view('/Mahasiswa/didalamkampus', ['data' => $data]);
-    
-        $data =  di_dalam_kampusK::all();
-        return view('/didalamkampusK', ['data' => $data]);
-    
     }
 
     public function insert(Request $request)
@@ -55,7 +51,7 @@ class didalamkampusController extends Controller
    public function store(Request $request)
    {
        DB::table('di_dalam_kampus')->insert([
-    
+
        'nama_kegiatan' => $request->nama_kegiatan,
        'program_kerja_divisi' => $request->program_kerja_divisi,
        'predikat' => $request->predikat,
@@ -72,7 +68,7 @@ class didalamkampusController extends Controller
     {
         // menghapus data pegawai berdasarkan id yang dipilih
         DB::table('di_dalam_kampus')->where('didalamkampus_id',$id)->delete();
-            
+
         // alihkan halaman ke halaman pegawai
         return redirect('/didalamkampus');
         return redirect('/didalamkampusK');
@@ -122,8 +118,8 @@ class didalamkampusController extends Controller
         $event->user_id = $user_id;
         $event->validation_status = 'Pending';
         $event->save();
-        
-        return redirect('/eo/event/me')  ;  
+
+        return redirect('/eo/event/me')  ;
     }
 
     public function deleteEvent($id){
@@ -174,5 +170,5 @@ class didalamkampusController extends Controller
         Alert::success('Data success updated','Success');
         return back();
     }
-   
+
 }

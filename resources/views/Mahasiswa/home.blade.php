@@ -8,26 +8,26 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="{{ ('template1/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ ('template1/bower_components/font-awesome/css/font-awesome.min.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/bower_components/font-awesome/css/font-awesome.min.css') }}">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="{{ ('template1/bower_components/Ionicons/css/ionicons.min.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/bower_components/Ionicons/css/ionicons.min.css') }}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ ('template1/dist/css/AdminLTE.min.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/dist/css/AdminLTE.min.css') }}">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="{{ ('template1/dist/css/skins/_all-skins.min.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/dist/css/skins/_all-skins.min.css') }}">
   <!-- Morris chart -->
-  <link rel="stylesheet" href="{{ ('template1/bower_components/morris.js/morris.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/bower_components/morris.js/morris.css') }}">
   <!-- jvectormap -->
-  <link rel="stylesheet" href="{{ ('template1/bower_components/jvectormap/jquery-jvectormap.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/bower_components/jvectormap/jquery-jvectormap.css') }}">
   <!-- Date Picker -->
-  <link rel="stylesheet" href="{{ ('template1/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="{{ ('template1/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
   <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="{{ ('template1/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
 
   <!-- Tambahan CSS -->
   <link rel="stylesheet" href="{{ URL('css/user/user.css') }}">
@@ -46,7 +46,7 @@
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg">SIMKIPEMA</span>
     </a>
-    
+
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
         <!-- Sidebar toggle button-->
@@ -100,12 +100,12 @@
         </div>
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      
+
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
 
         <li><a href="{{ URL ('/Mahasiswa/dashboard')}}"><i class="fa fa-book"></i> <span>Dashboard</span></a></li>
-        
+
 
         <li class="treeview">
           <a href="#">
@@ -157,7 +157,7 @@
                           </ul>
                       </li>
                   </ul>
-                  
+
                   <li class="treeview menu-open" style="display: block;">
                       <a href="#"><i class="fa fa-circle-o"></i> Kegiatan Eksternal
                         <span class="pull-right-container">
@@ -201,7 +201,7 @@
                     </ul>
                   </li>
                 </ul>
-                
+
 
         {{-- <li class="treeview">
           <a href="#">
@@ -267,7 +267,7 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-edit"></i> 
+            <i class="fa fa-edit"></i>
             <span>Rekap dokumentasi</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -302,7 +302,7 @@
              </ul>
             </li>
           </ul>
-        
+
         <li><a href="{{ URL ('/Mahasiswa/laporan') }}"><i class="fa fa-book"></i> <span>Laporan</span></a></li>
       </ul>
     </section>
@@ -312,7 +312,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    
+
     @yield('content')
   </div>
   <!-- /.content-wrapper -->
