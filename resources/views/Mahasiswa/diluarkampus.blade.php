@@ -33,7 +33,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                      <form action={{ url('/diluarkampus')}} method="post">
+                                      <form action={{ url('/Mahasiswa/diluarkampus')}} method="post">
                                             {{csrf_field()}}
                                             <div class="form-group">
                                               <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>

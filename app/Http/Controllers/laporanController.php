@@ -11,7 +11,7 @@ class laporanController extends Controller
     public function show()
     {
         $data =  laporan::all();
-        return view('/laporan',['data' => $data]);
+        return view('/Mahasiswa/laporan',['data' => $data]);
         return view('/laporanK',['data' => $data]);
     }
 
@@ -25,7 +25,7 @@ class laporanController extends Controller
         $laporan->status = $request->status;
         $laporan->save();
 
-        return redirect('/laporan');
+        return redirect('/Mahasiswa/laporan');
         return redirect('/laporanK');
         
     }

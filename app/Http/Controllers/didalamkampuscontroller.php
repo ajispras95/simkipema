@@ -28,18 +28,18 @@ class didalamkampusController extends Controller
         $di_dalam_kampus->save();
 
         return redirect('/Mahasiswa/didalamkampus')  ;
-        return redirect('/didalamkampusK')  ;
+
     }
 
     public function index()
     {
         $di_dalam_kampus = DB::table('di_dalam_kampus')->get();
-        return view('didalamkampus',['data'=> $di_dalam_kampus]);
+        return view('/Mahasiswa/didalamkampus',['data'=> $di_dalam_kampus]);
     }
 
     public function create()
    {
-       return view('/didalamkampus');
+       return view('/Mahasiswa/didalamkampus');
    }
 
    /**
@@ -50,7 +50,7 @@ class didalamkampusController extends Controller
     */
    public function store(Request $request)
    {
-       DB::table('di_dalam_kampus')->insert([
+       DB::table('/Mahasiswa/di_dalam_kampus')->insert([
 
        'nama_kegiatan' => $request->nama_kegiatan,
        'program_kerja_divisi' => $request->program_kerja_divisi,
@@ -62,7 +62,7 @@ class didalamkampusController extends Controller
        'scan_bukti' => $request->scan_bukti
        ]);
 
-       return redirect('/didalamkampus')->with('alert-success','Berhasil Menambahkan Data!');
+       return redirect('/Mahasiswa/didalamkampus')->with('alert-success','Berhasil Menambahkan Data!');
    }
     public function hapus($id)
     {

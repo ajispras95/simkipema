@@ -11,7 +11,7 @@ class diluarkampusController extends Controller
     public function show()
     {
         $data = di_luar_kampus::all();
-        return view('/diluarkampus', ['data' => $data]);
+        return view('/Mahasiswa/diluarkampus', ['data' => $data]);
     }
 
     public function insert(Request $request)
@@ -27,7 +27,7 @@ class diluarkampusController extends Controller
         $di_luar_kampus->scan_bukti = $request->scan_bukti;
         $di_luar_kampus->save();
 
-        return redirect('/diluarkampus')  ;
+        return redirect('/Mahasiswa/diluarkampus')  ;
     }
 
     public function hapus($id)

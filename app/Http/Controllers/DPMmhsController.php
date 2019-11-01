@@ -11,7 +11,7 @@ class DPMmhsController extends Controller
     public function show()
     {
         $data =  DPM_mhs::all();
-        return view('Mahasiswa/DPMmhs', ['data' => $data]);
+        return view('/lembaga/dpm/DPMmhs', ['data' => $data]);
     }
 
     public function insert(Request $request)

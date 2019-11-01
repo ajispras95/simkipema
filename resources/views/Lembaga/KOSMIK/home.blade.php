@@ -1,4 +1,3 @@
-@extends('layout.home')
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,30 +7,30 @@
   <title>Prestasi Mahasiswa | Home </title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="{{ ('template1/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ ('template1/bower_components/font-awesome/css/font-awesome.min.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/bower_components/font-awesome/css/font-awesome.min.css') }}">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="{{ ('template1/bower_components/Ionicons/css/ionicons.min.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/bower_components/Ionicons/css/ionicons.min.css') }}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ ('template1/dist/css/AdminLTE.min.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/dist/css/AdminLTE.min.css') }}">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="{{ ('template1/dist/css/skins/_all-skins.min.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/dist/css/skins/_all-skins.min.css') }}">
   <!-- Morris chart -->
-  <link rel="stylesheet" href="{{ ('template1/bower_components/morris.js/morris.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/bower_components/morris.js/morris.css') }}">
   <!-- jvectormap -->
-  <link rel="stylesheet" href="{{ ('template1/bower_components/jvectormap/jquery-jvectormap.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/bower_components/jvectormap/jquery-jvectormap.css') }}">
   <!-- Date Picker -->
-  <link rel="stylesheet" href="{{ ('template1/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="{{ ('template1/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
   <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="{{ ('template1/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
+  <link rel="stylesheet" href="{{ url('template1/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
 
   <!-- Tambahan CSS -->
   <link rel="stylesheet" href="{{ URL('css/user/user.css') }}">
+
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -41,7 +40,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="{{ URL ('/dashboardK')}}" class="logo">
+    <a href="{{ URL ('/lembaga/kosmik/dashboard')}}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>UII</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -73,7 +72,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="{{ URL ('/profilK')}} " class="btn btn-default btn-flat">Profile</a>
+                  <a href="{{ URL ('/lembaga/kosmik/profil')}} " class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
                   <a href="{{ URL ('/login')}}" class="btn btn-default btn-flat">Sign out</a>
@@ -105,7 +104,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
 
-        <li><a href="{{ URL ('/dashboardK')}}"><i class="fa fa-book"></i> <span>Dashboard</span></a></li>
+        <li><a href="{{ URL ('/lembaga/kosmik/dashboard')}}"><i class="fa fa-book"></i> <span>Dashboard</span></a></li>
 
         <li class="treeview">
           <a href="#">
@@ -118,8 +117,8 @@
           <ul class="treeview-menu">
             <li class="treeview menu-open" style="display: block;">
               <ul class="treeview-menu" style="display: block;">
-                  <li><a href="{{ URL ('/didalamkampusK') }}"> Di dalam kampus</a></li>
-                  <li><a href="{{ URL ('/diluarkampusK') }}"> Di luar kampus</a></li>
+                  <li><a href="{{ URL ('/lembaga/kosmik/didalamkampus') }}"> Di dalam kampus</a></li>
+                  <li><a href="{{ URL ('/lembaga/kosmik/diluarkampus') }}"> Di luar kampus</a></li>
                 </ul>
               </li>
             </ul>
@@ -141,8 +140,8 @@
                         </a>
                         <ul class="treeview-menu">
                         <li class="treeview-menu" style="display: block;">
-                            <li><a href="{{ URL ('/prestasiK') }}"> Di dalam kampus</a></li>
-                            <li><a href="{{ URL ('/prestasiK') }}"> Di luar kampus</a></li>
+                            <li><a href="{{ URL ('/lembaga/kosmik/prestasi') }}"> Di dalam kampus</a></li>
+                            <li><a href="{{ URL ('/lembaga/kosmik/prestasi') }}"> Di luar kampus</a></li>
                         </li>
                       </ul>
                       <li class="treeview menu-open" style="display: block;">
@@ -153,8 +152,8 @@
                         </a>
                         <ul class="treeview-menu">
                         <li class="treeview-menu" style="display: block;">
-                            <li><a href="{{ URL ('/prestasiK') }}"> Di dalam kampus</a></li>
-                            <li><a href="{{ URL ('/prestasiK') }}"> Di luar kampus</a></li>
+                            <li><a href="{{ URL ('/lembaga/kosmik/prestasi') }}"> Di dalam kampus</a></li>
+                            <li><a href="{{ URL ('/lembaga/kosmik/prestasi') }}"> Di luar kampus</a></li>
                         </li>
                       </ul>
                       <li class="treeview menu-open" style="display: block;">
@@ -165,8 +164,8 @@
                         </a>
                         <ul class="treeview-menu">
                         <li class="treeview-menu" style="display: block;">
-                            <li><a href="{{ URL ('/prestasiK') }}"> Di dalam kampus</a></li>
-                            <li><a href="{{ URL ('/prestasiK') }}"> Di luar kampus</a></li>
+                            <li><a href="{{ URL ('/lembaga/kosmik/prestasi') }}"> Di dalam kampus</a></li>
+                            <li><a href="{{ URL ('/lembaga/kosmik/prestasi') }}"> Di luar kampus</a></li>
                         </li>
                       </ul>
                     </li>
@@ -182,14 +181,14 @@
                     </a>
                     <ul class="treeview-menu">
                       <li class="treeview menu-open" style="display: block;">
-                          <a href="{{ URL ('/DokumentasiInternalK') }}"></i> dokumentasi Internal
+                          <a href="{{ URL ('/lembaga/kosmik/DokumentasiInternal') }}"></i> dokumentasi Internal
                           </a>
                       <li class="treeview menu-open" style="display: block;">
-                          <a href="{{ URL ('/DokumentasiEksternalK') }}"></i> dokumentasi Eksternal
+                          <a href="{{ URL ('/lembaga/kosmik/DokumentasiEksternal') }}"></i> dokumentasi Eksternal
                           </a>
                       </li>
                     </ul>
-                  <li><a href="{{ URL ('/laporanK') }}"><i class="fa fa-book"></i> <span>Laporan</span></a></li>
+                  <li><a href="{{ URL ('/lembaga/kosmik/laporan') }}"><i class="fa fa-book"></i> <span>Laporan</span></a></li>
                 </ul>
               </section>
     <!-- /.sidebar -->

@@ -27,23 +27,23 @@ Route::get('/dashboard', function () {
 
 Route::get('/centris/dashboard', function () {
     return view('/lembaga/centris/dashboard');
-})->name('login')->middleware('auth:centris');
+})->name('login')->middleware('auth:CENTRIS');
 
 Route::get('/uasc/dashboard', function () {
     return view('/lembaga/uasc/dashboard');
-})->name('login')->middleware('auth:uasc');
+})->name('login')->middleware('auth:UASC');
 
-Route::get('/kosmik/dashboard', function () {
+Route::get('/lembaga/kosmik/dashboard', function () {
     return view('/lembaga/kosmik/dashboard');
-})->name('login')->middleware('auth:kosmik');
+})->name('login')->middleware('auth:KOSMIK');
 
 Route::get('/himmah/dashboard', function () {
     return view('/lembaga/himmah/dashboard');
-})->name('login')->middleware('auth:himmah');
+})->name('login')->middleware('auth:HIMMAH');
 
 Route::get('/dpm/dashboard', function () {
     return view('/lembaga/dpm/dashboard');
-})->name('login')->middleware('auth:dpm');
+})->name('login')->middleware('auth:DPM');
 
 Route::get('/didalamkampus', function () {
     return view('/Mahasiswa/didalamkampus');
@@ -206,16 +206,17 @@ Route::get('/uploaddoknona', function () {
 
 // Route::get('/LEMmhs', "LEMmhsController@show");
 
-Route::get('Mahasiswa/didalamkampus', "didalamkampusController@show");
+Route::get('/Mahasiswa/didalamkampus', "didalamkampusController@show");
+Route::post('/Mahasiswa/didalamkampus', "didalamkampusController@store");
 Route::get('/lembaga/kosmik/didalamkampus', "didalamkampusController@show");
 Route::get('/lembaga/centris/didalamkampus', "didalamkampusController@show");
 Route::get('/lembaga/uasc/didalamkampus', "didalamkampusController@show");
 Route::get('/lembaga/dpm/didalamkampus', "didalamkampusController@show");
 Route::get('/lembaga/himmah/didalamkampus', "didalamkampusController@show");
-Route::post('/didalamkampus/{route->get}','didalamkampusController@show');
-Route::get('/lembaga/didalamkampus', "didalamkampusController@index");
+Route::post('/lembaga/didalamkampus/{route->get}',"didalamkampusController@show");
+Route::get('/lembaga/kosmik/didalamkampus', "didalamkampusController@index");
 Route::post('/lembaga/didalamkampus','didalamkampusController@store');
-Route::post('/kosmik/didalamkampusK','didalamkampusController@store');
+Route::post('/lembaga/kosmik/didalamkampus',"didalamkampusController@store");
 
 Route::get('/Mahasiswa/diluarkampus', "diluarkampusController@show");
 Route::get('/lembaga/kosmik/diluarkampus', "diluarkampusController@show");

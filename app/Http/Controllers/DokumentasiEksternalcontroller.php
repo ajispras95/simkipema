@@ -11,7 +11,7 @@ class DokumentasiEksternalController extends Controller
     public function show()
     {
         $data =  dokumentasi_eksternal::all();
-        return view('/DokumentasiEksternal', ['data' => $data]);
+        return view('/Mahasiswa/dokumentasieksternal', ['data' => $data]);
     }
 
     public function insert(Request $request)
@@ -24,7 +24,7 @@ class DokumentasiEksternalController extends Controller
         $dokumentasi_eksternal->status = $request->status;
         $dokumentasi_eksternal->save();
 
-        return redirect('/DokumentasiEksternal')  ;
+        return redirect('/Mahasiswa/dokumentasieksternal')  ;
     }
     // public function __construct()
     // {
