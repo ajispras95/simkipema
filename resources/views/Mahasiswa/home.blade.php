@@ -275,7 +275,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="treeview menu-open" style="display: block;">
-                <a href="#"><i class="fa fa-circle-o"></i>dokumentasi Internal
+                <a href="#"><i class="fa fa-circle-o"></i>Dokumentasi Internal
                   <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                   </span>
@@ -288,7 +288,7 @@
               </li>
             </ul>
             <li class="treeview menu-open" style="display: block;">
-                <a href="#"><i class="fa fa-circle-o"></i> dokumentasi Eksternal
+                <a href="#"><i class="fa fa-circle-o"></i> Dokumentasi Eksternal
                   <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                   </span>

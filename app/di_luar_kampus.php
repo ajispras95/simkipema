@@ -14,6 +14,9 @@ class di_luar_kampus extends Model
     protected $table = 'di_luar_kampus';
     public $incrementing = false;
 
+    public function user(){
+        return $this->hasOne(User::class, 'di_luar_kampus');
+    }
     /**
      * The attributes that are mass assignable.
      *

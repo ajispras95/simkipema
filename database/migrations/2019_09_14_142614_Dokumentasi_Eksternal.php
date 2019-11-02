@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class DokumentasiEksternal extends Migration
+class dokumentasieksternal extends Migration
 {
     /**
      * Run the migrations.
@@ -18,11 +18,20 @@ class DokumentasiEksternal extends Migration
             $table->increments('id');
             $table->string('nama_organisasi');
             $table->string('nama_kegiatan');
-            $table->increments('Juara');
-            $table->timestamps('Tanggal_Kegiatan');
-            $table->string('Angkatan');
-            $table->string('Status');
+            $table->increments('juara');
+            $table->timestamps('tanggal_kegiatan');
+            $table->string('angkatan');
+            $table->string('status');
         });
+
+        Schema::table('dokumentasi_eksternal', function (Blueprint $table){
+            $table->unsignedInteger('nama_kegiatan');
+            $table->foreign('nama_kegiatan')->references('id')->on('confirms');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+        });
+
+
     }
 
     /**
@@ -35,3 +44,4 @@ class DokumentasiEksternal extends Migration
         Schema::dropIfExists('dokumentasi_eksternal');
     }
 }
+

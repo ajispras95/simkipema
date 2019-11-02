@@ -12,6 +12,11 @@ class dokumentasi_internal extends Model
      * @var string
      */
     protected $table = 'dokumentasi_internal';
+    public $incrementing = false;
+
+    public function user(){
+        return $this->hasOne(User::class, 'dokumentasi_internal');
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -19,6 +24,6 @@ class dokumentasi_internal extends Model
      * @var array
      */
     protected $fillable = [
-        'nama_organisasi', 'nama_kegiatan', 'Juara', 'tanggal_kegiatan', 'Angkatan','Status', 
+        'nama_organisasi', 'nama_kegiatan', 'juara', 'tanggal_kegiatan', 'angkatan','status', 
     ];
 }

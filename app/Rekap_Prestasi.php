@@ -4,21 +4,25 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Rekap_Prestasi extends Model
+class rekap_prestasi extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'Rekap_Prestasi';
+    protected $table = 'rekap_prestasi';
+    public $incrementing = false;
 
+    public function user(){
+        return $this->hasOne(User::class,'rekap_prestasi');
+    }
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'nama_peserta', 'nama_organisasi', 'nama_kegiatan', 'Juara', 'nama_lomba', 'tanggal_kegiatan', 'angkatan', 
+        'nama_organisasi', 'nama_kegiatan', 'juara', 'nama_lomba', 'tanggal_kegiatan', 'angkatan', 
     ];
 }

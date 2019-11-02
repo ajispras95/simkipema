@@ -19,6 +19,7 @@ class diluarkampus extends Migration
             $table->increments('id');
             
             $table->string('nama_kegiatan');
+            $table->string('dosen_pembimbing');
             $table->string('program_kerja_divisi');
             $table->string('predikat');
             $table->date('waktu_pelaksanaan');

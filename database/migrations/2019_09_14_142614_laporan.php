@@ -63,6 +63,13 @@ class laporan extends Migration
             $table->boolean('status');
             $table->timestamps();
         });
+
+        Schema::table('laporan', function (Blueprint $table){
+            $table->unsignedInteger('nama_kegiatan');
+            $table->foreign('nama_kegiatan')->references('id')->on('confirms');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+        });
     }
 
     /**

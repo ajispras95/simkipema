@@ -12,6 +12,11 @@ class dokumentasi_eksternal extends Model
      * @var string
      */
     protected $table = 'dokumentasi_eksternal';
+    public $incrementing = false;
+
+    public function user(){
+        return $this->hasOne(User::class, 'dokumentasi_eksternal');
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -19,6 +24,6 @@ class dokumentasi_eksternal extends Model
      * @var array
      */
     protected $fillable = [
-        'nama_organisasi', 'nama_kegiatan', 'Juara', 'tanggal_kegiatan', 'Angkatan','Status', 
+        'nama_organisasi', 'nama_kegiatan', 'juara', 'tanggal_kegiatan','angkatan','status', 
     ];
 }

@@ -50,7 +50,7 @@ class didalamkampusController extends Controller
     */
    public function store(Request $request)
    {
-       DB::table('/Mahasiswa/di_dalam_kampus')->insert([
+       DB::table('di_dalam_kampus')->insert([
 
        'nama_kegiatan' => $request->nama_kegiatan,
        'program_kerja_divisi' => $request->program_kerja_divisi,

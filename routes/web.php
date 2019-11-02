@@ -219,29 +219,38 @@ Route::post('/lembaga/didalamkampus','didalamkampusController@store');
 Route::post('/lembaga/kosmik/didalamkampus',"didalamkampusController@store");
 
 Route::get('/Mahasiswa/diluarkampus', "diluarkampusController@show");
+Route::post('/Mahasiswa/diluarkampus', "diluarkampusController@store");
 Route::get('/lembaga/kosmik/diluarkampus', "diluarkampusController@show");
 Route::get('/lembaga/centris/diluarkampus', "diluarkampusController@show");
 Route::get('/lembaga/uasc/diluarkampus', "diluarkampusController@show");
 Route::get('/lembaga/dpm/diluarkampus', "diluarkampusController@show");
 Route::get('/lembaga/himmah/diluarkampus', "diluarkampusController@show");
 Route::post('/diluarkampus/{route->get}','diluarkampusController@show');
+Route::get('/lembaga/kosmik/diluarkampus', "diluarkampusController@index");
+Route::post('/lembaga/diluarkampus','diluarkampusController@store');
+Route::post('/lembaga/kosmik/diluarkampus',"diluarkampusController@store");
 
-Route::get('/Mahasiswa/prestasi', "RekapPrestasiController@show");
-Route::get('/lembaga/kosmik/prestasi', "RekapPrestasiController@show");
-Route::get('/lembaga/centris/prestasi', "RekapPrestasiController@show");
-Route::get('/lembaga/uasc/prestasi', "RekapPrestasiController@show");
-Route::get('/lembaga/dpm/prestasi', "RekapPrestasiController@show");
-Route::get('/lembaga/himmah/prestasi', "RekapPrestasiController@show");
-Route::post('/prestasi/{route->get}', 'RekapPrestasiController@show');
+Route::get('/Mahasiswa/prestasi', "rekapprestasiController@show");
+Route::post('/Mahasiswa/prestasi', "rekapprestasiController@store");
+Route::get('/lembaga/kosmik/prestasi', "rekapprestasiController@show");
+Route::get('/lembaga/centris/prestasi', "rekapprestasiController@show");
+Route::get('/lembaga/uasc/prestasi', "rekapprestasiController@show");
+Route::get('/lembaga/dpm/prestasi', "rekapprestasiController@show");
+Route::get('/lembaga/himmah/prestasi', "rekapprestasiController@show");
+Route::post('/prestasi/{route->get}', 'rekapprestasiController@show');
+Route::get('/Mahasiswa/prestasi', "rekapprestasiController@index");
 
 Route::get('/Mahasiswa/dokumentasiinternal', "dokumentasiinternalController@show");
+Route::post('/Mahasiswa/dokumentasiinternal', "dokumentasiinternalController@store");
 Route::get('/lembaga/kosmik/dokumentasiinternal', "dokumentasiinternalController@show");
 Route::get('/lembaga/centris/dokumentasiinternal', "dokumentasiinternalController@show");
 Route::get('/lembaga/uasc/dokumentasiinternal', "dokumentasiinternalController@show");
 Route::get('/lembaga/dpm/dokumentasiinternal', "dokumentasiinternalController@show");
 Route::get('/lembaga/himmah/dokumentasiinternal', "dokumentasiinternalController@show");
 Route::post('/dokumentasiinternal/{route->get}', "dokumentasiinternalController@show");
+Route::get('/Mahasiswa/dokumentasiinternal', "dokumentasiinternalController@index");
 
+Route::post('/Mahasiswa/dokumentasieksternal', "dokumentasieksternalController@store");
 Route::get('/Mahasiswa/dokumentasieksternal', "dokumentasieksternalController@show");
 Route::get('/lembaga/kosmik/dokumentasieksternal', "dokumentasieksternalController@show");
 Route::get('/lembaga/centris/dokumentasieksternal', "dokumentasieksternalController@show");
@@ -249,14 +258,17 @@ Route::get('/lembaga/uasc/dokumentasieksternal', "dokumentasieksternalController
 Route::get('/lembaga/dpm/dokumentasieksternal', "dokumentasieksternalController@show");
 Route::get('/lembaga/himmah/dokumentasieksternal', "dokumentasieksternalController@show");
 Route::post('/dokumentasieksternal/{route->get}', "dokumentasieksternalController@show");
+Route::get('/Mahasiswa/dokumentasieksternal', "dokumentasieksternalController@index");
 
 Route::get('/Mahasiswa/laporan', "laporanController@show");
+Route::post('/Mahasiswa/laporan', "laporanController@store");
 Route::get('/lembaga/kosmiklaporan', "laporanController@show");
 Route::get('/lembaga/centris/laporan', "laporanController@show");
 Route::get('/lembaga/uasc/laporan', "laporanController@show");
 Route::get('/lembaga/dpm/laporan', "laporanController@show");
 Route::get('/lembaga/himmah/laporan', "laporanController@show");
 Route::post('/laporan/{route->get}', "laporanController@show");
+Route::get('/Mahasiswa/laporan', "laporanController@index");
 
 // // Route::get('/DPMmhs', "DPMmhsController@show");
 

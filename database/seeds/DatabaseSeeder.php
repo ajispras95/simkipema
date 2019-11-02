@@ -14,6 +14,11 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UsersTableSeeder::class);
         $this->call(didalamkampusController::class); 
+        $this->call(diluarkampusController::class);
+        $this->call(dokumentasieksternalController::class); 
+        $this->call(dokumentasiinternalController::class);
+        $this->call(rekapprestasiController::class); 
+        $this->call(laporanController::class); 
 
             //
             $faker = Faker\Factory::create(); //import library faker
