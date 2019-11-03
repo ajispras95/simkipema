@@ -13,7 +13,6 @@ class laporanController extends Controller
     {
         $data =  laporan::all();
         return view('/Mahasiswa/laporan',['data' => $data]);
-        return view('/laporanK',['data' => $data]);
     }
 
     public function insert(Request $request)
@@ -27,7 +26,6 @@ class laporanController extends Controller
         $laporan->save();
 
         return redirect('/Mahasiswa/laporan');
-        return redirect('/laporanK');
         
     }
 

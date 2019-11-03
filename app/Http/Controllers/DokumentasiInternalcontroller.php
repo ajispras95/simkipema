@@ -27,6 +27,7 @@ class dokumentasiinternalController extends Controller
         $dokumentasi_internal->save();
 
         return redirect('/Mahasiswa/dokumentasiinternal')  ;
+       
     }
     public function index()
     {

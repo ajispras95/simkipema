@@ -33,7 +33,7 @@
                           </button>
                       </div>
                       <div class="modal-body">
-                          <form action="/controller/inputformController" method="post">
+                          <form action="/lembaga/kosmik/prestasi" method="post">
                               {{csrf_field()}}
                               {{-- <div class="form-group">
                                   <label for="recipient-name" class="col-form-label">NIM</label>

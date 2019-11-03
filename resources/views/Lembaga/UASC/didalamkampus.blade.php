@@ -1,4 +1,4 @@
-@extends('lembaga.kosmik.home')
+@extends('lembaga.uasc.home')
 
 @section('tab-title')
 <title>Kegiatan | Internal</title>

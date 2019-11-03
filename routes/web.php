@@ -25,11 +25,11 @@ Route::get('/dashboard', function () {
     return view('/Mahasiswa/dashboard');
 })->name('login')->middleware('auth:mahasiswa');
 
-Route::get('/centris/dashboard', function () {
+Route::get('/lembaga/centris/dashboard', function () {
     return view('/lembaga/centris/dashboard');
 })->name('login')->middleware('auth:CENTRIS');
 
-Route::get('/uasc/dashboard', function () {
+Route::get('/lembaga/uasc/dashboard', function () {
     return view('/lembaga/uasc/dashboard');
 })->name('login')->middleware('auth:UASC');
 
@@ -37,11 +37,11 @@ Route::get('/lembaga/kosmik/dashboard', function () {
     return view('/lembaga/kosmik/dashboard');
 })->name('login')->middleware('auth:KOSMIK');
 
-Route::get('/himmah/dashboard', function () {
+Route::get('/lembaga/himmah/dashboard', function () {
     return view('/lembaga/himmah/dashboard');
 })->name('login')->middleware('auth:HIMMAH');
 
-Route::get('/dpm/dashboard', function () {
+Route::get('/lembaga/dpm/dashboard', function () {
     return view('/lembaga/dpm/dashboard');
 })->name('login')->middleware('auth:DPM');
 
@@ -159,9 +159,9 @@ Route::get('/KegiatanEksternaldmin', function () {
 |--------------------------------------------------------------------------
 */
 
-// Route::get('/', function () {
-//     return view('Mahasiswa/dashboard');
-// });
+Route::get('/', function () {
+    return view('Mahasiswa/dashboard');
+});
 
 Route::get('/Mahasiswa', function () {
     return view('Mahasiswa/mahasiswa');
@@ -262,7 +262,7 @@ Route::get('/Mahasiswa/dokumentasieksternal', "dokumentasieksternalController@in
 
 Route::get('/Mahasiswa/laporan', "laporanController@show");
 Route::post('/Mahasiswa/laporan', "laporanController@store");
-Route::get('/lembaga/kosmiklaporan', "laporanController@show");
+Route::get('/lembaga/kosmik/laporan', "laporanController@show");
 Route::get('/lembaga/centris/laporan', "laporanController@show");
 Route::get('/lembaga/uasc/laporan', "laporanController@show");
 Route::get('/lembaga/dpm/laporan', "laporanController@show");

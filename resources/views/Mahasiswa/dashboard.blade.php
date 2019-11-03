@@ -1,4 +1,4 @@
-@extends('Mahasiswa/home')
+@extends('Mahasiswa.home')
 
 @section('tab-title')
 <title>Halaman | Mahasiswa</title>

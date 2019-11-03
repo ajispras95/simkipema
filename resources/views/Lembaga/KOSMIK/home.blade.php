@@ -180,12 +180,8 @@
                       </span>
                     </a>
                     <ul class="treeview-menu">
-                      <li class="treeview menu-open" style="display: block;">
-                          <a href="{{ URL ('/lembaga/kosmik/DokumentasiInternal') }}"></i> dokumentasi Internal
-                          </a>
-                      <li class="treeview menu-open" style="display: block;">
-                          <a href="{{ URL ('/lembaga/kosmik/DokumentasiEksternal') }}"></i> dokumentasi Eksternal
-                          </a>
+                      <li><a href="{{ URL ('/lembaga/kosmik/dokumentasiinternal') }}"><i class="fa fa-circle-o"></i> Dokumentasi Internal</a></li>
+                      <li><a href="{{ URL ('/lembaga/kosmik/dokumentasieksternal') }}"><i class="fa fa-circle-o"></i> Dokumentasi Eksternal</a></li>
                       </li>
                     </ul>
                   <li><a href="{{ URL ('/lembaga/kosmik/laporan') }}"><i class="fa fa-book"></i> <span>Laporan</span></a></li>

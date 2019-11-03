@@ -1,4 +1,5 @@
 @extends('lembaga.kosmik.home')
+
 @section('tab-title')
 <title>Dokumentasi | Eksternal</title>
 @endsection
@@ -32,36 +33,47 @@
                                   </button>
                               </div>
                               <div class="modal-body">
-                                  <form action="/eo/create" method="post">
+                                <form action={{ url('/lembaga/kosmik/dokumentasieksternal')}} method="post">
                                       {{csrf_field()}}
-                                      <div class="form-group">
-                                          <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>
-                                          <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Event Name">
-                                      </div>
+                                      @if(count($errors) > 0)
+                                        <div class="alert alert-danger">
+                                            @foreach ($errors->all() as $error)
+                                            {{ $error }} <br/>
+                                            @endforeach
+                                        </div>
+                                        @endif
                                       <label>Nama Organisasi</label>
-                                      <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                      <select class="form-control select2 select2-hidden-accessible" name="nama_organisasi" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                         <option value="Informatika">Himpunan Teknik Informatika</option>
                                         <option value="Mobil listrik">UASC UII</option>
                                         <option value="Lem f">LEM F UII</option>
                                         <option value="Industri">Himpunan Teknik Industri</option>
                                         <option value="Mesin">Himpunan Teknik Mesin</option>
                                     </select> 
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Nama Kegiatan</label>
+                                        <input type="text" name="nama_kegiatan" class="form-control" id="recipient-name" placeholder="Event Name">
+                                    </div>
                                       <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Kejuaraan</label>
-                                        <input type="text" name="kejuaraan" class="form-control" id="recipient-name" placeholder="Juara satu">
+                                        <input type="text" name="juara" class="form-control" id="recipient-name" placeholder="Juara satu">
                                     </div>
                                     <div class="form-group">
                                       <label for="recipient-name" class="col-form-label">Tanggal Kegiatan</label>
-                                      <input type="text" name="tanggal kejuaraan" class="form-control" id="recipient-name" placeholder="26 Maret 2018">
+                                      <input type="text" name="tanggal_kegiatan" class="form-control" id="recipient-name" placeholder="26 Maret 2018">
                                   </div>
                                   <label>Angkatan</label>
-                                      <select class="form-control select2 select2-hidden-accessible" name="category" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                      <select class="form-control select2 select2-hidden-accessible" name="angkatan" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                           <option value="2010">2010</option>
                                           <option value="2011">2011</option>
                                           <option value="2012">2012</option>
                                           <option value="2013">2013</option>
                                           <option value="2014">2014</option>
                                       </select>
+                                      <div class="form-group">
+                                          <label for="recipient-name" class="col-form-label">Status</label>
+                                          <input type="text" name="status" class="form-control" id="recipient-name" placeholder="26 Maret 2018">
+                                      </div>
                                       <div class="form-group">
                                         <label for="exampleInputFile">File input</label>
                                         <input type="file" id="exampleInputFile">
@@ -93,15 +105,16 @@
                           </tr>
                           </thead>
                           <tbody>
+                              @php $no = 1; @endphp
                             @foreach ($data as $d)
                         <tr>
                           <td> {{ $d->id }}</td>
                           <td> {{ $d->nama_organisasi }}</td>
                           <td> {{ $d->nama_kegiatan }}</td>
-                          <td> {{ $d->Juara }}</td>
-                          <td> {{ $d->Tanggal_Kegiatan }}</td>                                
-                          <td> {{ $d->Angkatan }}</td>
-                          <td> {{ $d->Status }}</td>
+                          <td> {{ $d->juara }}</td>
+                          <td> {{ $d->tanggal_kegiatan }}</td>                                
+                          <td> {{ $d->angkatan }}</td>
+                          <td> {{ $d->status }}</td>
                           <td>
                               <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
                                   Detail 
