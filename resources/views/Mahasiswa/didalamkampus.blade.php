@@ -130,9 +130,9 @@
                                             <button type="button" class="" data-toggle="modal" data-target="#Edit" data-whatever="@mdo">
                                                 Edit 
                                               </button>
-                                              <button type="button" class="" data-toggle="modal" data-target="#hapus" data-whatever="@mdo">
-                                                Hapus
+                                              <button> <a href="/Mahasiswa/didalamkampus/{{ $d->id }}" value="hapus">Hapus</a>
                                                 </button>
+                                                
                                   </tr>
                                   @endforeach
                               </tbody>
@@ -146,12 +146,28 @@
                       <!-- /.col -->
                     </div>
                     <script>
+                        function hapus(didalamkampus, id){
+                            didalamkampus.preventDefault()
+                            swal({
+                                title: "Are you sure to accept?",
+                                text: "Please make an agreement by phone or email before accepting an offer",
+                                icon: "warning",
+                                closeOnClickOutside: true,
+                                buttons: ["hapus", "Accept"],
+                            }).then((willDelete) => {
+                                if(willDelete){
+                                    $("#hapus-"+id).submit()
+                                }
+                            })
+                        }
+                    </script>
+                    <script>
                     var request;
 
-                      $("#tambahkegiatan").click(function(event)
-                      $("#Hapus").click(function(event)
-                      $("#Edit").click(function(event)
-                      $("#Detail").click(function(event){
+                      $("#tambahkegiatan").click(function(didalamkampus)
+                      $("#Hapus").click(function(didalamkampus)
+                      $("#Edit").click(function(didalamkampus)
+                      $("#Detail").click(function(didalamkampus){
                         var user = $('#user').val();
                         var password = $('#pw').val();
                         var token = $("input[name=_token]").val();

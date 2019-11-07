@@ -99,45 +99,151 @@
   </nav> --}}
 
     <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-        <!-- Sidebar toggle button-->
-        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-          <span class="sr-only">Toggle navigation</span>
-        </a>
-        <div class="navbar-custom-menu">
-          <ul class="nav navbar-nav">
-            <li class="dropdown user user-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{ URL ('template1/dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
-              <div class="navbar-header">
-                  <ul class="nav navbar-nav">
-              <span class="hidden-xs">{{Auth::user()->name}}</span>
-              </div>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="{{ URL ('template1/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
-                <p>
-                 {{Auth::user()->name}} 
-                  <small>{{Auth::user()->name}}</small>
-                </p>
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="{{Auth::user()->location}} " class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="{{ URL ('/login')}}" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+                    <nav class="navbar navbar-static-top">
+                        <div class="container">
+                            <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                                <ul class="nav navbar-nav"
+                                    @if({{Auth::user()->name)
+                                        <li><a href="{{ URL ('/lembaga/centris/home') }}">centris</a></li>
+                                        <li><a href="{{ URL ('/lembaga/dpm/home') }}">dpm</a></li>
+                                        <li><a href="{{ URL ('/lembaga/kosmik/home') }}">kosmik</a></li>
+                                        <li><a href="{{ URL ('/lembaga/himmah/home') }}">himmah</a></li>
+                                        <li><a href="{{ URL ('/lembaga/uasc/home') }}">uasc</a></li>
+                                        <li class="dropdown">
+                                            <a href="{{ URL('') }}" class="dropdown-toggle" data-toggle="dropdown">Sponsorship<span class="caret"></span></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li>
+                                                    <a href="{{ URL ('/eo/sponsorship/dashboard') }}" class="header-list-menu">
+                                                        <span class="fa fa-home"></span>
+                                                        Dashboard
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ URL ('/eo/sponsorship/incoming') }}" class="header-list-menu">
+                                                        <span class="fa fa-list"></span>
+                                                        Incoming Sponsor
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ URL ('/eo/sponsorship/waiting') }}" class="header-list-menu">
+                                                        <span class="fa fa-clock-o"></span>
+                                                        Waiting Sponsor
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ URL ('/eo/sponsorship/accepted') }}" class="header-list-menu">
+                                                        <span class="fa fa-check-square"></span>
+                                                        Accepted Sponsor
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ URL ('/eo/sponsorship/rejected') }}" class="header-list-menu">
+                                                        <span class="fa fa-exclamation-circle"></span>
+                                                        Rejected Sponsor
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    @else
+                                        <li><a href="{{ URL ('/partner/event/explore') }}">Events</a></li>
+                                        <li class="dropdown">
+                                            <a href="{{ URL('') }}" class="dropdown-toggle" data-toggle="dropdown">Sponsorship<span class="caret"></span></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li>
+                                                    <a href="{{ URL ('/partner/sponsorship/dashboard') }}" class="header-list-menu">
+                                                        <span class="fa fa-home"></span>
+                                                        Dashboard
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ URL ('/partner/sponsorship/incoming') }}" class="header-list-menu">
+                                                        <span class="fa fa-list"></span>
+                                                        Incoming Sponsor
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ URL ('/partner/sponsorship/waiting') }}" class="header-list-menu">
+                                                        <span class="fa fa-clock-o"></span>
+                                                        Waiting Sponsor
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ URL ('/partner/sponsorship/accepted') }}" class="header-list-menu">
+                                                        <span class="fa fa-check-square"></span>
+                                                        Accepted Sponsor
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ URL ('/partner/sponsorship/rejected') }}" class="header-list-menu">
+                                                        <span class="fa fa-exclamation-circle"></span>
+                                                        Rejected Sponsor
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    @endif
+    
+                                </ul>
+                            </div>
+    
+                            <div class="navbar-custom-menu">
+                                <ul class="nav navbar-nav">
+                        
+                                    <!-- User Account Menu -->
+                                    <li class="dropdown user user-menu">
+                                        <!-- Menu Toggle Button -->
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <!-- The user image in the navbar-->
+                                            @if($userLogin->photoava)
+                                                <img src="{{ URL('upload/ava/'.$userLogin->photoava) }}" class="user-image" alt="User Image">
+                                            @else
+                                                <img src="{{ URL('main_template/dist/img/avatar04.png') }}" class="user-image" alt="User Image">
+                                            @endif
+                                            <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                            <span class="hidden-xs">{{ $userLogin->name }}</span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <!-- The user image in the menu -->
+                                            <li class="user-header">
+                                                @if($userLogin->photoava)
+                                                    <img src="{{ URL('upload/ava/'.$userLogin->photoava) }}" class="img-circle" alt="User Image">
+                                                @else
+                                                    <img src="{{ URL('main_template/dist/img/avatar04.png') }}" class="img-circle" alt="User Image">
+                                                @endif
+                                                <p>
+                                                    {{ $userLogin->name }}
+                                                    @if($userLogin->role == 'EO')
+                                                        <small>As Event Organizer</small>
+                                                    @else
+                                                        <small>As Sponsor</small>
+                                                    @endif
+                                                </p>
+                                            </li>
+                                            
+                                            <!-- Menu Footer-->
+                                            <li class="user-footer">
+                                                <div class="pull-left">
+                                                    @if($userLogin->role == 'EO')
+                                                        <a href="{{ URL('/eo/profile') }}" class="btn btn-default btn-flat">Profile</a>
+                                                    @else
+                                                        <a href="{{ URL('/partner/profil') }}" class="btn btn-default btn-flat">Profile</a>
+                                                    @endif
+                                                </div>
+                                                <div class="pull-right">
+                                                    <a onclick="logout(event)" class="btn btn-default btn-flat">Sign out</a>
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                                        {{ csrf_field() }}
+                                                    </form>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+    
 
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">

@@ -150,15 +150,17 @@
                                   <td> Jepang</td>
                                   <td> viewed / Not Seen</td>
                                   <td> --}}
+                                      @foreach ($data as $d)
                                       <button type="button" class="" data-toggle="modal" data-target="#Detail" data-whatever="@mdo">
                                           Detail 
                                         </button>
                                         <button type="button" class="" data-toggle="modal" data-target="#Edit" data-whatever="@mdo">
                                             Edit 
                                           </button>
-                                          <button type="button" class="" data-toggle="modal" data-target="#hapus" data-whatever="@mdo">
+                                          <button href="/Mahasiswa/didalamkampus/hapus/{{ $d->id }}">
                                             Hapus
                                             </button>
+                                            @endforeach
                                   {{-- </td>
                                 </tr>
                                 <td> 2</td>

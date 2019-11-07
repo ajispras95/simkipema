@@ -10,16 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes(); 
 
 Route::get('/login',"Auth\LoginController@index");
 Route::get('/register','Auth\RegisterController@create');
 Route::get('/logout', 'Auth\LogoutUser@logout');
 Route::post('/authenticate', 'Auth\LoginController@authenticate');
 
-Route::get('/dashboardmin', function () {
-    return view('Admin/dashboardmin');
-})->name('login')->middleware('auth:Admin');
+
+// Route::group(['middleware' => 'auth'],function(){
+
+
 
 Route::get('/dashboard', function () {
     return view('/Mahasiswa/dashboard');
@@ -48,6 +49,13 @@ Route::get('/lembaga/dpm/dashboard', function () {
 Route::get('/didalamkampus', function () {
     return view('/Mahasiswa/didalamkampus');
 })->name('login')->middleware('auth:mahasiswa');
+
+
+//admin
+Route::get('/dashboardmin', function () {
+    return view('Admin/dashboardmin');
+})->name('login')->middleware('auth:Admin');
+
 
 Route::get('/mahasiswa', function () {
     return view('Admin/mahasiswa');
@@ -112,11 +120,9 @@ Route::get('/laporandmin', function () {
     return view('Admin/laporandmin');
 });
 
-
 Route::get('/uploadproposal', function () {
     return view('Admin/uploadproposal');
 });
-
 
 Route::get('/uploaddok', function () {
     return view('Admin/uploaddok');
@@ -171,22 +177,6 @@ Route::get('/Pengguna', function () {
     return view('Mahasiswa/Pengguna');
 });
 
-// Route::get('/prestasi', function () {
-//     return view('Mahasiswa/prestasi');
-// });
-
-// Route::get('/DokumentasiInternal', function () {
-//     return view('Mahasiswa/DokumentasiInternal');
-// });
-
-// Route::get('/DokumentasiEksternal', function () {
-//     return view('Mahasiswa/DokumentasiEksternal');
-// });
-
-// Route::get('/laporan', function () {
-//     return view('Mahasiswa/laporan');
-// });
-
 
 Route::get('/uploadproposal', function () {
     return view('Mahasiswa/uploadproposal');
@@ -200,14 +190,27 @@ Route::get('/uploaddoknona', function () {
     return view('Mahasiswa/uploaddoknona');
 });
 
-// Route::get('/KegiatanInternal', "KegiatanInternalController@show");
+Route::get('/formtambahkegiatan', function () {
+    return view('Mahasiswa/formtambahkegiatan');
+});
 
-// Route::get('/KegiatanEksternal', "KegiatanEksternalController@show");
+Route::get('/formtambahlaporan', function () {
+    return view('Mahasiswa/formtambahlaporan');
+});
 
-// Route::get('/LEMmhs', "LEMmhsController@show");
+Route::get('/formtambahprestasi', function () {
+    return view('Mahasiswa/formtambahprestasi');
+});
+
+Route::get('/profilmahasiswa', function () {
+    return view('Mahasiswa/profil');
+});
 
 Route::get('/Mahasiswa/didalamkampus', "didalamkampusController@show");
+Route::get('/Mahasiswa/didalamkampus/{id}',"didalamkampusController@hapus");
+Route::post('/Mahasiswa/didalamkampus/{id}',"didalamkampusController@hapus");
 Route::post('/Mahasiswa/didalamkampus', "didalamkampusController@store");
+// Route::delete('/Mahasiswa/didalamkampus/delete/{id}','didalamkampusController@delete');
 Route::get('/lembaga/kosmik/didalamkampus', "didalamkampusController@show");
 Route::get('/lembaga/centris/didalamkampus', "didalamkampusController@show");
 Route::get('/lembaga/uasc/didalamkampus', "didalamkampusController@show");
@@ -217,6 +220,9 @@ Route::post('/lembaga/didalamkampus/{route->get}',"didalamkampusController@show"
 Route::get('/lembaga/kosmik/didalamkampus', "didalamkampusController@index");
 Route::post('/lembaga/didalamkampus','didalamkampusController@store');
 Route::post('/lembaga/kosmik/didalamkampus',"didalamkampusController@store");
+Route::get('/lembaga/kosmik/didalamkampus/{id}', 'didalamkampusController@hapus');
+Route::delete('/Mahasiswa/didalamkampus/hapus/{id}','didalamkampusController@delete');
+
 
 Route::get('/Mahasiswa/diluarkampus', "diluarkampusController@show");
 Route::post('/Mahasiswa/diluarkampus', "diluarkampusController@store");
@@ -270,36 +276,8 @@ Route::get('/lembaga/himmah/laporan', "laporanController@show");
 Route::post('/laporan/{route->get}', "laporanController@show");
 Route::get('/Mahasiswa/laporan', "laporanController@index");
 
-// // Route::get('/DPMmhs', "DPMmhsController@show");
-
-// // Route::get('/UASCmhs', "UASCmhsController@show");
-
-// // Route::get('/KOSMIKmhs', "KOSMIKmhsController@show");
-
-// // Route::get('/HIMMAHmhs', "HIMMAHmhsController@show");
-
-// // Route::get('/CENTRISmhs', "CENTRISmhsController@show");
 
 
-// Route::get('/KegiatanEksternal', function () {
-//     return view('Mahasiswa/KegiatanEksternal');
-// });
-
-Route::get('/formtambahkegiatan', function () {
-    return view('Mahasiswa/formtambahkegiatan');
-});
-
-Route::get('/formtambahlaporan', function () {
-    return view('Mahasiswa/formtambahlaporan');
-});
-
-Route::get('/formtambahprestasi', function () {
-    return view('Mahasiswa/formtambahprestasi');
-});
-
-Route::get('/profilmahasiswa', function () {
-    return view('Mahasiswa/profil');
-});
 
 
 /*
@@ -333,11 +311,7 @@ Route::put('/didalamkampus/Hapus/{id}', 'didalamkampusController@hapus');
 | form tambah data
 |--------------------------------------------------------------------------
 */
-
-// Route::resource('/didalamkampus', 'didalamkampus'); //tambahkan baris ini
-// Route::get('/didalamkampus', function () {
-//     return view('/index');
 // });
-Route::get('/halaman-kedua', function () {
-    return view('halamandua');
-});
+
+
+// Route::get('/home', 'HomeController@index')->name('home');

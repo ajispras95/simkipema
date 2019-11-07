@@ -10,5 +10,7 @@ class di_dalam_kampus extends Model
     protected $fillable = [
         'id'
     ];
-
+    public function didalamkampus(){
+        return $this->hasMany(didalamkampus::class, 'didalamkampus_id');
+    }
 }
