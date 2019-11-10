@@ -60,7 +60,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="#" method="post">
+                                        <form action={{ url('/Mahasiswa/profil')}} method="post">
                                             {{csrf_field()}}
                                             <div class="form-group">
                                                 <label for="exampleInputFile">Avatar</label>

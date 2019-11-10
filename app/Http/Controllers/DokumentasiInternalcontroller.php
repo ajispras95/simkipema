@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\dokumentasi_internal;
+use Illuminate\Support\Facades\Auth;
 
 class dokumentasiinternalController extends Controller
 {
@@ -12,7 +13,21 @@ class dokumentasiinternalController extends Controller
     public function show()
     {
         $data =  dokumentasi_internal::all();
-        return view('/Mahasiswa/dokumentasiinternal', ['data' => $data]);
+        $cek = Auth::user()->name;
+        if ($cek == 'KOSMIK') {
+            return view('/lembaga/kosmik/dokumentasiinternal',['data' => $data]);
+        }elseif($cek == 'UASC'){
+            return view('/lembaga/uasc/dokumentasiinternal',['data' => $data]);
+        }elseif($cek == 'HIMMAH'){
+            return view('/lembaga/himmah/dokumentasiinternal',['data' => $data]);
+        }elseif($cek == 'CENTRIS'){
+            return view('/lembaga/centris/dokumentasiinternal',['data' => $data]);
+        }elseif($cek == 'DPM'){
+            return view('/lembaga/dpm/dokumentasiinternal',['data' => $data]);
+        }elseif($cek == 'Mahasiswa'){
+            return view('/Mahasiswa/dokumentasiinternal',['data' => $data]);
+        }
+        
     }
 
     public function insert(Request $request)
@@ -26,18 +41,59 @@ class dokumentasiinternalController extends Controller
         $dokumentasi_internal->status = $request->status;
         $dokumentasi_internal->save();
 
-        return redirect('/Mahasiswa/dokumentasiinternal')  ;
+        $cek = Auth::user()->name;
+        if ($cek == 'KOSMIK') {
+            return redirect('/lembaga/kosmik/dokumentasiinternal');
+        }elseif($cek == 'UASC'){
+            return redirect('/lembaga/uasc/dokumentasiinternal');
+        }elseif($cek == 'HIMMAH'){
+            return redirect('/lembaga/himmah/dokumentasiinternal');
+        }elseif($cek == 'CENTRIS'){
+            return redirect('/lembaga/centris/dokumentasiinternal');
+        }elseif($cek == 'DPM'){
+            return redirect('/lembaga/dpm/dokumentasiinternal');
+        }else{
+            return redirect('/Mahasiswa/dokumentasiinternal');
+        }
+    
        
     }
     public function index()
     {
         $dokumentasi_internal = DB::table('dokumentasi_internal')->get();
-        return view('/Mahasiswa/dokumentasiinternal',['data'=> $dokumentasi_internal]);
+        $cek = Auth::user()->name;
+        if ($cek == 'KOSMIK') {
+            return redirect('/lembaga/kosmik/dokumentasiinternal',['data'=> $dokumentasi_internal]);
+        }elseif($cek == 'UASC'){
+            return redirect('/lembaga/uasc/dokumentasiinternal',['data'=> $dokumentasi_internal]);
+        }elseif($cek == 'HIMMAH'){
+            return redirect('/lembaga/himmah/dokumentasiinternal',['data'=> $dokumentasi_internal]);
+        }elseif($cek == 'CENTRIS'){
+            return redirect('/lembaga/centris/dokumentasiinternal',['data'=> $dokumentasi_internal]);
+        }elseif($cek == 'DPM'){
+            return redirect('/lembaga/dpm/dokumentasiinternal',['data'=> $dokumentasi_internal]);
+        }else{
+            return redirect('/Mahasiswa/dokumentasiinternal',['data'=> $dokumentasi_internal]);
+        }
     }
 
     public function create()
    {
-       return view('/Mahasiswa/dokumentasiinternal');
+    $cek = Auth::user()->name;
+    if ($cek == 'KOSMIK') {
+        return redirect('/lembaga/kosmik/dokumentasiinternal');
+    }elseif($cek == 'UASC'){
+        return redirect('/lembaga/uasc/dokumentasiinternal');
+    }elseif($cek == 'HIMMAH'){
+        return redirect('/lembaga/himmah/dokumentasiinternal');
+    }elseif($cek == 'CENTRIS'){
+        return redirect('/lembaga/centris/dokumentasiinternal');
+    }elseif($cek == 'DPM'){
+        return redirect('/lembaga/dpm/dokumentasiinternal');
+    }else{
+        return redirect('/Mahasiswa/dokumentasiinternal');
+    }
+
    }
 
    /**
@@ -58,7 +114,20 @@ class dokumentasiinternalController extends Controller
         'status' => $request->status,
         ]);
  
-        return redirect('/Mahasiswa/dokumentasiinternal')->with('alert-success','Berhasil Menambahkan Data!');
+        $cek = Auth::user()->name;
+       if ($cek == 'KOSMIK') {
+           return redirect('/lembaga/kosmik/dokumentasiinternal')->with('alert-success','Berhasil Menambahkan Data!');;
+       }elseif($cek == 'UASC'){
+           return redirect('/lembaga/uasc/dokumentasiinternal')->with('alert-success','Berhasil Menambahkan Data!');;
+       }elseif($cek == 'HIMMAH'){
+           return redirect('/lembaga/himmah/dokumentasiinternal')->with('alert-success','Berhasil Menambahkan Data!');;
+       }elseif($cek == 'CENTRIS'){
+           return redirect('/lembaga/centris/dokumentasiinternal')->with('alert-success','Berhasil Menambahkan Data!');;
+       }elseif($cek == 'DPM'){
+           return redirect('/lembaga/dpm/dokumentasiinternal')->with('alert-success','Berhasil Menambahkan Data!');;
+       }elseif($cek == 'Mahasiswa'){
+           return redirect('/Mahasiswa/dokumentasiinternal')->with('alert-success','Berhasil Menambahkan Data!');;
+       }
     }
     // public function __construct()
     // {

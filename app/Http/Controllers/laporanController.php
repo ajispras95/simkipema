@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\laporan;
+use Illuminate\Support\Facades\Auth;
 
 class laporanController extends Controller
 {
@@ -12,7 +13,22 @@ class laporanController extends Controller
     public function show()
     {
         $data =  laporan::all();
-        return view('/Mahasiswa/laporan',['data' => $data]);
+        $cek = Auth::user()->name;
+        if ($cek == 'KOSMIK') {
+            return view('/lembaga/kosmik/laporan',['data' => $data]);
+        }elseif($cek == 'KOSMIK'){
+            return view('/lembaga/dpm/laporan',['data' => $data]);
+        }elseif($cek == 'DPM'){
+            return view('/lembaga/himmah/laporan',['data' => $data]);
+        }elseif($cek == 'HIMMAH'){
+            return view('/lembaga/centris/laporan',['data' => $data]);
+        }elseif($cek == 'CENTRIS'){
+            return view('/lembaga/dpm/laporan',['data' => $data]);
+        }elseif($cek == 'DPM'){
+            return view('/Mahasiswa/laporan',['data' => $data]);
+        }elseif($cek == 'Mahasiswa'){
+        }
+        
     }
 
     public function insert(Request $request)
@@ -25,19 +41,59 @@ class laporanController extends Controller
         $laporan->status = $request->status;
         $laporan->save();
 
-        return redirect('/Mahasiswa/laporan');
+        $cek = Auth::user()->name;
+        if ($cek == 'KOSMIK') {
+            return redirect('/lembaga/kosmik/laporan');
+        }elseif($cek == 'UASC'){
+            return redirect('/lembaga/uasc/laporan');
+        }elseif($cek == 'HIMMAH'){
+            return redirect('/lembaga/himmah/laporan');
+        }elseif($cek == 'CENTRIS'){
+            return redirect('/lembaga/centris/laporan');
+        }elseif($cek == 'DPM'){
+            return redirect('/lembaga/dpm/laporan');
+        }else{
+            return redirect('/Mahasiswa/laporan');
+        }
         
     }
 
     public function index()
     {
         $laporan = DB::table('laporan')->get();
-        return view('/Mahasiswa/laporan',['data'=> $laporan]);
+        $cek = Auth::user()->name;
+        if ($cek == 'KOSMIK') {
+            return redirect('/lembaga/kosmik/laporan',['data'=> $laporan]);
+        }elseif($cek == 'UASC'){
+            return redirect('/lembaga/uasc/laporan',['data'=> $laporan]);
+        }elseif($cek == 'HIMMAH'){
+            return redirect('/lembaga/himmah/laporan',['data'=> $laporan]);
+        }elseif($cek == 'CENTRIS'){
+            return redirect('/lembaga/centris/laporan',['data'=> $laporan]);
+        }elseif($cek == 'DPM'){
+            return redirect('/lembaga/dpm/laporan',['data'=> $laporan]);
+        }else{
+            return redirect('/Mahasiswa/laporan',['data'=> $laporan]);
+        }
+        
     }
 
     public function create()
    {
-       return view('/Mahasiswa/laporan');
+    $cek = Auth::user()->name;
+    if ($cek == 'KOSMIK') {
+        return redirect('/lembaga/kosmik/laporan');
+    }elseif($cek == 'UASC'){
+        return redirect('/lembaga/uasc/laporan');
+    }elseif($cek == 'HIMMAH'){
+        return redirect('/lembaga/himmah/laporan');
+    }elseif($cek == 'CENTRIS'){
+        return redirect('/lembaga/centris/laporan');
+    }elseif($cek == 'DPM'){
+        return redirect('/lembaga/dpm/laporan');
+    }else{
+        return redirect('/Mahasiswa/laporan');
+    }
    }
 
    /**
@@ -57,7 +113,20 @@ class laporanController extends Controller
         'status' => $request->status,
         ]);
  
-        return redirect('/Mahasiswa/laporan')->with('alert-success','Berhasil Menambahkan Data!');
+        $cek = Auth::user()->name;
+       if ($cek == 'KOSMIK') {
+           return redirect('/lembaga/kosmik/laporan')->with('alert-success','Berhasil Menambahkan Data!');;
+       }elseif($cek == 'UASC'){
+           return redirect('/lembaga/uasc/laporan')->with('alert-success','Berhasil Menambahkan Data!');;
+       }elseif($cek == 'HIMMAH'){
+           return redirect('/lembaga/himmah/laporan')->with('alert-success','Berhasil Menambahkan Data!');;
+       }elseif($cek == 'CENTRIS'){
+           return redirect('/lembaga/centris/laporan')->with('alert-success','Berhasil Menambahkan Data!');;
+       }elseif($cek == 'DPM'){
+           return redirect('/lembaga/dpm/laporan')->with('alert-success','Berhasil Menambahkan Data!');;
+       }elseif($cek == 'Mahasiswa'){
+           return redirect('/Mahasiswa/laporan')->with('alert-success','Berhasil Menambahkan Data!');;
+       }
     }
 
     public function hapus($id)
@@ -66,7 +135,20 @@ class laporanController extends Controller
         DB::table('laporan')->where('didalamkampus_id',$id)->delete();
             
         // alihkan halaman ke halaman pegawai
-        return redirect('/laporan');
+        $cek = Auth::user()->name;
+        if ($cek == 'KOSMIK') {
+            return redirect('/lembaga/kosmik/laporan');
+        }elseif($cek == 'UASC'){
+            return redirect('/lembaga/uasc/laporan');
+        }elseif($cek == 'HIMMAH'){
+            return redirect('/lembaga/himmah/laporan');
+        }elseif($cek == 'CENTRIS'){
+            return redirect('/lembaga/centris/laporan');
+        }elseif($cek == 'DPM'){
+            return redirect('/lembaga/dpm/laporan');
+        }else{
+            return redirect('/Mahasiswa/laporan');
+        }
     }
     // public function deleteEvent(Request $request){
 

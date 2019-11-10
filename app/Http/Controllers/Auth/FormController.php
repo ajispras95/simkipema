@@ -76,7 +76,7 @@ class FormController extends Controller
         $di_dalam_kampus->user_id = $user_id;
         $di_dalam_kampus->save();
         
-        return redirect('/didalamkampus')  ;
+        return redirect('/Mahasiswa/didalamkampus')  ;
         
     }
 

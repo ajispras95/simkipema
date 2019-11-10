@@ -5,14 +5,29 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\di_luar_kampus;
+use Illuminate\Support\Facades\Auth;
 
 class diluarkampusController extends Controller
 {
 
     public function show()
     {
-        $data = di_luar_kampus::all();
-        return view('/Mahasiswa/diluarkampus', ['data' => $data]);
+        $data =  di_luar_kampus::all();
+        $cek = Auth::user()->name;
+        if ($cek == 'KOSMIK') {
+            return view('/lembaga/kosmik/diluarkampus',['data' => $data]);
+        }elseif($cek == 'UASC'){
+            return view('/lembaga/uasc/diluarkampus',['data' => $data]);
+        }elseif($cek == 'HIMMAH'){
+            return view('/lembaga/himmah/diluarkampus',['data' => $data]);
+        }elseif($cek == 'CENTRIS'){
+            return view('/lembaga/centris/diluarkampus',['data' => $data]);
+        }elseif($cek == 'DPM'){
+            return view('/lembaga/dpm/diluarkampus',['data' => $data]);
+        }elseif($cek == 'Mahasiswa'){
+            return view('/Mahasiswa/diluarkampus',['data' => $data]);
+        }
+        
     }
 
     public function insert(Request $request)
@@ -28,18 +43,61 @@ class diluarkampusController extends Controller
         $di_luar_kampus->scan_bukti = $request->scan_bukti;
         $di_luar_kampus->save();
 
-        return redirect('/Mahasiswa/diluarkampus')  ;
+        $cek = Auth::user()->name;
+        if ($cek == 'KOSMIK') {
+            return redirect('/lembaga/kosmik/diluarkampus');
+        }elseif($cek == 'UASC'){
+            return redirect('/lembaga/uasc/diluarkampus');
+        }elseif($cek == 'HIMMAH'){
+            return redirect('/lembaga/himmah/diluarkampus');
+        }elseif($cek == 'CENTRIS'){
+            return redirect('/lembaga/centris/diluarkampus');
+        }elseif($cek == 'DPM'){
+            return redirect('/lembaga/dpm/diluarkampus');
+        }else{
+            return redirect('/Mahasiswa/diluarkampus');
+        }
+
     }
 
     public function index()
     {
         $di_luar_kampus = DB::table('di_luar_kampus')->get();
-        return view('/Mahasiswa/diluarkampus',['data'=> $di_luar_kampus]);
+        $cek = Auth::user()->name;
+        if ($cek == 'KOSMIK') {
+            return redirect('/lembaga/kosmik/diluarkampus',['data'=> $di_luar_kampus]);
+        }elseif($cek == 'UASC'){
+            return redirect('/lembaga/uasc/diluarkampus',['data'=> $di_luar_kampus]);
+        }elseif($cek == 'HIMMAH'){
+            return redirect('/lembaga/himmah/diluarkampus',['data'=> $di_luar_kampus]);
+        }elseif($cek == 'CENTRIS'){
+            return redirect('/lembaga/centris/diluarkampus',['data'=> $di_luar_kampus]);
+        }elseif($cek == 'DPM'){
+            return redirect('/lembaga/dpm/diluarkampus',['data'=> $di_luar_kampus]);
+        }else{
+            return redirect('/Mahasiswa/diluarkampus',['data'=> $di_luar_kampus]);
+        }
+        
     }
 
     public function create()
    {
-       return view('/Mahasiswa/diluarkampus');
+
+    $cek = Auth::user()->name;
+    if ($cek == 'KOSMIK') {
+        return redirect('/lembaga/kosmik/diluarkampus');
+    }elseif($cek == 'UASC'){
+        return redirect('/lembaga/uasc/diluarkampus');
+    }elseif($cek == 'HIMMAH'){
+        return redirect('/lembaga/himmah/diluarkampus');
+    }elseif($cek == 'CENTRIS'){
+        return redirect('/lembaga/centris/diluarkampus');
+    }elseif($cek == 'DPM'){
+        return redirect('/lembaga/dpm/diluarkampus');
+    }else{
+        return redirect('/Mahasiswa/diluarkampus');
+    }
+
    }
 
    /**
@@ -63,16 +121,42 @@ class diluarkampusController extends Controller
         'scan_bukti' => $request->scan_bukti
         ]);
  
-        return redirect('/Mahasiswa/diluarkampus')->with('alert-success','Berhasil Menambahkan Data!');
+        $cek = Auth::user()->name;
+       if ($cek == 'KOSMIK') {
+           return redirect('/lembaga/kosmik/diluarkampus')->with('alert-success','Berhasil Menambahkan Data!');;
+       }elseif($cek == 'UASC'){
+           return redirect('/lembaga/uasc/diluarkampus')->with('alert-success','Berhasil Menambahkan Data!');;
+       }elseif($cek == 'HIMMAH'){
+           return redirect('/lembaga/himmah/diluarkampus')->with('alert-success','Berhasil Menambahkan Data!');;
+       }elseif($cek == 'CENTRIS'){
+           return redirect('/lembaga/centris/diluarkampus')->with('alert-success','Berhasil Menambahkan Data!');;
+       }elseif($cek == 'DPM'){
+           return redirect('/lembaga/dpm/diluarkampus')->with('alert-success','Berhasil Menambahkan Data!');;
+       }elseif($cek == 'Mahasiswa'){
+           return redirect('/Mahasiswa/diluarkampus')->with('alert-success','Berhasil Menambahkan Data!');;
+       }
     }
 
     public function hapus($id)
     {
         // menghapus data pegawai berdasarkan id yang dipilih
-        DB::table('di_dalam_kampus')->where('didalamkampus_id',$id)->delete();
+        DB::table('diluarkampus')->where('diluarkampus_id',$id)->delete();
             
         // alihkan halaman ke halaman pegawai
-        return redirect('/didalamkampus');
+        $cek = Auth::user()->name;
+    if ($cek == 'KOSMIK') {
+        return redirect('/lembaga/kosmik/diluarkampus');
+    }elseif($cek == 'UASC'){
+        return redirect('/lembaga/uasc/diluarkampus');
+    }elseif($cek == 'HIMMAH'){
+        return redirect('/lembaga/himmah/diluarkampus');
+    }elseif($cek == 'CENTRIS'){
+        return redirect('/lembaga/centris/diluarkampus');
+    }elseif($cek == 'DPM'){
+        return redirect('/lembaga/dpm/diluarkampus');
+    }else{
+        return redirect('/Mahasiswa/diluarkampus');
+    }
     }
     // public function deleteEvent(Request $request){
 

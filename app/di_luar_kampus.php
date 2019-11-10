@@ -23,6 +23,6 @@ class di_luar_kampus extends Model
      * @var array
      */
     protected $fillable = [
-        'nama_kegiatan', 'dosen_pembimbing', 'program_kerja_divisi', 'predikat', 'waktu_pelaksanaan', 'tempat','tingkat', 'scan_bukti',
+        'id','nama_kegiatan', 'dosen_pembimbing', 'program_kerja_divisi', 'predikat', 'waktu_pelaksanaan', 'tempat','tingkat', 'scan_bukti',
     ];
 }

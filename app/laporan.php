@@ -12,6 +12,9 @@ class laporan extends Model
      * @var string
      */
     protected $table = 'laporan';
+    public function user(){
+        return $this->hasOne(User::class, 'laporan');
+    }
 
     /**
      * The attributes that are mass assignable.

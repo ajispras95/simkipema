@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use User;
 
 class LoginController extends Controller
 {
@@ -48,19 +49,8 @@ class LoginController extends Controller
         $this->api['role'] = Auth::user()->role;
         $this->api['name'] = Auth::user()->name;
         return $this->api;
-
     }
 
-    protected function redirectTo()
-    {
-        $user = Auth::user();
-
-        if($user->role=='Admin'){
-            return '/admin';
-        }else if($user->role=='EO'){
-            return '/eo';
-        }else if($user->role=='Sponsor'){
-            return '/partner';
-        }
-    }
+    
+    
 }

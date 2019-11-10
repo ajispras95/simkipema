@@ -40,7 +40,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="{{ URL ('/Mahasiswa/dashboard')}}" class="logo">
+    <a href="{{ URL ('/dashboard')}}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>UII</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -104,8 +104,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
 
-        <li><a href="{{ URL ('/Mahasiswa/dashboard')}}"><i class="fa fa-book"></i> <span>Dashboard</span></a></li>
-
+        <li><a href="{{ URL ('/dashboard')}}"><i class="fa fa-book"></i> <span>Dashboard</span></a></li>
 
         <li class="treeview">
           <a href="#">
@@ -117,114 +116,21 @@
           </a>
           <ul class="treeview-menu">
             <li class="treeview menu-open" style="display: block;">
-                <a href="#"><i class="fa fa-circle-o"></i>Kegiatan Internal
-                  <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li class="treeview menu-open" style="display: block;">
-                        <a href="#">LEM
-                          <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                          </span>
-                        </a>
-                        <ul class="treeview-menu" style="display: block;">
-                            <li><a href="{{ URL ('/Mahasiswa/didalamkampus') }}"> Di dalam kampus</a></li>
-                            <li><a href="{{ URL ('/Mahasiswa/diluarkampus') }}"> Di luar kampus</a></li>
-                          </ul>
-                      </li>
-                      <li class="treeview menu-open" style="display: block;">
-                        <a href="#">DPM
-                          <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                          </span>
-                        </a>
-                        <ul class="treeview-menu" style="display: block;">
-                            <li><a href="{{ URL ('/Mahasiswa/didalamkampus') }}"> Di dalam kampus</a></li>
-                            <li><a href="{{ URL ('/Mahasiswa/diluarkampus') }}"> Di luar kampus</a></li>
-                          </ul>
-                      </li>
-                      <li class="treeview menu-open" style="display: block;">
-                        <a href="#">HIMMAH
-                          <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                          </span>
-                        </a>
-                        <ul class="treeview-menu" style="display: block;">
-                            <li><a href="{{ URL ('/Mahasiswa/didalamkampus') }}"> Di dalam kampus</a></li>
-                            <li><a href="{{ URL ('/Mahasiswa/diluarkampus') }}"> Di luar kampus</a></li>
-                          </ul>
-                      </li>
-                  </ul>
-
-                  <li class="treeview menu-open" style="display: block;">
-                      <a href="#"><i class="fa fa-circle-o"></i> Kegiatan Eksternal
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                      </a>
-                    <ul class="treeview-menu">
-                    <li class="treeview menu-open" style="display: block;">
-                      <a href="#">KOSMIK
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                      </a>
-                      <ul class="treeview-menu" style="display: block;">
-                          <li><a href="{{ URL ('/Mahasiswa/didalamkampus') }}"> Di dalam kampus</a></li>
-                          <li><a href="{{ URL ('/Mahasiswa/diluarkampus') }}"> Di luar kampus</a></li>
-                        </ul>
-                      </li>
-                    <li class="treeview menu-open" style="display: block;">
-                        <a href="#">UASC
-                          <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                          </span>
-                        </a>
-                        <ul class="treeview-menu" style="display: block;">
-                            <li><a href="{{ URL ('/Mahasiswa/didalamkampus') }}"> Di dalam kampus</a></li>
-                            <li><a href="{{ URL ('/Mahasiswa/diluarkampus') }}"> Di luar kampus</a></li>
-                        </ul>
-                    </li>
-                        <li class="treeview menu-open" style="display: block;">
-                          <a href="#">CENTRIS
-                            <span class="pull-right-container">
-                              <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                          </a>
-                        <ul class="treeview-menu" style="display: block;">
-                            <li><a href="{{ URL ('/Mahasiswa/didalamkampus') }}"> Di dalam kampus</a></li>
-                            <li><a href="{{ URL ('/Mahasiswa/diluarkampus') }}"> Di luar kampus</a></li>
-                          </ul>
-                        </li>
-                    </ul>
-                  </li>
+              <ul class="treeview-menu" style="display: block;">
+                  <li><a href="{{ URL ('/Mahasiswa/didalamkampus') }}"> Di dalam kampus</a></li>
+                  <li><a href="{{ URL ('/Mahasiswa/diluarkampus') }}"> Di luar kampus</a></li>
                 </ul>
+              </li>
+            </ul>
 
-
-        {{-- <li class="treeview">
-          <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>Kegiatan mahasiswa</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-              <li><a href="{{ URL ('/KegiatanInternal') }}"><i class="fa fa-circle-o"></i>Kegiatan Internal</a></li>
-            <li><a href="{{ URL ('/KegiatanEksternal') }}"><i class="fa fa-circle-o"></i>Kegiatan Eksternal</a></li>
-          </ul>
-        </li> --}}
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>Rekap Prestasi</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-pie-chart"></i>
+                <span>Rekap Prestasi</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
               <ul class="treeview-menu">
                     <li class="treeview menu-open" style="display: block;">
                         <a href="#">Prestasi
@@ -265,47 +171,22 @@
                     </li>
                   </ul>
 
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-edit"></i>
-            <span>Rekap dokumentasi</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li class="treeview menu-open" style="display: block;">
-                <a href="#"><i class="fa fa-circle-o"></i>Dokumentasi Internal
-                  <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-                </a>
-            <ul class="treeview-menu">
-              <li class="treeview-menu" style="display: block;">
-                  <li><a href="{{ URL ('/Mahasiswa/dokumentasiinternal') }}"><i class="fa fa-circle-o"></i> LEM</a></li>
-                  <li><a href="{{ URL ('/Mahasiswa/dokumentasiinternal') }}"><i class="fa fa-circle-o"></i> DPM</a></li>
-                  <li><a href="{{ URL ('/Mahasiswa/dokumentasiinternal') }}"><i class="fa fa-circle-o"></i> HIMMAH</a></li>
-              </li>
-            </ul>
-            <li class="treeview menu-open" style="display: block;">
-                <a href="#"><i class="fa fa-circle-o"></i> Dokumentasi Eksternal
-                  <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-                </a>
-                <ul class="treeview-menu">
-                <li class="treeview-menu" style="display: block;">
-                  <li><a href="{{ URL ('/Mahasiswa/dokumentasieksternal') }}"><i class="fa fa-circle-o"></i> CENTRIS</a></li>
-                  <li><a href="{{ URL ('/Mahasiswa/dokumentasieksternal') }}"><i class="fa fa-circle-o"></i> KOSMIK</a></li>
-                  <li><a href="{{ URL ('/Mahasiswa/dokumentasieksternal') }}"><i class="fa fa-circle-o"></i> UASC</a></li>
-                </li>
-             </ul>
-            </li>
-          </ul>
-
-        <li><a href="{{ URL ('/Mahasiswa/laporan') }}"><i class="fa fa-book"></i> <span>Laporan</span></a></li>
-      </ul>
-    </section>
+                  <li class="treeview">
+                    <a href="#">
+                      <i class="fa fa-edit"></i> 
+                      <span>Rekap dokumentasi</span>
+                      <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                      </span>
+                    </a>
+                    <ul class="treeview-menu">
+                      <li><a href="{{ URL ('/Mahasiswa/dokumentasiinternal') }}"><i class="fa fa-circle-o"></i> Dokumentasi Internal</a></li>
+                      <li><a href="{{ URL ('/Mahasiswa/dokumentasieksternal') }}"><i class="fa fa-circle-o"></i> Dokumentasi Eksternal</a></li>
+                      </li>
+                    </ul>
+                  <li><a href="{{ URL ('/Mahasiswa/laporan') }}"><i class="fa fa-book"></i> <span>Laporan</span></a></li>
+                </ul>
+              </section>
     <!-- /.sidebar -->
   </aside>
 

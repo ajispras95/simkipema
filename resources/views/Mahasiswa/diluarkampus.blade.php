@@ -130,64 +130,20 @@
                                       <td> {{ $d->tingkat }}</td>
                                       <td> {{ $d->scan_bukti }}</td>
                                       <td>
-                                {{-- <tr>
-                                  <td> 1</td>
-                                  <td> UASC</td>
-                                  <td> FSAE Student 2019</td>
-                                  <td> Best technology</td>
-                                  <td> 14-06-2018</td>                                
-                                  <td> Jepang</td>
-                                  <td> viewed / Not Seen</td>
-                                  <td> --}}
-                                      <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                          Detail 
-                                        </button>
-                                        <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                            Edit 
-                                          </button>
-                                          <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                              Hapus 
-                                            </button>
-                                  {{-- </td>
-                                </tr>
-                                <td> 2</td>
-                                <td> Kosmik UII</td>
-                                <td> Soundrenaline 2018</td>
-                                <td> best indie band</td>
-                                <td> 12-08-2018</td>                                
-                                <td> Jogjakarta</td>
-                                <td> viewed / Not Seen</td>
-                                <td>
-                                    <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                        Detail 
-                                      </button>
-                                      <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                          Edit 
-                                        </button>
-                                        <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                            Hapus 
-                                          </button>
-                                </td>
-                                  </tr>
-                                  <tr>
-                                    <td> 3</td>
-                                    <td> Centris UII</td>
-                                    <td> Seminar digital dakwah</td>
-                                    <td> Pengisi acara </td>
-                                    <td> 19-02-2015</td>
-                                    <td> Jakarta</td>
-                                    <td> viewed / Not Seen</td>
-                                    <td>
-                                        <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                            Detail 
-                                          </button>
-                                          <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                              Edit 
-                                            </button>
-                                            <button type="button" class="" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                                Hapus 
-                                              </button>
-                                    </td> --}}
+                                
+                                    <a href="{{URL('/Mahasiswa/diluarkampus/detail/'.$d->id)}}">Detail</a>
+
+                                    <form action="{{URL('/Mahasiswa/diluarkampus/hapus/')}}" method="POST">
+                                      {{csrf_field()}}
+                                      <input type="hidden" name="id" value="{{$d->id}}">
+                                      <button type="submit" onclick="confirm('Apakah anda yakin menghapus data?')">Edit</button>
+                                    </form>
+
+                                    <form action="{{URL('/Mahasiswa/diluarkampus/hapus/')}}" method="POST">
+                                      {{csrf_field()}}
+                                      <input type="hidden" name="id" value="{{$d->id}}">
+                                      <button type="submit" onclick="confirm('Apakah anda yakin menghapus data?')">Hapus</button>
+                                    </form>
                                   </tr>
                                   @endforeach
                               </tbody>

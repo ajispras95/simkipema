@@ -19,7 +19,7 @@
                         <div class="box">
                           <div class="box-body">
                             <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#tambahkegiatan" data-whatever="@mdo">
-                                <i class="fa fa-plus-circle"></i> Tambah Kegiatan
+                                <i class="fa fa-plus-circle"></i> Edit
                             </button>
                         </div>
                     
@@ -33,7 +33,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action={{ url('/Mahasiswa/didalamkampus')}} method="post">
+                                        <form action={{ url('/Mahasiswa/edit')}} method="post">
                                             {{csrf_field()}}
                                             @if(count($errors) > 0)
                                             <div class="alert alert-danger">
@@ -124,20 +124,14 @@
                                       <td> {{ $d->tingkat }}</td>
                                       <td> {{ $d->scan_bukti }}</td>
                                       <td>
-                                            <a href="{{URL('/Mahasiswa/didalamkampus/detail/'.$d->id)}}">Detail</a>
-
-                                            <form action="{{URL('/Mahasiswa/didalamkampus/hapus/')}}" method="POST">
-                                              {{csrf_field()}}
-                                              <input type="hidden" name="id" value="{{$d->id}}">
-                                              <button type="submit" onclick="confirm('Apakah anda yakin menghapus data?')">Edit</button>
-                                            </form>
-
-                                            <form action="{{URL('/Mahasiswa/didalamkampus/hapus/')}}" method="POST">
-                                              {{csrf_field()}}
-                                              <input type="hidden" name="id" value="{{$d->id}}">
-                                              <button type="submit" onclick="confirm('Apakah anda yakin menghapus data?')">Hapus</button>
-                                            </form>
-                                      </td>
+                                          <button type="button" class="" data-toggle="modal" data-target="#Detail" data-whatever="@mdo">
+                                              Detail 
+                                            </button>
+                                            <button type="button" class="" data-toggle="modal" data-target="#Edit" data-whatever="@mdo">
+                                                Edit 
+                                              </button>
+                                              <button> <a href="/Mahasiswa/didalamkampus/{{ $d->id }}" value="hapus">Hapus</a>
+                                                </button>
                                                 
                                   </tr>
                                   @endforeach

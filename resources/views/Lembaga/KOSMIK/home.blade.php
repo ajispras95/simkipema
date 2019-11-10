@@ -1,6 +1,6 @@
-@extends('layout.home')
+{{-- @extends('layout.home') --}}
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+{{-- <html lang="{{ app()->getLocale() }}"> --}}
 <html>
 <head>
   <meta charset="utf-8">
@@ -33,9 +33,9 @@
   <!-- Tambahan CSS -->
   <link rel="stylesheet" href="{{ URL('css/user/user.css') }}">
 
-  <meta name="csrf-token" content="{{ csrf_token() }}">
+  {{-- <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>{{ config('app.name', 'Laravel') }}</title> --}}
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -45,11 +45,11 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href=" {{Auth::user()->window}}" class="logo">
+    <a href="{{ URL ('/lembaga/kosmik/dashboard')}}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>UII</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">SIMKIPEMA</span>
+    <span class="logo-lg">SIMKIPEMA</span>
     </a>
     
     <!-- Header Navbar: style can be found in header.less -->
@@ -63,21 +63,21 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{{ URL ('template1/dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
-              <span class="hidden-xs">{{Auth::user()->name}}</span>
+              <span class="hidden-xs">KOSMIK</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
                 <img src="{{ URL ('template1/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                 <p>
-                  {{Auth::user()->name}}
-                  <small>{{Auth::user()->name}}</small>
+                 KOSMIK
+                  <small>Komunitas Musik informatika</small>
                 </p>
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="{{Auth::user()->form.'profil'}}" class="btn btn-default btn-flat">Profile</a>
+                  <a href="{{ URL ('/lembaga/kosmik/profil')}}" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
                   <a href="{{ URL ('/login')}}" class="btn btn-default btn-flat">Sign out</a>
@@ -100,7 +100,7 @@
           <img src="{{ URL ('template1/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>{{Auth::user()->name}}</p>
+          <p>KOSMIK</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -109,7 +109,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
 
-        <li><a href="{{Auth::user()->window}}"><i class="fa fa-book"></i> <span>Dashboard</span></a></li>
+        <li><a href="{{ URL ('/lembaga/kosmik/dashboard')}}"><i class="fa fa-book"></i> <span>Dashboard</span></a></li>
 
         <li class="treeview">
           <a href="#">
@@ -122,8 +122,8 @@
           <ul class="treeview-menu">
             <li class="treeview menu-open" style="display: block;">
               <ul class="treeview-menu" style="display: block;">
-                  <li><a href="{{Auth::user()->form.'didalamkampus'}}"> Di dalam kampus</a></li>
-                  <li><a href="{{Auth::user()->form.'diluarkampus'}}"> Di luar kampus</a></li>
+                  <li><a href="{{ URL ('/lembaga/kosmik/didalamkampus') }}"> Di dalam kampus</a></li>
+                  <li><a href="{{ URL ('/lembaga/kosmik/diluarkampus') }}"> Di luar kampus</a></li>
                 </ul>
               </li>
             </ul>

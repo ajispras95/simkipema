@@ -44,6 +44,6 @@ class didalamkampus extends Migration
     public function down()
     {
         Schema::dropIfExists('di_dalam_kampus');
-        Schema::dropIfExists('di_dalam_kampusK');
+    
     }
 }

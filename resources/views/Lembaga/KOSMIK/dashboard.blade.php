@@ -26,7 +26,7 @@
               <p>Total Program</p>
               <div class="small-box bg-aqua">
                 <div class="inner">
-                  <h3>10</h3>
+                  <h3>{{$jmlkegiatan}}</h3>
                   <p>Program Kegiatan</p>
                 </div>
                 <div class="icon">
